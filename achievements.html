@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Achievements</title>
+
+  <!-- Theme + Data -->
+  <script src="theme-loader.js" defer></script>
+  <script src="achievements.js" defer></script>
+
+  <!-- Page Logic -->
+  <script src="achievement-selector.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="achievements.css" />
+</head>
+
+<body>
+<nav class="top-nav">
+  <div class="nav-left">Rohan OS</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="achievements.html" class="active">Achievements</a>
+    <a href="resume.html">Résumé</a>
+    <a href="ets.html">ETS</a>
+    <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+  <header class="ach-header">
+    <div class="ach-title">
+      <h1>Achievements</h1>
+      <p class="ach-subtitle">A complete index of all 33 achievements</p>
+    </div>
+
+    <div class="ach-selector">
+      <input 
+        id="achievementInput" 
+        type="text" 
+        placeholder="Enter IDs e.g. 3, 7, 12, 18, 25"
+      />
+      <button id="generateResumeBtn">Resume</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="achievementsContainer" class="ach-grid"></div>
+  </main>
+
+</body>
+</html>
