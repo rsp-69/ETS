@@ -82,7 +82,7 @@ const themes = {
   coles: {
     "--main": "#E00024",
     "--pg-bg": "#E00024",
-    "--body-bg": "#FFFFFF",
+    "--body-bg": "#FFFFFE",
     "--text": "#707070",
     "--headings": "#FFCC00",
     "--subheadings": "#B00020",
