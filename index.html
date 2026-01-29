@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETS Theme Selector</title>
+
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --card-bg: #ffffff;
+      --text: #222;
+      --accent: #0078ff;
+      --radius: 14px;
+      --shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 480px;
+      background: var(--card-bg);
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: var(--text);
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+      cursor: pointer;
+      background: var(--accent);
+      color: white;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border-radius: var(--radius);
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="top-nav">
+  <div class="nav-left">Rohan OS</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="achievements.html" class="active">Achievements</a>
+    <a href="resume.html">Résumé</a>
+    <a href="ets.html">ETS</a>
+    <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+  <div class="container">
+    <h1>Choose Your View</h1>
+    <p>Select how you’d like to experience this résumé.</p>
+
+    <button class="btn" onclick="setTheme('myView')">My View</button>
+    <button class="btn" onclick="setTheme('light')">Light Mode</button>
+    <button class="btn" onclick="setTheme('dark')">Dark Mode</button>
+
+    <select id="companySelect" onchange="companyThemeSelected()">
+      <option value="">Company Mode (Select Company)</option>
+      <option value="aldi">ALDI</option>
+      <option value="afl">AFL</option>
+      <option value="bunnings">Bunnings</option>
+      <option value="coles">Coles</option>
+      <option value="kmart">KMART</option>
+      <option value="yarra_trams">Yarra Trams</option>
+    </select>
+
+    <div class="note">
+      More company themes are being added.
+    </div>
+  </div>
+
+  <script>
+    function setTheme(themeName) {
+      localStorage.setItem("ETS_THEME", themeName);
+      window.location.href = "resume.html"; 
+    }
+
+    function companyThemeSelected() {
+      const company = document.getElementById("companySelect").value;
+      if (company) {
+        localStorage.setItem("ETS_THEME", company);
+        window.location.href = "resume.html";
+      }
+    }
+  </script>
+</body>
+</html>
