@@ -20,8 +20,8 @@ const themes = {
     "--main": "#1B1B1B",
     "--headings":"#2EBB57",
     "--subheadings": "#FFB703",
-    "--lines": "#FFB703",
-    "--borders": "#F4C430"
+    "--lines": "#F4C430",
+    "--borders": "#FFB703"
   },
 
   light: {
@@ -30,9 +30,9 @@ const themes = {
     "--text": "#161616",
     "--main": "#DEE2E6",
     "--headings": "#4CC9F0",
-    "--subheadings": "#4CC9F0",
+    "--subheadings": "#6C757D",
     "--lines": "#FFB703",
-    "--borders": "#6C757D"
+    "--borders": "#4CC9F0"
   },
 
   dark: {
@@ -82,7 +82,7 @@ const themes = {
   coles: {
     "--main": "#E00024",
     "--pg-bg": "#E00024",
-    "--body-bg": "#FFFFFE",
+    "--body-bg": "#FFFFFF",
     "--text": "#707070",
     "--headings": "#FFCC00",
     "--subheadings": "#B00020",

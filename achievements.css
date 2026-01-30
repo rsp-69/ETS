@@ -2,61 +2,8 @@
    GLOBAL
 ============================ */
 
-/* ============================
-   NAVIGATION BAR
-============================ */
-
-.top-nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(12px);
-  background: rgb(from var(--pg-bg) r g b / 0.6);
-  border-bottom: 1px solid rgb(from var(--body-bg) r g b / 0.3);
-  padding: 14px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-left {
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--subheadings);
-  text-shadow: 0 0 6px rgb(from var(--subheadings) r g b / 0.4);
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-}
-
-.nav-links a {
-  color: var(--body-bg);
-  text-decoration: none;
-  font-weight: 500;
-  opacity: 0.8;
-  transition: opacity 0.2s ease, text-shadow 0.2s ease;
-}
-
-.nav-links a:hover {
-  opacity: 1;
-  text-shadow: 0 0 6px rgb(from var(--subheadings) r g b / 0.4);
-}
-
-.nav-links .active {
-  opacity: 1;
-  font-weight: 600;
-  text-shadow: 0 0 8px rgb(from var(--subheadings) r g b / 0.5);
-}
-
 body {
-  background: var(--pg-bg);
-  color: var(--body-bg);
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.55;
+  display: block;
 }
 
 /* ============================
@@ -68,13 +15,13 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   padding: 28px 32px;
-  border-bottom: 2px solid var(--headings);
+  border-bottom: 2px solid rgba(--bg3);
 }
 
 .ach-title h1 {
   margin: 0;
   font-size: 32px;
-  color: var(--borders);
+  color: var(--bg5);
 }
 
 .ach-subtitle {
@@ -94,26 +41,26 @@ body {
 
 #achievementInput {
   padding: 10px 14px;
-  border: 1px solid var(--borders);
-  background: var(--body-bg);
-  color: var(--text);
+  border: 1px solid var(--glass-border-top);
+  background: var(--glass-bg);
+  color: var(--navtext);
   border-radius: 6px;
   width: 240px;
 }
 
 #generateResumeBtn {
   padding: 10px 16px;
-  background: rgb(from var(--headings) r g b / 0.5);
+  background: rgb(from var(--bg1) r g b / 0.5);
   border-left: none;
   border-right: none;
-  border-top: 1px solid rgb(from var(--body-bg) r g b / 0.8);
-  border-bottom: 1px solid rgba(105, 105, 105, 0.8);
-  color: rgb(from var(--subheadings) r g b / 0.3);
+  border-top: 1px solid rgba(105,105,105,0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  color: rgb(from var(--navtext) r g b / 0.3);
   text-shadow:
-    -1px -1px 0 rgb(from var(--body-bg) r g b / 0.6),
-     1px -1px 0 rgb(from var(--subheadings) r g b / 0.6),
-    -1px  1px 0 rgb(from var(--subheadings) r g b / 0.6),
-     1px  1px 0 rgb(from var(--subheadings) r g b / 0.6);
+    -1px -1px 0 rgb(from var(--bg4) r g b / 0.6),
+     1px -1px 0 rgb(from var(--bg1) r g b / 0.6),
+    -1px  1px 0 rgb(from var(--pbg1) r g b / 0.6),
+     1px  1px 0 rgb(from var(--bg1) r g b / 0.6);
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
@@ -146,12 +93,12 @@ body {
 	z-index:10;
   --glow-strength: 0;
 
-  background: rgb(from var(--body-bg) r g b / 0.2);
-  border-top: 1px solid rgb(from var(--body-bg) r g b / 0.8);
+  background: rgb(from var(--bg3) r g b / 0.2);
+  border-top: 1px solid rgba(255,255,255,0.8);
   border-bottom: 1px solid rgba(105,105,105,0.8);
   padding: 20px;
   border-radius: 25px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08), inset 0 0 25px rgb(from var(--subheadings) r g b /0.6); 
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), inset 0 0 25px rgba(255,255,255,0.6); 
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -164,7 +111,6 @@ body {
   filter: blur(18px);
   opacity: var(--glow-strength);
   transition: opacity 4s ease;
-  z-index: 1;
 }
 
 .achievement-card::after {
@@ -176,7 +122,6 @@ body {
   filter: blur(14px);
   opacity: var(--glow-strength);
   transition: opacity 4s ease;
-  z-index: 1;
 }
 
 .achievement-card:hover {
@@ -194,19 +139,19 @@ body {
 .ach-number {
 	z-index:5;
   font-weight: 700;
-  color: rgb(from var(--main) r g b / 0.3);
+  color: rgb(from var(--bg4) r g b / 0.9);
   margin-bottom: 10px;
   font-size: 15px;
   position: relative;
   overflow: hidden;
   text-shadow:
-    -1px -1px 0 rgb(from var(--body-bg) r g b / 0.6),
-     1px -1px 0 rgb(from var(--subheadings) r g b / 0.6),
-    -1px  1px 0 rgb(from var(--subheadings) r g b / 0.6),
-     1px  1px 0 rgb(from var(--subheadings) r g b / 0.6);
+    -1px -1px 0 rgb(from var(--bg2) r g b / 0.9),
+     1px -1px 0 rgb(from var(--bg3) r g b / 0.9),
+    -1px  1px 0 rgb(from var(--bg3) r g b / 0.9),
+     1px  1px 0 rgb(from var(--bg3) r g b / 0.9);
 }
 
-.ach-text {
+.ach-navtext {
   font-size: 15px;
-  color: var(--body-bg);
+  color: var(--navtext);
 }

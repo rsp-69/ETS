@@ -4,115 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rohan OS — Theme Selector</title>
+<link rel="stylesheet" href="os.css">
 
   <style>
-  :root {
-  /* Soft Neon Gradient */
-  --bg1: #BA9EE6;   /* Lavender */
-  --bg2: #C1B9F4;   /* Periwinkle */
-  --bg3: #B8D5FB;   /* Sky Blue */
-  --bg4: #C1ECE6;   /* Mint Aqua */
-  --bg5: #E8F8E6;   /* Pastel Green */
-
-  /* Glass Panel */
-  --glass-bg: rgba(255, 255, 255, 0.15);
-  --glass-border-top: rgba(255, 255, 255, 0.8);
-  --glass-border-btm: rgba(105, 105, 105, 0.2);
-
-  /* Text + Accent */
-  --text: #2C2F36;        /* Charcoal for readability */
-  --accent: #6A4C93;      /* Muted violet highlight */
-
-  /* Shape + Shadow */
-  --radius: 30px;
-  --shadow: 0 8px 30px rgba(0,0,0,0.18),
-            inset 0 12px 10px rgba(255,255,255,0.4),
-            inset 0 -8px 8px rgba(0,0,0,0.12);
-}
-
-    /* Ambient animated background */
-    body {
-	  z-index:1;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, sans-serif;
-      background: linear-gradient(145deg, var(--bg1) 0%, var(--bg2) 30%, var(--bg3) 40%, var(--bg4) 60%, var(--bg5) 70%);
-      background-size: 200% 200%;
-      animation: bgMove 24s ease infinite;
-      min-height: 100vh;
-      display: flex;
+	body {
+	display: flex;
       justify-content: center;
       align-items: flex-start;
     }
 
-    @keyframes bgMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Frosted glass navigation bar */
-    .top-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      backdrop-filter: blur(14px);
-      background: rgba(255,255,255,0.55);
-      border-bottom: 1px solid var(--glass-border-top);
-      padding: 2px 2px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 7;
-    }
-
-    .nav-left {
-      font-weight: 300;
-      font-size: 0.65rem;
-      color: var(--text);
-    }
-
-    .nav-links a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 200;
-      transition: 0.2s;
-    }
-
-    .nav-links a.active {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .nav-links a:hover {
-      opacity: 0.7;
-    }
-
     /* Glass panel container */
-    .container {
-      width: 70%;
-      max-width: 480px;
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      padding: 40px;
-	  border-radius: var(--radius);
-	  border: 1px solid rgba(0,0,0,0.05);
-	  box-shadow: 
-    	0 4px 2px rgba(255,255,255,0.2),
-  		inset 0 15px 8px var(--glass-border-top),
-		inset 0 -8px 8px var(--glass-border-btm); 
-      text-align: center;
-      margin-top: 20vh;
-		z-index:10;
-		position: relative;
-    }
+.container {
+  width: 70%;
+  max-width: 480px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(0.05px);
+  padding: 40px;
+  border-radius: var(--radius);
+  border-left: 1px solid rgba(255, 255, 255, 0.9);
+  border-right: 1px solid rgba(255, 255, 255, 0.9);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow:
+    0 10px 4px rgba(255, 255, 255, 0.6),
+    inset 0 8px 8px rgba(0, 0, 0, 0.2),
+    inset 0 -8px 8px var(--glass-border-btm); 
+  text-align: center;
+  margin-top: 20vh;
+  z-index: 10;
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  /* Inset -1px to align perfectly over the transparent 1px border area */
+  top: -1px;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  
+  /* Two gradients: one pinned to top, one pinned to bottom */
+  /* Starting at center (middle of the width) */
+  background-image: 
+    radial-gradient(circle at center, rgba(192, 192, 192, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%),
+    radial-gradient(circle at center, rgba(192, 192, 192, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
+  
+  /* Height of 1px for the border line */
+  background-size: 100% 1px;
+  background-position: top center, bottom center;
+  background-repeat: no-repeat;
+
+  /* Masking logic to ensure it only renders on the 1px edge */
+  padding: 1px;
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
 
    h1 {
 	  margin-top: 0;
       font-size: 1rem;
-     color: var(--text);
+     color: var(--navtext);
       font-weight: 400;
     }
 
@@ -130,11 +90,11 @@
       padding: 14px;
       margin: 10px 0;
       border-radius: var(--radius);
-	  border: 0;
+	  border: 1px solid rgba(255,255,255,0.05);
 	  box-shadow: 
     	0 1px 2px rgba(255,255,255,0.15),
   		inset 0 3px 2px var(--glass-border-top),
-		inset 0 -1px 0 var(--glass-border-btm); 
+		inset 0 -1px 2px var(--glass-border-btm); 
       font-size: 1.1rem;
       cursor: pointer;
       color: white;
@@ -149,7 +109,10 @@
     }
 
     /* Theme previews */
-    .btn.myView { background: linear-gradient(45deg, #013220 60%, #FFB703 70%, #2EBB57 75%, #F4C430 90%); opacity:40%;}
+
+    .btn.myView { 
+		background: linear-gradient(45deg, #013220 60%, #FFB703 70%, #2EBB57 75%, #F4C430 90%); opacity:40%;
+		}
     .btn.light { background: linear-gradient(45deg, #CED4DA 60%, #4CC9F0 70%, #FFB703 75%, #DEE2E6 90%); opacity:40%;}
     .btn.dark { background: linear-gradient(45deg, #212529 60%, #6C757D 70%, #E30B5D 75%, #2EBB57 90%); opacity:40%;}
 
@@ -176,13 +139,13 @@
 <body>
 
 <nav class="top-nav">
-  <div class="nav-left">Rohan OS</div>
+  <div class="nav-left">RSP</div>
   <div class="nav-links">
     <a href="index.html" class="active">Home</a>
     <a href="achievements.html">Achievements</a>
     <a href="resume.html">Résumé</a>
-    <a href="ets.html">ETS</a>
-    <a href="about.html">About</a>
+    <a href="cover.html">Cover Letter</a>
+    <a href="about.html">About ETS</a>
   </div>
 </nav>
 

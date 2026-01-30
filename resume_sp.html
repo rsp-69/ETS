@@ -58,14 +58,14 @@
       color: var(--text);
       overflow: hidden;
       font-size: 0.75rem;
-      border: 2px solid var(--borders);
+      border: 1px solid var(--lines);
     }
 
     .content-body {
       padding: 10px 32px;
-      border-left: 4px solid var(--subheadings);
-      border-bottom: 4px solid var(--subheadings);
-      border-right: 4px solid var(--subheadings);
+      border-left: 2px solid var(--pg-bg);
+      border-bottom: 2px solid var(--pg-bg);
+      border-right: 2px solid var(--pg-bg);
     }
 
     .section {
@@ -82,8 +82,8 @@
       background-color: var(--body-bg);
       color: var(--text);
       padding: 12px 32px;
-      border: 5px solid var(--subheadings);
-      border-bottom: 2px solid var(--borders);
+      border: 1px solid var(--subheadings);
+      border-bottom: 1px solid var(--borders);
     }
 
     .header h1 {
@@ -138,19 +138,6 @@
       margin-bottom: 10px;
     }
 
-/*    .rainbow-line-container {
-      display: flex;
-      width: 100%;
-      height: 2px;
-      margin-top: 4px;
-      border-radius: 2px;
-      overflow: hidden;
-    }*/
-	.custom-line {
-	height: 2px;
-	width: 100%;
-  background-image: linear-gradient(to right, var(--main) 0%, var(--headings) 25%, var(--subheadings) 50%, var(--lines) 75%, var(--borders) 100%);
-}
 
     .section-title {
       font-weight: 500;
@@ -159,6 +146,7 @@
       letter-spacing: 0.1em;
       margin: 0;
       color: var(--subheadings);
+		border-bottom: 1px solid var(--lines)
     }
 
     .experience-title {
@@ -168,7 +156,7 @@
     }
 
     .experience-subtitle {
-      font-size: 0.65rem;
+      font-size: 0.78rem;
       color: var(--borders);
       margin-bottom: 1px;
     }
@@ -221,14 +209,13 @@
     }
 
     .tag {
-		z-index:1;
       display: inline-block;
       background-color: var(--tag);
       padding: 3px 7px;
       border-radius: 2px;
       margin: 0 5px 5px 0;
       font-size: 0.62rem;
-      font-weight: 600;
+      font-weight: 400;
 		color: var(--body-bg);
       border: 1px solid var(--borders);
     }
@@ -287,8 +274,6 @@
       <section class="section">
         <header class="custom-header-container">
           <h3 class="section-title">PROFESSIONAL PROFILE</h3>
-			<div class="custom-line">
-			</div>
         </header>
 
         <p class="profile-text">
@@ -300,9 +285,8 @@
       <section class="section">
         <header class="custom-header-container">
           <h3 class="section-title">TECHNICAL SKILLS</h3>
-			<div class="custom-line">
-			</div>
         </header>
+
         <div>
           <span class="tag-group-title">PROGRAMMING AND TOOLS</span>
           <span class="tag">C++</span><span class="separator">|</span>
@@ -337,8 +321,6 @@
       <section class="section">
         <header class="custom-header-container">
           <h3 class="section-title">KEY TECHNICAL PROJECT</h3>
-			<div class="custom-line">
-			</div>
         </header>
 
         <article class="bg-accent-soft">
@@ -360,10 +342,7 @@
       <section class="section">
         <header class="custom-header-container">
           <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
-			<div class="custom-line">
-			</div>
         </header>
-
         <article class="border-left-accent">
           <h3 class="experience-title">NATIONAL SUPPLY CHAIN ANALYST</h3>
           <span class="text-accent-primary">
@@ -386,9 +365,9 @@
       <section class="section">
         <header class="custom-header-container">
           <h3 class="section-title">EDUCATION</h3>
-			<div class="custom-line">
-			</div>
         </header>
+
+        <div style="padding-left: 12px;">
           <article>
             <p><span class="education-title">MASTER OF BUSINESS INFORMATION TECHNOLOGY</span>
 <span class="education-location">RMIT UNIVERSITY <span class="text-accent-primary">| 2013 - 2015</span></span>
@@ -400,15 +379,15 @@
 <span class="education-location">UNIVERSITY OF MUMBAI, INDIA <span class="text-accent-primary">| 2008 - 2012</span></span>
             </p>
           </article>
+        </div>
       </section>
 
       <!-- INTERESTS -->
       <section class="section">
         <header class="custom-header-container">
           <h3 class="section-title">INTERESTS & PERSONAL INSIGHTS</h3>
-			<div class="custom-line">
-			</div>
-			
+        </header>
+
         <div class="bg-accent-soft">
           <div class="profile-text" style="font-size:0.75rem; line-height: 1.3;">
 			<ul>
