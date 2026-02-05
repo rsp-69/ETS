@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rohan OS — Theme Selector</title>
+	
+	<link rel="stylesheet" href="os.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+	font-family: var(--font-body), sans-serif;
+    }
+
+    .home-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="home-wrapper">
+
+<nav class="top-nav">
+  <div class="nav-left">RSP</div>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="projects.html">Personal Projects</a>
+    <a href="about.html">About ETS</a>
+  </div>
+</nav>
+
+<!-- ROLE INPUT (always visible) -->
+<input id="roleInput" class="input-field"
+  placeholder="What’s the role? Give me the name as advertised."
+  oninput="localStorage.setItem('ETS_ROLE', this.value)" />
+
+<!-- MAIN GLASS SLAB -->
+<div class="container glass-panel">
+  <h1>Choose Your View</h1>
+  <p>Select how you’d like to experience this résumé.</p>
+
+  <button class="glass-btn myView" onclick="handleViewSelection('personal')">My View</button>
+  <button class="glass-btn light" onclick="handleViewSelection('light')">Light Mode</button>
+  <button class="glass-btn dark" onclick="handleViewSelection('dark')">Dark Mode</button>
+
+  <select id="companySelect" onchange="handleViewSelection('org')">
+    <option value="">Org. Mode (Select)</option>
+    <option value="aldi">ALDI</option>
+    <option value="afl">AFL</option>
+    <option value="bunnings">Bunnings</option>
+    <option value="coles">Coles</option>
+    <option value="kmart">KMART</option>
+    <option value="yarra_trams">Yarra Trams</option>
+  </select>
+
+  <div class="note">More company themes are being added.</div>
+</div>
+
+<!-- COMPANY INPUT (appears only for personal/light/dark) -->
+<input id="companyInput" class="input-field"
+  placeholder="Where’s it at? Again, proper name of organisation as this and the role you typed in the field above will be going in your cover letter"
+  oninput="localStorage.setItem('ETS_CUSTOM_ORG', this.value)" />
+
+<!-- DOCUMENT BUTTONS -->
+<div id="docButtons">
+  <button class="glass-panel glass-btn" onclick="openDocument('resume')">Résumé</button>
+  <button class="glass-panel glass-btn" onclick="openDocument('cover')">Cover Letter</button>
+</div>
+
+<script>
+let selectedView = null;
+
+function handleViewSelection(view) {
+  selectedView = view;
+
+  const companyInput = document.getElementById("companyInput");
+  const docButtons = document.getElementById("docButtons");
+
+  // Reset both elements
+  companyInput.style.opacity = "0";
+  companyInput.style.pointerEvents = "none";
+  companyInput.style.transform = "translateY(20px)";
+
+  docButtons.style.opacity = "0";
+  docButtons.style.pointerEvents = "none";
+  docButtons.style.transform = "translateY(20px)";
+
+  // Show company input for all views except org
+  if (view !== "org") {
+    setTimeout(() => {
+      companyInput.style.opacity = "1";
+      companyInput.style.pointerEvents = "auto";
+      companyInput.style.transform = "translateY(0)";
+    }, 50);
+  }
+
+  // Buttons always show, timing varies slightly for org
+  setTimeout(() => {
+    docButtons.style.opacity = "1";
+    docButtons.style.pointerEvents = "auto";
+    docButtons.style.transform = "translateY(0)";
+  }, view === "org" ? 150 : 200);
+}
+
+function openDocument(type) {
+  if (!selectedView) return;
+
+  const target =
+    type === "cover"
+      ? "cover.html"
+      : selectedView === "org"
+        ? "resume.html"
+        : "resume_sp.html";
+
+  window.location.href = target;
+}
+
+</script>
+
+</div>
+</body>
+</html>
