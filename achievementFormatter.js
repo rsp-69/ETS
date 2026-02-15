@@ -7,8 +7,14 @@ function formatAchievement(rawText) {
 
 function generateResumeBullets(ids, masterList) {
   return ids.map(id => {
-    const raw = masterList[id];
-    if (!raw) return `[Missing achievement for ID ${id}]`;
+    const key = String(id);
+    const raw = masterList[id] || masterList[key];
+
+    if (!raw) {
+      console.warn(`Missing achievement for ID ${id}`);
+      return `[Missing achievement for ID ${id}]`;
+    }
+
     return formatAchievement(raw);
   });
 }

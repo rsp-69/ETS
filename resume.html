@@ -9,10 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One:wght@400;700&family=Proxima+Nova:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /*
-    ============================================================
+<style>
+/*
+============================================================
     1. CORE VARIABLES & BASE
     ============================================================
     */
@@ -42,10 +41,8 @@
       line-height: 1.32;
     }
 
-    /*
-    ============================================================
-    2. LAYOUT CONTAINERS
-    ============================================================
+    /*  ============================================================
+    2. LAYOUT CONTAINERS  ============================================================
     */
     .resume-container {
 	z-index:10;
@@ -428,7 +425,19 @@
 <script src="achievementFormatter.js"></script>
 
 <script>
-  // Define DOM slot variables
+
+  function safeGetJSON(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return fallback;
+    return JSON.parse(raw);
+  } catch (e) {
+    console.warn('safeGetJSON parse error for', key, e);
+    return fallback;
+  }
+}
+
+// Define DOM slot variables
   const slot_ach_1 = document.getElementById("ach-slot-1");
   const slot_ach_2 = document.getElementById("ach-slot-2");
   const slot_ach_3 = document.getElementById("ach-slot-3");
@@ -464,12 +473,7 @@
 
   // Load selected achievements from Achievement Selector
   document.addEventListener("DOMContentLoaded", () => {
-    const stored = localStorage.getItem("ETS_SELECTED_ACHIEVEMENTS");
-
-    if (stored) {
-      activeIDs = JSON.parse(stored);   // <-- override default
-    }
-
+activeIDs = safeGetJSON("ETS_SELECTED_ACHIEVEMENTS", [7,4,9,19,20]);
     swapAchievements();
   });
 </script>

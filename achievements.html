@@ -2,53 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Achievements</title>
-<link rel="stylesheet" href="os.css">
-<style>
-	body {
-	display: block;
-    }
-</style>
-  <!-- Theme + Data -->
-  <script src="theme-loader.js" defer></script>
-  <script src="achievements.js" defer></script>
 
-  <!-- Page Logic -->
-  <script src="achievement-selector.js" defer></script>
+  <!-- OS Core Styles -->
+  <link rel="stylesheet" href="os.css" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="achievements.css">
+  <!-- Achievements Page Styles -->
+  <link rel="stylesheet" href="achievements.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<nav class="top-nav">
-  <div class="nav-left">Rohan OS</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="achievements.html" class="active">Achievements</a>
-    <a href="resume.html">Résumé</a>
-    <a href="cover.html">Cover Letter</a>
-    <a href="about.html">About ETS</a>
-  </div>
-</nav>
+
+  <!-- TOP NAVIGATION -->
+  <nav class="top-nav">
+    <div class="nav-left">RSP</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="achievements.html" class="active">Achievements</a>
+      <a href="projects.html">Personal Projects</a>
+      <a href="about.html">About ETS</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
   <header class="ach-header">
     <div class="ach-title">
-      <h1>A complete index of my 33 achievements</h1>
-
+      <h1>A complete index of my achievements</h1>
+      <div class="ach-subtitle">All 33 achievements rendered dynamically</div>
     </div>
+
     <div class="ach-selector">
       <input 
-        id="achievementInput" 
-        type="text" 
-        placeholder="Enter IDs e.g. 3, 7, 12, 18, 25"
-      />
-      <button id="generateResumeBtn">Resume</button>
+        id="achievementInput"
+        type="text"
+        class="input-field"
+        placeholder="Enter IDs e.g. 3, 7, 12, 18, 25"/>
+
+      <button id="generateResumeBtn" class="glass-btn">
+        Résumé
+      </button>
     </div>
   </header>
 
+  <!-- MAIN GRID -->
   <main>
     <div id="achievementsContainer" class="ach-grid"></div>
   </main>
+
+  <!-- DATA + LOGIC -->
+  <script src="achievements.js"></script>
+  <script src="achievementFormatter.js"></script>
+  <script src="achievement-selector.js"></script>
+
+  <!-- STACK + SHIMMER LOGIC -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      // PAGE ENTRANCE (fade in)
+      setTimeout(() => {
+        document.body.classList.add("achievements-loaded");
+      }, 350);
+
+      // CARD STACKING
+      setTimeout(() => {
+        const cards = [...document.querySelectorAll(".achievement-card")];
+
+        // Determine columns dynamically
+        const columns = {};
+        cards.forEach(card => {
+          const rect = card.getBoundingClientRect();
+          const x = Math.round(rect.left);
+          if (!columns[x]) columns[x] = [];
+          columns[x].push(card);
+        });
+
+        const columnKeys = Object.keys(columns).sort((a, b) => a - b);
+
+        columnKeys.forEach((col, index) => {
+          setTimeout(() => {
+            columns[col].forEach(card => {
+              card.classList.add("revealed");
+            });
+          }, index * 80);
+        });
+
+        // After cascade → shimmer nav once
+        const totalTime = columnKeys.length * 80 + 400;
+
+        setTimeout(() => {
+          const nav = document.querySelector(".top-nav");
+          if (nav) nav.classList.add("nav-shimmer-once");
+        }, totalTime);
+
+      }, 350 + 80);
+    });
+  </script>
 
 </body>
 </html>

@@ -1,47 +1,78 @@
 <html>
 <head>
   <title>Cover Letter</title>
-
-  <!-- Fonts -->
+  <link href="os.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One:wght@400;700&family=Proxima+Nova:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ============================
-       FONT SYSTEM
+       FONT SYSTEM + VARIABLES
     ============================= */
     :root {
-      --font-name: 'Poiret One', sans-serif;
-      --font-body: 'Proxima Nova', sans-serif;
+      --body-bg: #013220;        /* becomes PAGE background */
+      --text: #F4EAD5;
+      --color-inverse-text: #FFFFFF;
+      --headings: #2EBB57;
+      --subheadings: #FFB703;
+      --lines: #F4C430;
+      --main: #161616;
+      --borders: #F4C430;
+      --color-status-green: #34BF49;
 
-      /* These will be dynamically mapped from company palette */
-      --cl-bg: #ffffff;
-      --cl-name: #000000;
-      --cl-divider: #000000;
-      --cl-highlight: #000000;
+      --pg-bg: var(--main);      /* becomes CONTAINER background */
+      --tag: var(--main);
+
+      --font-header: 'Poiret One', sans-serif;
+      --font-body: 'Proxima Nova', sans-serif;
     }
 
     /* ============================
-       PAGE LAYOUT (DOCUMENT-CLASS)
+       PAGE BACKGROUND (INVERTED)
     ============================= */
     body {
-      background: var(--cl-bg);
-      margin: 60px auto;
-      max-width: 720px;
-      padding: 40px 50px;
+      background: var(--body-bg);   /* INVERSION: résumé uses pg-bg here */
+      margin: 0;
+      padding: 40px 0;
       font-family: var(--font-body);
       font-size: 0.95rem;
       line-height: 1.55;
-      color: #222;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
     }
 
     /* ============================
-       HEADER BLOCK (RIGHT-ALIGNED)
+       NEW CONTAINER (résumé style)
+    ============================= */
+    .cl-container {
+      max-width: 800px;
+      width: 95%;
+      background: var(--pg-bg);     /* INVERSION: résumé uses body-bg here */
+      border: 2px solid var(--borders);
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    /* ============================
+       INNER CONTENT BODY
+    ============================= */
+    .cl-body {
+      padding: 10px 32px;
+      background: var(--pg-bg);
+      border-left: 4px solid var(--subheadings);
+      border-right: 4px solid var(--subheadings);
+      border-bottom: 4px solid var(--subheadings);
+    }
+
+    /* ============================
+       EXISTING COVER LETTER STYLES
     ============================= */
     .name-header {
       font-family: var(--font-name);
       font-size: 1.9rem;
       letter-spacing: 0.08em;
-      color: var(--cl-name);
+      color: var(--main);
       margin: 0;
       text-align: right;
     }
@@ -58,17 +89,13 @@
       font-size: 0.85rem;
     }
 
-    /* Divider under header + under subject */
     .cl-divider {
-      height: 2px;
-      background: var(--cl-divider);
+      height: 1px;
+      background: var(--headings);
       margin: 14px 0 22px 0;
       border-radius: 2px;
     }
 
-    /* ============================
-       RECIPIENT BLOCK (LEFT)
-    ============================= */
     .recipient-block p {
       margin: 2px 0;
       text-align: left;
@@ -80,15 +107,11 @@
       text-align: left;
     }
 
-    /* ============================
-       MAIN BODY (JUSTIFIED)
-    ============================= */
     .letter-body p {
       text-align: justify;
       margin: 12px 0;
     }
 
-    /* Ordered list styling */
     .philosophy-list {
       margin: 10px 0 18px 0;
       padding-left: 22px;
@@ -100,20 +123,17 @@
     }
 
     .cl-highlight {
-      color: var(--cl-highlight);
+      color: var(--subheadings);
       font-weight: 600;
     }
 
-    /* ============================
-       SIGNATURE BLOCK (RIGHT)
-    ============================= */
     .signature-block {
       margin-top: 30px;
       text-align: right;
     }
 
     .signature-space {
-      height: 60px; /* reserved for real signature image */
+      height: 60px;
       width: 220px;
       margin-left: auto;
       border-bottom: 2px solid var(--cl-divider);
@@ -130,77 +150,88 @@
 <body>
 
   <!-- ============================
-       HEADER BLOCK
+       NEW CONTAINER WRAPPER
   ============================= -->
-  <h1 class="name-header">ROHAN PRABHU</h1>
-  <p class="header-subtext">Supply Chain Analyst</p>
-  <p class="header-contact">Melbourne, VIC · rohan.prabhu24@gmail.com · 0415 068 437</p>
+  <div class="cl-container">
+    <div class="cl-body">
 
-  <div class="cl-divider"></div>
+      <!-- ============================
+           HEADER BLOCK
+      ============================= -->
+      <h1 class="name-header">ROHAN PRABHU</h1>
+      <p class="header-subtext">Supply Chain Analyst</p>
+      <p class="header-contact">Melbourne, VIC · rohan.prabhu24@gmail.com · 0415 068 437</p>
 
-  <!-- ============================
-       RECIPIENT BLOCK
-  ============================= -->
-  <div class="recipient-block">
-    <p id="currentDate" style="text-align:right; margin-bottom:10px;"></p>
+      <div class="cl-divider"></div>
 
-    <p>The Hiring Manager,</p>
-    <p><span id="companyAddress"></span>, Melbourne, AU.</p>
+      <!-- ============================
+           RECIPIENT BLOCK
+      ============================= -->
+      <div class="recipient-block">
+        <p id="currentDate" style="text-align:right; margin-bottom:10px;"></p>
 
-    <p class="subject-line">Subject: <span id="subjectJobTitle"></span></p>
-  </div>
+        <p>The Hiring Manager,</p>
+        <p><span id="companyAddress"></span>, Melbourne, AU.</p>
 
-  <div class="cl-divider"></div>
+        <p class="subject-line">Subject: <span id="subjectJobTitle"></span></p>
+      </div>
 
-  <!-- ============================
-       MAIN LETTER BODY
-  ============================= -->
-  <div class="letter-body">
+      <div class="cl-divider"></div>
 
-    <p>Dear Hiring Manager,</p>
+      <!-- ============================
+           MAIN LETTER BODY
+      ============================= -->
+      <div class="letter-body">
 
-    <p>
-      Throughout my career, I have operated on three core philosophies, grounded in two foundational principles:
-      <strong>Kindness</strong> and <strong>Common Sense</strong>.
-    </p>
+        <p>Dear Hiring Manager,</p>
 
-    <ol class="philosophy-list">
-      <li>Often, the simplest answer is the right answer.</li>
-      <li>Listen first, act after; else you never truly learn.</li>
-      <li>Fear not the unconventional, for therein lies growth.</li>
-    </ol>
+        <p>
+          Throughout my career, I have operated on three core philosophies, grounded in two foundational principles:
+          <strong>Kindness</strong> and <strong>Common Sense</strong>.
+        </p>
 
-    <p>
-      Whether it be achieving simplicity in data reporting through a VBA automation suite, listening first to internal teams to develop the “Inventory Investigator Toolkit”, or fearlessly embracing the unconventional to solve a complex data interoperability issue, I consistently deliver results from strategic thinking and technical know‑how.
-    </p>
+        <ol class="philosophy-list">
+          <li>Often, the simplest answer is the right answer.</li>
+          <li>Listen first, act after; else you never truly learn.</li>
+          <li>Fear not the unconventional, for therein lies growth.</li>
+        </ol>
 
-    <p>
-      These approaches have successfully reduced process time for 256 DAILY reports from hours to minutes, ensured low resistance to change in projects, and crucially, mitigated costly disputes and enforced operational integrity.
-    </p>
+        <p>
+          Whether it be achieving simplicity in data reporting through a VBA automation suite, listening first to internal teams to develop the Inventory Investigator Toolkit or fearlessly embracing the unconventional to solve a complex data interoperability issue, I consistently deliver results from strategic thinking and technical know‑how.
+        </p>
 
-    <p>
-      As I write this to demonstrate my interest in the role, I hope to have piqued your interest as well, and would love to discuss how my philosophical drive, strategic thinking, and technical know‑how can directly contribute to
-      <span class="cl-highlight"><span id="bodyCompanyName"></span></span>'s success.
-    </p>
+        <p>
+          These approaches have successfully reduced process time for 256 DAILY reports from hours to minutes, ensured low resistance to change in projects, and crucially, mitigated costly disputes and enforced operational integrity.
+        </p>
 
-    <p>
-      Thank you for your time and consideration. I understand recruiting can be a stressful task and I hope it is going the way you wished.
-    </p>
+        <p>
+          As I write this to demonstrate my interest in the role, I hope to have piqued your interest as well, and would love to discuss how my philosophical drive, strategic thinking, and technical know‑how can directly contribute to
+          <span class="cl-highlight"><span id="bodyCompanyName"></span></span>'s success.
+        </p>
 
-  </div>
+        <p>
+          Thank you for your time and consideration. I understand recruiting can be a stressful task and I hope it is going the way you wished.
+        </p>
 
-  <!-- ============================
-       SIGNATURE BLOCK
-  ============================= -->
-  <div class="signature-block">
-    <p>Sincerely,</p>
-    <div class="signature-space"></div>
-    <p class="typed-name">Rohan Prabhu</p>
+      </div>
+
+      <!-- ============================
+           SIGNATURE BLOCK
+      ============================= -->
+      <div class="signature-block">
+        <p>Sincerely,</p>
+        <div class="signature-space"></div>
+        <p class="typed-name">Rohan Prabhu</p>
+      </div>
+
+    </div>
   </div>
 
   <!-- ============================
        DYNAMIC INJECTION SCRIPT
   ============================= -->
+  <script src="theme-loader.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Projects</title>
+
+  <!-- OS Core Styles -->
+  <link rel="stylesheet" href="os.css" />
+
+  <!-- Achievements Page Styles (thin-glass cards) -->
+  <link rel="stylesheet" href="achievements.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <nav class="top-nav">
+    <div class="nav-left">RSP</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="projects.html" class="active">Personal Projects</a>
+      <a href="about.html">About ETS</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="ach-header">
+    <div class="ach-title">
+      <h1>A curated selection of my personal projects</h1>
+      <div class="ach-subtitle">Four projects that showcase my engineering approach</div>
+    </div>
+  </header>
+
+  <!-- MAIN GRID -->
+  <main>
+    <div class="ach-grid">
+
+      <!-- PROJECT 1 -->
+      <div class="achievement-card">
+        <div class="ach-number">01</div>
+        <h3>Home Ecosystem Automation & API Integration</h3>
+        <p>
+          Engineered a custom automation bridge that allowed Apple iOS devices to control Google Home hardware through Spotify’s Web API. Built entirely from scratch by self‑teaching JSON, REST, and API authentication flows, and delivered a fully functional system in just three days.
+        </p>
+        <div>
+          <span class="glass-pill">API</span>
+          <span class="glass-pill">JSON</span>
+          <span class="glass-pill">Automation</span>
+          <span class="glass-pill">iOS Shortcuts</span>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="achievement-card">
+        <div class="ach-number">02</div>
+        <h3>AccuLumen Brightness Index Integration</h3>
+        <p>
+          Born from the momentum of learning JSON + REST, this project used AccuWeather’s newly released AccuLumen Brightness Index to drive real‑time indoor lighting. Started in Apple Shortcuts, but after hitting a numeric‑variable limitation, the system was rebuilt using Google Home’s internal YAML scripting for full variable‑driven control.
+        </p>
+        <div>
+          <span class="glass-pill">API</span>
+          <span class="glass-pill">Smart Home</span>
+          <span class="glass-pill">YAML</span>
+          <span class="glass-pill">Automation</span>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="achievement-card">
+        <div class="ach-number">03</div>
+        <h3>Custom UI Control Workaround (Slider Repurposing)</h3>
+        <p>
+          A pure Apple Shortcuts engineering project that repurposed the native iOS brightness and ringer sliders to control external devices. Overcame the lack of third‑party on‑screen sliders by intercepting system slider values and redirecting them as custom control signals — all without jailbreaks or unsupported APIs.
+        </p>
+        <div>
+          <span class="glass-pill">iOS Shortcuts</span>
+          <span class="glass-pill">UX</span>
+          <span class="glass-pill">System Hacking</span>
+          <span class="glass-pill">Automation</span>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="achievement-card">
+        <div class="ach-number">04</div>
+        <h3>ETS — OS UI Engine, Motion Architecture & Glass Material System</h3>
+        <p>
+          A fully custom OS‑grade UI environment featuring a modular glass material system, variable‑driven motion architecture, ensemble animation choreography, and a cohesive cinematic design language. Engineered from first principles with a focus on maintainability, perceptual timing, and system‑level clarity.
+        </p>
+        <div>
+          <span class="glass-pill">UI Engineering</span>
+          <span class="glass-pill">Motion Design</span>
+          <span class="glass-pill">Architecture</span>
+          <span class="glass-pill">ETS</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- PAGE ENTRANCE LOGIC -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    // PAGE ENTRANCE (fade in)
+    setTimeout(() => {
+      document.body.classList.add("achievements-loaded");
+    }, 80);
+
+    // CARD STACKING
+    setTimeout(() => {
+      const cards = [...document.querySelectorAll(".achievement-card")];
+
+      // Determine columns dynamically
+      const columns = {};
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = Math.round(rect.left);
+        if (!columns[x]) columns[x] = [];
+        columns[x].push(card);
+      });
+
+      const columnKeys = Object.keys(columns).sort((a, b) => a - b);
+
+      columnKeys.forEach((col, index) => {
+        setTimeout(() => {
+          columns[col].forEach(card => {
+            card.classList.add("revealed");
+          });
+        }, index * 40);
+      });
+
+      // After cascade → shimmer nav once
+      const totalTime = columnKeys.length * 40 + 200;
+
+      setTimeout(() => {
+        const nav = document.querySelector(".top-nav");
+        if (nav) nav.classList.add("nav-shimmer-once");
+      }, totalTime);
+
+    }, 150 + 40);
+  });
+</script>
+
+</body>
+</html>

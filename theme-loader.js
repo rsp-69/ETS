@@ -1,18 +1,37 @@
 /* ==========================================================
-   ETS THEME LOADER — FINAL VERSION (Semantic Variables)
+   ETS THEME LOADER — RESTORED ARCHITECTURE (Views / Modes / Themes)
    ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("ETS_THEME") || "myView";
-  applyTheme(savedTheme);
-  setupThemeSelector(savedTheme);
+  const theme = localStorage.getItem("ETS_THEME");   // THEME (view theme OR org theme)
+  const mode  = localStorage.getItem("ETS_MODE");    // MODE (personal, org, vapourware, etc.)
+
+  const finalTheme = theme || "myView";              // Default view theme
+
+  applyTheme(finalTheme);
+  applyBodyClass(finalTheme);
+  setupThemeSelector(finalTheme);
 });
 
 /* ==========================================================
-   THEME REGISTRY
+   APPLY BODY CLASS FOR THEME
+   ========================================================== */
+
+function applyBodyClass(themeName) {
+  document.body.classList.forEach(cls => {
+    if (cls.startsWith("theme-")) {
+      document.body.classList.remove(cls);
+    }
+  });
+  document.body.classList.add(`theme-${themeName}`);
+}
+
+/* ==========================================================
+   THEME REGISTRY (Views + Org Themes)
    ========================================================== */
 
 const themes = {
+  /* ===== VIEWS ===== */
   myView: {
     "--body-bg": "#013220",
     "--pg-bg": "#1B1B1B",
@@ -35,6 +54,28 @@ const themes = {
     "--borders": "#4CC9F0"
   },
 
+  tiramisu: {
+    "--body-bg": "#F2C299",
+    "--pg-bg": "#FFD9A0",
+    "--text": "#201A17",
+    "--main": "#E49C69",
+    "--headings": "#5C3B2E",
+    "--subheadings": "#201A17",
+    "--lines": "#E49C69",
+    "--borders": "#5C3B2E"
+  },
+
+  retro_tech: {
+    "--body-bg": "#C0C0C0",
+    "--pg-bg": "#353837",
+    "--text": "#353837",
+    "--main": "#C0C0C0",
+    "--headings": "#062A8F",
+    "--subheadings": "#005540",
+    "--lines": "#FFB227",
+    "--borders": "#B32427"
+  },
+
   dark: {
     "--body-bg": "#212529",
     "--pg-bg": "#6C757D",
@@ -46,6 +87,7 @@ const themes = {
     "--borders": "#ADB5BD"
   },
 
+  /* ===== ORG THEMES ===== */
   aldi: {
     "--main": "#00205B",
     "--pg-bg": "#00205B",
@@ -121,6 +163,8 @@ function applyTheme(themeName) {
   const theme = themes[themeName];
   if (!theme) return;
 
+  document.documentElement.setAttribute("data-ets-theme", themeName);
+
   const allVars = [
     "--body-bg",
     "--pg-bg",
@@ -132,31 +176,27 @@ function applyTheme(themeName) {
     "--borders"
   ];
 
-  // Reset all variables
   allVars.forEach(v => {
     document.documentElement.style.removeProperty(v);
   });
 
-  // Auto-derive pg-bg from main if missing
   if (theme["--main"] && !theme["--pg-bg"]) {
     theme["--pg-bg"] = theme["--main"];
   }
 
-  // Apply theme
   Object.keys(theme).forEach(variable => {
     document.documentElement.style.setProperty(variable, theme[variable]);
   });
 }
 
 /* ==========================================================
-   THEME SELECTOR UI
+   THEME SELECTOR UI (Dropdown)
    ========================================================== */
 
 function setupThemeSelector(currentTheme) {
   const selector = document.getElementById("themeSelector");
   if (!selector) return;
 
-  // Populate dropdown
   Object.keys(themes).forEach(themeName => {
     const option = document.createElement("option");
     option.value = themeName;
@@ -165,10 +205,36 @@ function setupThemeSelector(currentTheme) {
     selector.appendChild(option);
   });
 
-  // Listen for changes
   selector.addEventListener("change", e => {
     const selected = e.target.value;
     localStorage.setItem("ETS_THEME", selected);
     applyTheme(selected);
+    applyBodyClass(selected);
   });
 }
+
+/* ==========================================================
+   SELECTED STATE FOR GLASS BUTTONS
+   ========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("ETS_THEME");
+
+  if (savedTheme) {
+    const activeBtn = document.querySelector(`.glass-btn.${savedTheme}`);
+    if (activeBtn) activeBtn.classList.add("selected");
+  }
+
+  document.querySelectorAll(".glass-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".glass-btn").forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+
+      const detailsBlock = document.getElementById("detailsBlock");
+      if (detailsBlock) {
+        detailsBlock.classList.remove("hidden");
+        detailsBlock.classList.add("reveal");
+      }
+    });
+  });
+});

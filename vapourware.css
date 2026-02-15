@@ -1,0 +1,244 @@
+/* ============================================
+   1. Root Variables
+   ============================================ */
+
+:root {
+    --color-synth-purple: #3A0064;
+    --color-neon-pink: #FF69B4;
+    --color-electric-cyan: #00FFFF;
+    --color-text-light: #EDEDED;
+    --color-container-dark: #0D0D0D;
+    --color-grid-soft: rgba(255, 105, 180, 0.1);
+
+    --font-family-main: 'Electrolize', monospace, sans-serif;
+}
+
+/* ============================================
+   2. Base + Reset
+   ============================================ */
+
+body {
+    margin: 0;
+    background: linear-gradient(-90deg, var(--color-grid-soft) 1px, transparent 1px),
+                linear-gradient(0deg, var(--color-grid-soft) 1px, transparent 1px),
+                #2C2C2C;
+    background-size: 20px 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: var(--font-family-main);
+    color: var(--color-text-light);
+}
+
+/* ============================================
+   3. Layout Containers
+   ============================================ */
+
+.resume-container {
+    max-width: 800px;
+    width: 95%;
+    margin: 0 auto;
+    background: var(--color-container-dark);
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.5),
+                0 0 10px rgba(255, 105, 180, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--color-neon-pink);
+}
+
+.content-body {
+    padding: 30px;
+}
+
+/* ============================================
+   4. Typography (including Vaporwave headings)
+   ============================================ */
+
+.header h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 0.03em;
+    text-shadow: 0 0 5px var(--color-neon-pink);
+}
+
+.section-title,
+.experience-title,
+.sub-header,
+.education-title,
+.tag-group-title {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+}
+
+.section-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-electric-cyan);
+    border-bottom: 2px solid var(--color-neon-pink);
+    padding-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 3px rgba(0, 255, 255, 0.5);
+}
+
+.experience-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    margin-top: 5px;
+}
+
+.experience-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-electric-cyan);
+    font-style: italic;
+    margin-bottom: 10px;
+    text-shadow: 0 0 1px var(--color-electric-cyan);
+}
+
+.profile-text {
+    line-height: 1.5;
+    color: var(--color-text-light);
+}
+
+.profile-text-small {
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   5. Components (tags, bullets, accents)
+   ============================================ */
+
+.header {
+    background-color: var(--color-synth-purple);
+    color: var(--color-neon-pink);
+    padding: 30px 40px;
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+.contact-info {
+    font-size: 0.875rem;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-link {
+    color: var(--color-electric-cyan);
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 0 3px var(--color-electric-cyan);
+}
+
+.border-left-accent {
+    border-left: 4px solid var(--color-neon-pink);
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.list-item {
+    margin-bottom: 6px;
+    line-height: 1.4;
+    color: var(--color-text-light);
+    list-style: square;
+    margin-left: 20px;
+}
+
+.list-item strong {
+    color: var(--color-electric-cyan);
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--color-synth-purple);
+    color: var(--color-electric-cyan);
+    padding: 4px 8px;
+    border-radius: 2px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid var(--color-electric-cyan);
+    box-shadow: 0 0 3px var(--color-electric-cyan);
+}
+
+.bg-accent-soft {
+    background-color: #1A1A1A;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px dashed var(--color-neon-pink);
+}
+
+.text-neon-pink {
+    color: var(--color-neon-pink);
+    font-weight: 700;
+}
+
+/* ============================================
+   6. Sections
+   ============================================ */
+
+.separator {
+    margin: 0 8px;
+    color: var(--color-neon-pink);
+}
+
+.education-location {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-electric-cyan);
+}
+
+/* ============================================
+   7. Print Styles
+   ============================================ */
+
+@media print {
+    html, body {
+        background-color: #2C2C2C !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .resume-container {
+        background-color: var(--color-container-dark) !important;
+        border: 1px solid var(--color-neon-pink) !important;
+        color: var(--color-text-light) !important;
+        box-shadow: none !important;
+    }
+
+    .profile-text,
+    .experience-title,
+    .list-item,
+    .contact-info,
+    .list-item strong {
+        color: var(--color-text-light) !important;
+    }
+
+    .header {
+        background-color: var(--color-synth-purple) !important;
+        color: var(--color-neon-pink) !important;
+        box-shadow: none !important;
+    }
+
+    .section-title,
+    .contact-link,
+    .experience-subtitle {
+        color: var(--color-electric-cyan) !important;
+        text-shadow: none !important;
+    }
+
+    .tag {
+        background-color: var(--color-synth-purple) !important;
+        border-color: var(--color-electric-cyan) !important;
+        color: var(--color-electric-cyan) !important;
+        box-shadow: none !important;
+    }
+
+    .bg-accent-soft {
+        background-color: #1A1A1A !important;
+        border-color: var(--color-neon-pink) !important;
+    }
+}

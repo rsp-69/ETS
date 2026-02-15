@@ -10,7 +10,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
 
   <style>
@@ -33,33 +33,30 @@
 
 <body>
 <div class="home-wrapper">
-
 <nav class="top-nav">
-  <div class="nav-left">RSP</div>
-  <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="projects.html">Personal Projects</a>
-    <a href="about.html">About ETS</a>
-  </div>
+  <a href="#">RSP</a>
+  <a href="index.html" class="active">Home</a>
+  <a href="achievements.html">Achievements</a>
+  <a href="projects.html">Personal Projects</a>
+  <a href="about.html">About ETS</a>
 </nav>
 
-<!-- ROLE INPUT (always visible) -->
-<input id="roleInput" class="input-field"
-  placeholder="What’s the role? Give me the name as advertised."
-  oninput="localStorage.setItem('ETS_ROLE', this.value)" />
 
 <!-- MAIN GLASS SLAB -->
 <div class="container glass-panel">
-  <h1>Choose Your View</h1>
-  <p>Select how you’d like to experience this résumé.</p>
-
+  <h2>Your choice matters</h2>
+  <p>Go on, design your experience!</p>
+<div class="theme-grid">
   <button class="glass-btn myView" onclick="handleViewSelection('personal')">My View</button>
-  <button class="glass-btn light" onclick="handleViewSelection('light')">Light Mode</button>
+  <button class="glass-btn tiramisu" onclick="handleViewSelection('tiramisu')">Tiramisu</button>
   <button class="glass-btn dark" onclick="handleViewSelection('dark')">Dark Mode</button>
+  <button class="glass-btn vapourware" onclick="handleViewSelection('vapourware')">Vapourware</button>
+  <button class="glass-btn light" onclick="handleViewSelection('light')">Light Mode</button>
+  <button class="glass-btn retro_tech" onclick="handleViewSelection('retro_tech')">Retro Tech</button>
+</div>
+<select id="companySelect" class="glass-btn" onchange="localStorage.setItem('ETS_CUSTOM_ORG', this.options[this.selectedIndex].text); handleViewSelection('org')">
 
-  <select id="companySelect" onchange="handleViewSelection('org')">
-    <option value="">Org. Mode (Select)</option>
+    <option value="">Org. Mode (select)</option>
     <option value="aldi">ALDI</option>
     <option value="afl">AFL</option>
     <option value="bunnings">Bunnings</option>
@@ -70,28 +67,55 @@
 
   <div class="note">More company themes are being added.</div>
 </div>
+<!-- ROLE INPUT (always visible) -->
+<input id="roleInput" class="input-field"
+  placeholder="Give me the role as advertised."
+  oninput="localStorage.setItem('ETS_ROLE', this.value)" />
 
 <!-- COMPANY INPUT (appears only for personal/light/dark) -->
 <input id="companyInput" class="input-field"
-  placeholder="Where’s it at? Again, proper name of organisation as this and the role you typed in the field above will be going in your cover letter"
-  oninput="localStorage.setItem('ETS_CUSTOM_ORG', this.value)" />
+  placeholder="And, proper name of organisation this will be go in your cover letter" oninput="localStorage.setItem('ETS_CUSTOM_ORG', this.value)" />
 
 <!-- DOCUMENT BUTTONS -->
 <div id="docButtons">
   <button class="glass-panel glass-btn" onclick="openDocument('resume')">Résumé</button>
   <button class="glass-panel glass-btn" onclick="openDocument('cover')">Cover Letter</button>
 </div>
-
 <script>
 let selectedView = null;
 
-function handleViewSelection(view) {
-  selectedView = view;
+// COMPANY DROPDOWN → APPLY ORG THEME
+document.getElementById("companySelect").addEventListener("change", function () {
+  const orgTheme = this.value.trim();
+  if (!orgTheme) return;
 
+  localStorage.setItem("ETS_THEME", orgTheme);
+  selectedView = orgTheme;
+
+  handleViewSelection("org");
+});
+
+// BUTTONS → APPLY VIEW THEMES (EXCEPT VAPOURWARE)
+function handleViewSelection(view) {
+  const roleInput = document.getElementById("roleInput");
   const companyInput = document.getElementById("companyInput");
   const docButtons = document.getElementById("docButtons");
 
-  // Reset both elements
+  selectedView = view;
+
+  // Save theme for all except vapourware + org dropdown
+  if (view !== "vapourware" && view !== "org") {
+    localStorage.setItem("ETS_THEME", view);
+  }
+
+  // Show/hide company input
+  companyInput.style.display = view === "org" ? "none" : "block";
+
+  // Animations
+  roleInput.style.opacity = "1";
+  roleInput.style.pointerEvents = "auto";
+  roleInput.style.transform = "translateY(0)";
+
   companyInput.style.opacity = "0";
   companyInput.style.pointerEvents = "none";
   companyInput.style.transform = "translateY(20px)";
@@ -100,7 +124,6 @@ function handleViewSelection(view) {
   docButtons.style.pointerEvents = "none";
   docButtons.style.transform = "translateY(20px)";
 
-  // Show company input for all views except org
   if (view !== "org") {
     setTimeout(() => {
       companyInput.style.opacity = "1";
@@ -109,7 +132,6 @@ function handleViewSelection(view) {
     }, 50);
   }
 
-  // Buttons always show, timing varies slightly for org
   setTimeout(() => {
     docButtons.style.opacity = "1";
     docButtons.style.pointerEvents = "auto";
@@ -117,19 +139,22 @@ function handleViewSelection(view) {
   }, view === "org" ? 150 : 200);
 }
 
+// DOCUMENT ROUTING
 function openDocument(type) {
   if (!selectedView) return;
 
-  const target =
-    type === "cover"
-      ? "cover.html"
-      : selectedView === "org"
-        ? "resume.html"
-        : "resume_sp.html";
+  let target;
+
+  if (type === "cover") {
+    target = "cover.html";
+  } else if (selectedView === "vapourware") {
+    target = "vapourware.html";
+  } else {
+    target = selectedView === "org" ? "resume.html" : "resume_sp.html";
+  }
 
   window.location.href = target;
 }
-
 </script>
 
 </div>

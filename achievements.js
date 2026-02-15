@@ -45,4 +45,12 @@ const achievementsData = {
 	"32": "Recognized by executive retail leadership for high-velocity data management, successfully executing critical range updates for Woolworths Petrol within 2-hour emergency windows to safeguard promotional launches.",
 	"33": "Led a Master Data Governance initiative to sanitize 1,500+ SKU range lines for major accounts (Woolworths, AusPost), eliminating obsolete data to ensure system parity and 100% delivery acceptance."
   }
-}
+};
+// Normalise numeric keys for MASTER_LIST
+Object.keys(achievementsData.MASTER_LIST).forEach(k => {
+  const n = Number(k);
+  if (!Number.isNaN(n) && !achievementsData.MASTER_LIST[n]) {
+    achievementsData.MASTER_LIST[n] = achievementsData.MASTER_LIST[k];
+  }
+});
+

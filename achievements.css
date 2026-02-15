@@ -1,143 +1,114 @@
-/* ============================
-   GLOBAL
-============================ */
+/* ==========================================================
+   ACHIEVEMENTS PAGE — CLEANED & OS‑ALIGNED
+   Thin‑glass cards preserved
+   Future-proof toggle: achievements-glass-thin / achievements-glass-thick
+========================================================== */
 
-body {
-  display: block;
+/* Remove unnecessary body overrides */
+
+/* Page hidden initially */
+.achievements-glass-thin {
+  opacity: 0;
+  transform: scale(0.985);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* ============================
+/* Page fully visible */
+.achievements-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Cards start invisible */
+.achievement-card {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Cards become visible */
+.achievement-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================
    HEADER
-============================ */
+========================================================== */
 
 .ach-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   padding: 28px 32px;
-  border-bottom: 2px solid rgba(--bg3);
+  border-bottom: 2px solid rgba(255,255,255,0.15);
 }
 
 .ach-title h1 {
   margin: 0;
   font-size: 32px;
-  color: var(--bg5);
+  color: var(--text-primary);
 }
 
 .ach-subtitle {
   margin: 4px 0 0 0;
-  font-size: 14px;
+  font-size: clamp(0.9rem, 1.4vw, 1.3rem);
   opacity: 0.8;
 }
 
-/* ============================
-   SELECTOR
-============================ */
+/* ==========================================================
+   SELECTOR (Input + Button now inherit OS styles)
+========================================================== */
 
 .ach-selector {
-  display: flex;
+  width:auto;
   gap: 12px;
+  align-items: center;
+  font-size: clamp(0.4rem, 1vw, 1rem);
 }
 
+/* No custom styling needed — OS handles .input-field */
 #achievementInput {
-  padding: 10px 14px;
-  border: 1px solid var(--glass-border-top);
-  background: var(--glass-bg);
-  color: var(--navtext);
-  border-radius: 6px;
-  width: 240px;
+  width: auto;
 }
 
+/* No custom styling needed — OS handles .glass-btn */
 #generateResumeBtn {
-  padding: 10px 16px;
-  background: rgb(from var(--bg1) r g b / 0.5);
-  border-left: none;
-  border-right: none;
-  border-top: 1px solid rgba(105,105,105,0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  color: rgb(from var(--navtext) r g b / 0.3);
-  text-shadow:
-    -1px -1px 0 rgb(from var(--bg4) r g b / 0.6),
-     1px -1px 0 rgb(from var(--bg1) r g b / 0.6),
-    -1px  1px 0 rgb(from var(--pbg1) r g b / 0.6),
-     1px  1px 0 rgb(from var(--bg1) r g b / 0.6);
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: opacity 0.2s ease;
+  width: auto;
+  padding: 14px 22px;
 }
 
-#generateResumeBtn:hover {
-  opacity: 0.85;
-}
-
-/* ============================
+/* ==========================================================
    GRID
-============================ */
+========================================================== */
 
 .ach-grid {
   display: grid;
-  grid-template-columns:
-    repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 20px;
   padding: 32px;
 }
 
-/* ============================
-   ACHIEVEMENT CARD
-============================ */
+/* ==========================================================
+   ACHIEVEMENT CARD — THIN GLASS (PRESERVED)
+========================================================== */
 
 .achievement-card {
   position: relative;
   overflow: hidden;
-	z-index:10;
-  --glow-strength: 0;
-
+  z-index: 10;
   background: rgb(from var(--bg3) r g b / 0.2);
   border-top: 1px solid rgba(255,255,255,0.8);
   border-bottom: 1px solid rgba(105,105,105,0.8);
   padding: 20px;
   border-radius: 25px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08), inset 0 0 25px rgba(255,255,255,0.6); 
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.achievement-card::before {
-  content: "";
-  position: absolute;
-  inset: -4px; /* extends glow outside the card */
-  border-radius: inherit;
-  background: inherit;
-  filter: blur(18px);
-  opacity: var(--glow-strength);
-  transition: opacity 4s ease;
-}
-
-.achievement-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: rgba(180, 220, 255, 0.12);
-  filter: blur(14px);
-  opacity: var(--glow-strength);
-  transition: opacity 4s ease;
-}
-
-.achievement-card:hover {
-  transform:
-    translateY(-4px) scale(1.015);
   box-shadow:
-    0 6px 18px rgb(from var(--main) r g b / 0.25),
-    0 0 12px rgb(from var(--subheadings) r g b / 0.15);
+    0 1px 2px rgba(0,0,0,0.08),
+    inset 0 0 25px rgba(255,255,255,0.6);
 }
-
-/* ============================
-   HOLOGRAPHIC SHIMMER
-============================ */
 
 .ach-number {
-	z-index:5;
+  z-index: 5;
   font-weight: 700;
   color: rgb(from var(--bg4) r g b / 0.9);
   margin-bottom: 10px;
@@ -151,7 +122,45 @@ body {
      1px  1px 0 rgb(from var(--bg3) r g b / 0.9);
 }
 
-.ach-navtext {
-  font-size: 15px;
-  color: var(--navtext);
+.achievement-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  border-radius: inherit;
+
+  background-image:
+    radial-gradient(circle at center, rgba(192, 192, 192, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%),
+    radial-gradient(circle at center, rgba(192, 192, 192, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
+  background-size: 100% 1px;
+  background-position: top center, bottom center;
+  background-repeat: no-repeat;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ==========================================================
+   FUTURE MODE: SWITCH TO OS GLASS (NOT ACTIVE)
+========================================================== */
+
+.achievements-glass-thick .achievement-card {
+  background: var(--glass-bg);
+  border-left: 1px solid rgba(255,255,255,0.9);
+  border-right: 1px solid rgba(255,255,255,0.9);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow:
+    0 10px 4px rgba(255,255,255,0.6),
+    inset 0 8px 8px rgba(0,0,0,0.2),
+    inset 0 -8px 4px var(--glass-border-btm);
 }
