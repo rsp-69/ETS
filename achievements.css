@@ -70,6 +70,7 @@
 /* No custom styling needed — OS handles .input-field */
 #achievementInput {
   width:100%;
+    padding: 14px 22px;
 }
 
 /* No custom styling needed — OS handles .glass-btn */
