@@ -78,6 +78,7 @@
 #generateResumeBtn {
   width: auto;
   padding: 14px 22px;
+  align-items: right;
 }
 
 /* ==========================================================
