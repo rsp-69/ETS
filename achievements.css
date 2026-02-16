@@ -65,6 +65,7 @@
   gap: 12px;
   align-items: center;
   font-size: clamp(0.4rem, 1vw, 1rem);
+    padding: 14px 22px;
 }
 
 /* No custom styling needed — OS handles .input-field */
