@@ -61,7 +61,7 @@
 ========================================================== */
 
 .ach-selector {
-  width:auto;
+  width:100%;
   gap: 12px;
   align-items: center;
   font-size: clamp(0.4rem, 1vw, 1rem);
@@ -69,7 +69,7 @@
 
 /* No custom styling needed — OS handles .input-field */
 #achievementInput {
-  width: auto;
+  width:100%;
 }
 
 /* No custom styling needed — OS handles .glass-btn */
