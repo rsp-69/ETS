@@ -85,8 +85,8 @@
 .ach-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 2fr));
-  gap: 20px;
-  padding: 32px;
+  gap: 10px;
+  padding: 24px;
 }
 
 /* ==========================================================
