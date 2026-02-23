@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rohan Prabhu // Resume</title>
+  <title>Rohan Prabhu - Cover Letter</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One:wght@400;700&family=Proxima+Nova:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
     :root {
@@ -23,15 +23,15 @@
       --color-status-green: #34BF49;
       --pg-bg: var(--main);
 	  --tag: var(--main);
-      --font-header: 'Poiret One', sans-serif;
-      --font-body: 'Proxima Nova', sans-serif;
+	  --font-header: 'Sulphur Point', sans-serif;
+      --font-body: 'Inter Tight', sans-serif;
     }
 
     body {
-	z-index:5;
-      margin: 5px;
+	  z-index: 5;
+      margin: 0;
       background: var(--body-bg);
-      padding: 5px;
+      padding: 20px;
       box-sizing: border-box;
       font-family: var(--font-body);
       line-height: 1.32;
@@ -39,9 +39,9 @@
 
 .cl-container {
   z-index: 10;
-  max-width: 300px;
+  max-width: 650px;
   width: 100%;
-  margin: 20px auto; /* Added margin for breathing room */
+  margin: 20px auto;
   
   /* --- THE GRADIENT BORDER TRICK --- */
   border: 4px solid transparent;
@@ -52,7 +52,7 @@
 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   color: var(--text);
-  padding: 40px;
+  padding: 15px;
   font-size: 0.75rem;
 }
 
@@ -63,7 +63,7 @@
       font-family: var(--font-header);
       font-size: 1.9rem;
       letter-spacing: 0.08em;
-      color: var(--main);
+      color: var(--headings);
       text-align: right;
     }
 
@@ -76,7 +76,27 @@
     .header-contact {
       text-align: right;
       margin: 2px 0 10px 0;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
+    }
+
+    .availability-status {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--color-status-green);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .status-dot {
+      height: 9px;
+      width: 9px;
+      background-color: var(--color-status-green);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      box-shadow: 0 0 4px var(--color-status-green);
     }
 
     .cl-divider {
@@ -123,16 +143,16 @@
     }
 
     .signature-space {
-      height: 60px;
-      width: 220px;
+      height: 40px;
+      width: 150px;
       margin-left: auto;
-      border-bottom: 2px solid var(--cl-divider);
+      border-bottom: 2px solid var(--subheadings);
       margin-bottom: 6px;
     }
 
     .typed-name {
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.65rem;
+      font-weight: 400;
     }
   </style>
 </head>
@@ -143,34 +163,25 @@
        NEW CONTAINER WRAPPER
   ============================= -->
   <div class="cl-container">
-    <div class="cl-body">
-
-      <!-- ============================
-           HEADER BLOCK
-      ============================= -->
-      <h1 class="name-header">ROHAN PRABHU</h1>
-      <p class="header-subtext">Supply Chain Analyst</p>
+<header>
+      <div class="name-header">Rohan Prabhu</div>
       <p class="header-contact">Melbourne, VIC · rohan.prabhu24@gmail.com · 0415 068 437</p>
-
+      <div class="availability-status">
+        <span class="status-dot"></span>Available for Immediate Start
+      </div>
+</header>
+    <div class="cl-body">
       <div class="cl-divider"></div>
-
-      <!-- ============================
-           RECIPIENT BLOCK
-      ============================= -->
       <div class="recipient-block">
         <p id="currentDate" style="text-align:right; margin-bottom:10px;"></p>
 
         <p>The Hiring Manager,</p>
-        <p><span id="org"></span>, Melbourne, AU.</p>
+        <p><span id="bodyCompanyName"></span>, Melbourne, AU.</p>
 
         <p class="subject-line">Subject: <span id="subjectJobTitle"></span></p>
       </div>
 
       <div class="cl-divider"></div>
-
-      <!-- ============================
-           MAIN LETTER BODY
-      ============================= -->
       <div class="letter-body">
 
         <p>Dear Hiring Manager,</p>
