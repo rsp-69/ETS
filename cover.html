@@ -1,79 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Cover Letter</title>
-  <link href="os.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohan Prabhu // Resume</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One:wght@400;700&family=Proxima+Nova:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* ============================
-       FONT SYSTEM + VARIABLES
-    ============================= */
+<style>
     :root {
-      --body-bg: #013220;        /* becomes PAGE background */
+      --body-bg: #013220;
       --text: #F4EAD5;
       --color-inverse-text: #FFFFFF;
       --headings: #2EBB57;
       --subheadings: #FFB703;
       --lines: #F4C430;
       --main: #161616;
-      --borders: #F4C430;
+      --borders: #F4C430;	
       --color-status-green: #34BF49;
-
-      --pg-bg: var(--main);      /* becomes CONTAINER background */
-      --tag: var(--main);
-
+      --pg-bg: var(--main);
+	  --tag: var(--main);
       --font-header: 'Poiret One', sans-serif;
       --font-body: 'Proxima Nova', sans-serif;
     }
 
-    /* ============================
-       PAGE BACKGROUND (INVERTED)
-    ============================= */
     body {
-      background: var(--body-bg);   /* INVERSION: résumé uses pg-bg here */
-      margin: 0;
-      padding: 40px 0;
+	z-index:5;
+      margin: 5px;
+      background: var(--body-bg);
+      padding: 5px;
+      box-sizing: border-box;
       font-family: var(--font-body);
-      font-size: 0.95rem;
-      line-height: 1.55;
-      color: var(--text);
-      display: flex;
-      justify-content: center;
+      line-height: 1.32;
     }
 
-    /* ============================
-       NEW CONTAINER (résumé style)
-    ============================= */
-    .cl-container {
-      max-width: 800px;
-      width: 95%;
-      background: var(--pg-bg);     /* INVERSION: résumé uses body-bg here */
-      border: 2px solid var(--borders);
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-    }
+.cl-container {
+  z-index: 10;
+  max-width: 300px;
+  width: 100%;
+  margin: 20px auto; /* Added margin for breathing room */
+  
+  /* --- THE GRADIENT BORDER TRICK --- */
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background: 
+    linear-gradient(var(--body-bg), var(--body-bg), var(--body-bg)) padding-box, 
+    linear-gradient(to right, var(--headings), var(--borders), var(--subheadings)) border-box; 
 
-    /* ============================
-       INNER CONTENT BODY
-    ============================= */
-    .cl-body {
-      padding: 10px 32px;
-      background: var(--pg-bg);
-      border-left: 4px solid var(--subheadings);
-      border-right: 4px solid var(--subheadings);
-      border-bottom: 4px solid var(--subheadings);
-    }
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  color: var(--text);
+  padding: 40px;
+  font-size: 0.75rem;
+}
 
     /* ============================
        EXISTING COVER LETTER STYLES
     ============================= */
     .name-header {
-      font-family: var(--font-name);
+      font-family: var(--font-header);
       font-size: 1.9rem;
       letter-spacing: 0.08em;
       color: var(--main);
-      margin: 0;
       text-align: right;
     }
 
@@ -90,9 +80,9 @@
     }
 
     .cl-divider {
-      height: 1px;
-      background: var(--headings);
-      margin: 14px 0 22px 0;
+      height: 2px;
+    background: linear-gradient(to right, var(--headings), var(--borders), var(--subheadings));
+      margin: 14px 0 14px 0;
       border-radius: 2px;
     }
 
@@ -171,7 +161,7 @@
         <p id="currentDate" style="text-align:right; margin-bottom:10px;"></p>
 
         <p>The Hiring Manager,</p>
-        <p><span id="companyAddress"></span>, Melbourne, AU.</p>
+        <p><span id="org"></span>, Melbourne, AU.</p>
 
         <p class="subject-line">Subject: <span id="subjectJobTitle"></span></p>
       </div>
@@ -232,32 +222,28 @@
   ============================= -->
   <script src="theme-loader.js"></script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
+<script>
+document.addEventListener('DOMContentLoaded', () => {
 
-      /* EDIT THESE TWO VALUES PER APPLICATION */
-      const companyName = "Kmart Australia";
-      const jobTitle = "Insights Data Analyst";
+  // Direct injection from the ONLY two variables that matter
+  const org = localStorage.getItem('ETS_CUSTOM_ORG') || "";
+  const role = localStorage.getItem('ETS_ROLE') || "";
 
-      /* DATE */
-      document.getElementById('currentDate').textContent =
-        new Date().toLocaleDateString('en-US', {
-          year: 'numeric', month: 'long', day: 'numeric'
-        });
-
-      /* INJECTION FIELDS */
-      const fields = {
-        companyAddress: companyName,
-        subjectJobTitle: `Application for ${jobTitle}`,
-        bodyCompanyName: companyName
-      };
-
-      for (const id in fields) {
-        const el = document.getElementById(id);
-        if (el) el.textContent = fields[id];
-      }
+  // Insert today's date
+  document.getElementById('currentDate').textContent =
+    new Date().toLocaleDateString('en-US', {
+      year: 'numeric', month: 'long', day: 'numeric'
     });
-  </script>
+
+  // Inject into the cover letter
+  document.getElementById('subjectJobTitle').textContent =
+    `Application for ${role}`;
+
+  document.getElementById('bodyCompanyName').textContent = org;
+
+});
+</script>
+
 
 </body>
 </html>

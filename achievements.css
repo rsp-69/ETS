@@ -61,24 +61,21 @@
 ========================================================== */
 
 .ach-selector {
-  width:100%;
+  width:auto;
   gap: 12px;
   align-items: center;
   font-size: clamp(0.4rem, 1vw, 1rem);
-  margin: 4px 0 0 0;
 }
 
 /* No custom styling needed — OS handles .input-field */
 #achievementInput {
-  width:100%;
-  margin: 4px 0 0 0;
+  width: auto;
 }
 
 /* No custom styling needed — OS handles .glass-btn */
 #generateResumeBtn {
   width: auto;
   padding: 14px 22px;
-  align-items: right;
 }
 
 /* ==========================================================
@@ -87,9 +84,9 @@
 
 .ach-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 2fr));
-  gap: 10px;
-  padding: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+  padding: 32px;
 }
 
 /* ==========================================================
@@ -111,6 +108,7 @@
 }
 
 .ach-number {
+  font-family: var(--font-display);
   z-index: 5;
   font-weight: 700;
   color: rgb(from var(--bg4) r g b / 0.9);
