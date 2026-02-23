@@ -117,12 +117,16 @@
   position: relative;
   overflow: hidden;
   text-shadow:
-    -1px -1px 0 rgb(from var(--bg2) r g b / 0.9),
+/*    -1px -1px 0 rgb(from var(--bg2) r g b / 0.9),
      1px -1px 0 rgb(from var(--bg3) r g b / 0.9),
     -1px  1px 0 rgb(from var(--bg3) r g b / 0.9),
      1px  1px 0 rgb(from var(--bg3) r g b / 0.9);
+}*/
+    0 0 4px rgb(from var(--bg2) r g b / 0.9),
+     0 0 11px rgb(from var(--bg3) r g b / 0.9),
+    -1px  1px 0 rgb(from var(--bg3) r g b / 0.9),
+     1px  1px 0 rgb(from var(--bg3) r g b / 0.9);
 }
-
 .achievement-card::before {
   content: "";
   position: absolute;
