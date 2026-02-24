@@ -69,7 +69,7 @@
 
 /* No custom styling needed — OS handles .input-field */
 #achievementInput {
-  width: 100%;
+  width: auto;
 }
 
 /* No custom styling needed — OS handles .glass-btn */
@@ -113,7 +113,7 @@
   font-weight: 700;
   color: rgb(from var(--bg4) r g b / 0.9);
   margin-bottom: 10px;
-  font-size: 25px;
+  font-size: 15px;
   position: relative;
   overflow: hidden;
   text-shadow:
@@ -122,11 +122,7 @@
     -1px  1px 0 rgb(from var(--bg3) r g b / 0.9),
      1px  1px 0 rgb(from var(--bg3) r g b / 0.9);
 }
-/*    0 0 4px rgb(from var(--bg2) r g b / 0.9),
-     0 0 11px rgb(from var(--bg3) r g b / 0.9),
-    -1px  1px 0 rgb(from var(--bg3) r g b / 0.9),
-     1px  1px 0 rgb(from var(--bg3) r g b / 0.9);
-}*/
+
 .achievement-card::before {
   content: "";
   position: absolute;

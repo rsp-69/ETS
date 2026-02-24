@@ -16,7 +16,7 @@ function renderAllAchievements() {
     card.className = "achievement-card";
 
     card.innerHTML = `
-      <div class="ach-number">#${id}</div>
+      <div class="ach-number">Achievement #${id}</div>
       <div class="ach-text">${master[id]}</div>
     `;
 
