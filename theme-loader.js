@@ -88,7 +88,7 @@ const themes = {
   },
 
   /* ===== ORG THEMES ===== */
-  aldi: {
+  "ALDI Australia": {
     "--main": "#00205B",
     "--pg-bg": "#00205B",
     "--body-bg": "#FFFFFF",
@@ -99,7 +99,7 @@ const themes = {
     "--borders": "#E30613"
   },
 
-  afl: {
+  AFL: {
     "--main": "#003B7A",
     "--pg-bg": "#003B7A",
     "--body-bg": "#FFFFFF",
@@ -109,8 +109,19 @@ const themes = {
     "--lines": "#333333",
     "--borders": "#FFFFFF"
   },
+  
+"Bega Group": {
+  "--main": "#D71920",
+  "--pg-bg": "#F7F3E8",
+  "--body-bg": "#FFFFFF",
+  "--text": "#00205B",
+  "--headings": "#006F3C",
+  "--subheadings": "#A3161A",
+  "--lines": "#004F2A",
+  "--borders": "#D71920"
+},
 
-  bunnings: {
+  "Bunnings Australia": {
     "--main": "#005B4F",
     "--pg-bg": "#005B4F",
     "--body-bg": "#F5F5F5",
@@ -121,7 +132,7 @@ const themes = {
     "--borders": "#FFCC00"
   },
 
-  coles: {
+  "Coles Group": {
     "--main": "#E00024",
     "--pg-bg": "#E00024",
     "--body-bg": "#FFFFFF",
@@ -132,7 +143,7 @@ const themes = {
     "--borders": "#707070"
   },
 
-  kmart: {
+  "Kmart Australia": {
     "--main": "#E21836",
     "--pg-bg": "#E21836",
     "--body-bg": "#FFFFFF",
@@ -143,7 +154,7 @@ const themes = {
     "--borders": "#000000"
   },
 
-  yarra_trams: {
+  "Yarra Trams": {
     "--main": "#00653A",
     "--pg-bg": "#00653A",
     "--body-bg": "#FFFFFF",
