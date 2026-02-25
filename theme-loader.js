@@ -109,18 +109,18 @@ const themes = {
     "--lines": "#333333",
     "--borders": "#FFFFFF"
   },
-
-  bega: {
-  "--main": "#D71920",
-  "--pg-bg": "#F7F3E8",
-  "--body-bg": "#FFFFFF",
-  "--text": "#00205B",
-  "--headings": "#006F3C",
-  "--subheadings": "#A3161A",
-  "--lines": "#004F2A",
-  "--borders": "#D71920"
-},
-
+   
+  "bega": {
+    "--main": "#007A33",
+    "--headings": "#D71920",
+    "--subheadings": "#007A33",
+    "--pg-bg": "#FFFFFF",
+    "--body-bg": "#F5F5F5",
+    "--text": "#1A1A1A", 
+    "--lines": "#C8D1C0",
+    "--borders": "#E0E0E0"
+  },
+   
   bunnings: {
     "--main": "#005B4F",
     "--pg-bg": "#005B4F",
