@@ -4,8 +4,9 @@
    Future-proof toggle: achievements-glass-thin / achievements-glass-thick
 ========================================================== */
 
-/* Remove unnecessary body overrides */
-
+:root{
+  --font-diplay: "Rubik Doodle Shadow", sans-serif;
+}
 /* Page hidden initially */
 .achievements-glass-thin {
   opacity: 0;
