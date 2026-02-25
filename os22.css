@@ -37,7 +37,12 @@ body {
   overflow: hidden;
 }
 
-
+#cosmic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+}
 
 /* HOT ORB */
 .hot-orb {
