@@ -49,7 +49,7 @@ body {
   position: absolute;
   width: 260px;
   height: 260px;
-  top: 15%;
+  top: -25%
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
@@ -84,7 +84,7 @@ body {
   position: absolute;
   width: 260px;
   height: 260px;
-  bottom: 25%;
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
