@@ -8,20 +8,20 @@
   --pulled-duration: var(--slab-duration);
   --drift-duration: 20s;
 
-/* Soft Neon Gradient
+/* Soft Neon Gradient */
   --bg1: #E7B7F7;
   --bg2: #C1B9F4;
   --bg3: #B8D5FB;
   --bg4: #C1ECE6;
-  --bg5: #E8F8E6; */
+  --bg5: #E8F8E6;
 
-  --bg1: #007CEF;
+/*  --bg1: #007CEF;
   --bg2: #1F93FF;
   --bg3: #74BCFF;
   --bg4: #CEFFCD;
   --bg5: #FFD11B;
   --bg6: #FF6905;
-  --bg7: #FF5500;
+  --bg7: #FF5500; */
   
   /* Typography */
 --font-body: 
@@ -68,8 +68,8 @@ body {
     var(--bg3) 25%,
     var(--bg4) 49%,
     var(--bg5) 75%,
-    var(--bg6) 95%,
-    var(--bg7) 100%
+    var(--bg2) 95%,
+    var(--bg4) 100%
   );
   background-size: 120% 120%;
   animation: bgMove 10s ease infinite;
