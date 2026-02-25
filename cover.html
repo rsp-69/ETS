@@ -153,6 +153,14 @@
     .typed-name {
       font-size: 0.65rem;
       font-weight: 400;
+
+	@media print {
+  html, body, .resume-container {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
     }
   </style>
 </head>
