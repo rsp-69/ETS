@@ -69,13 +69,13 @@
 
 /* No custom styling needed — OS handles .input-field */
 #achievementInput {
-  width: auto;
+  width: 80%;
 }
 
 /* No custom styling needed — OS handles .glass-btn */
 #generateResumeBtn {
   width: auto;
-  padding: 14px 22px;
+  padding: 12px 18px;
 }
 
 /* ==========================================================
