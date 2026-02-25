@@ -4,10 +4,6 @@
    Future-proof toggle: achievements-glass-thin / achievements-glass-thick
 ========================================================== */
 
-:root{
-  --font-diplay: "Rubik Doodle Shadow", sans-serif;
-}
-/* Page hidden initially */
 .achievements-glass-thin {
   opacity: 0;
   transform: scale(0.985);
