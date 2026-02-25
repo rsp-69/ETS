@@ -114,7 +114,7 @@ const themes = {
     "--main": "#007A33",
     "--headings": "#D71920",
     "--subheadings": "#007A33",
-    "--pg-bg": "#FFFFFF",
+    "--pg-bg": "#007A33",
     "--body-bg": "#F5F5F5",
     "--text": "#1A1A1A", 
     "--lines": "#C8D1C0",
