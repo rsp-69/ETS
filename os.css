@@ -71,6 +71,7 @@ body {
     var(--bg6) 95%,
     var(--bg7) 100%
   );
+  opacity: 0.4;
   background-size: 120% 120%;
   animation: bgMove 10s ease infinite;
   min-height: 100vh;
