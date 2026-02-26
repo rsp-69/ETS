@@ -111,6 +111,7 @@ body {
 }
 
 .top-nav::before {
+  z-index: 21;
   content: "";
   position: absolute;
   top: -1px;
@@ -136,6 +137,7 @@ body {
 
 /* NAV SHIMMER — midpoint at 6s */
 .top-nav::after {
+  z-index: 21;
   content: "";
   position: absolute;
   top: 0;
@@ -185,6 +187,7 @@ body {
    ============================= */
 
 .glass-panel {
+  z-index: 10;
   background: var(--glass-bg);
   border-radius: 30px;
   backdrop-filter: blur(14px);
@@ -246,6 +249,7 @@ body {
 
 /* SHOWSTOPPER — fast, bright, dramatic */
 .container::after {
+  z-index: 11;
   content: "";
   position: absolute;
   top: 0;
@@ -307,12 +311,14 @@ body {
 
 #roleInput {
   opacity: 0;
+  z-index: 8;
   transform: translateY(20px);
   pointer-events: none;
   transition: all 0.35s ease;
 }
 #companyInput {
   opacity: 0;
+  z-index: 8;
   transform: translateY(20px);
   pointer-events: none;
   transition: all 0.35s ease;
@@ -339,6 +345,7 @@ body {
 }
 
 .glass-btn {
+  z-index: 13;
   display: block;
   padding: 12px 20px;
   border-radius: var(--radius);
@@ -409,6 +416,7 @@ body {
    SELECT DROPDOWN
    ============================= */
 #companySelect {
+  z-index: 13;
   display: block;
   width: 100%;
   padding-left: 12px;
@@ -467,6 +475,7 @@ body {
 }
 
 .glass-pill {
+  z-index: 10;
   display: inline-block;
   padding: 6px 14px;
 
@@ -539,6 +548,7 @@ body {
    ============================= */
 
 #docButtons {
+  z-index: 9;
   opacity: 0;
   pointer-events: none;
   transform: translateY(20px);
