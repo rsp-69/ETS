@@ -8,52 +8,35 @@
   --pulled-duration: var(--slab-duration);
   --drift-duration: 20s;
 
-/* Soft Neon Gradient 
+  /* Soft Neon Gradient
   --bg1: #E7B7F7;
   --bg2: #C1B9F4;
   --bg3: #B8D5FB;
   --bg4: #C1ECE6;
   --bg5: #E8F8E6;*/
 
-  --bg1: #007CEF;
-  --bg2: #1F93FF;
-  --bg3: #74BCFF;
-  --bg4: #CEFFCD;
-  --bg5: #FFD11B;
-  --bg6: #FF6905;
-  --bg7: #FF5500;
-  
-  /* Typography */
---font-body: 
-  "Plus Jakarta Sans",
-  -apple-system,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  Roboto,
-  sans-serif;
+  --font-body: 
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
 
-  --font-display: "Rubik Doodle Shadow", cursive;
+  --font-display: "Tilt Neon", sans-serif;
 
-  /* Glass Material */
-  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-bg: rgba(249, 253, 254, 0.08);
   --glass-border-top: rgba(255, 255, 255, 0.8);
   --glass-border-btm: rgba(105, 105, 105, 0.2);
 
-  /* Text System */
   --text-primary: rgba(44, 47, 54, 0.8);
   --text-secondary: rgba(44, 47, 54, 0.6);
   --accent: #6A4C93;
-
-  /* Shape + Shadow */
   --radius: 15px;
   --shadow: 0 8px 30px rgba(0,0,0,0.18),
             inset 0 12px 10px rgba(255,255,255,0.4),
             inset 0 -8px 8px rgba(0,0,0,0.12);
 }
-
-/* ============================
-   GLOBAL BODY + BACKGROUND
-   ============================= */
 
 body {
   margin: 0;
@@ -61,31 +44,132 @@ body {
   box-sizing: border-box;
   color: var(--text-secondary);
   font-family: var(--font-body), sans-serif;
+}
+
+.bg-base {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+  background: linear-gradient(
+    to top,
+    rgba(15, 20, 28, 1) 0%,
+    rgba(25, 35, 50, 1) 45%,
+    rgba(5, 11, 18, 1) 70%,
+    rgba(11, 18, 21, 1) 100%
+	);
+}
+
+.bg-base::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url('https://grainy-gradients.vercel.app');
+  mix-blend-mode: overlay;
+}
+
+.bg-linear {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   background: linear-gradient(
     to bottom,
-    var(--bg1) 0%,
-    var(--bg2) 7%,
-    var(--bg3) 25%,
-    var(--bg4) 49%,
-    var(--bg5) 75%,
-    var(--bg6) 95%,
-    var(--bg7) 100%
+    rgba(11, 18, 21, 0.8) 0%
+    rgba(28, 169, 201, 0.5) 15%,
+    rgba(124, 185, 232, 0.35) 33%,
+    rgba(28, 169, 201, 0.15) 66%,
+    rgba(15, 20, 28, 0.8) 100% 
   );
-  opacity: 0.4;
-  background-size: 120% 120%;
-  animation: bgMove 10s ease infinite;
-  min-height: 100vh;
+  background-size: 100% 200%;
+  pointer-events: none;
+animation: fallGlow 12s ease-in-out infinite;
 }
 
-@keyframes bgMove { 
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.bg-ember {
+  position: fixed;
+  bottom: -10vmin;
+  left: -20vmin;
+  width: 85vmin;
+  height: 85vmin;
+  z-index: 3;
+  transform: none;
+  pointer-events: none;
 }
 
-/* ============================
-   FROSTED GLASS NAVIGATION BAR
-   ============================= */
+.bg-ember::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 75% 27%,
+      rgba(255, 225, 150, 0.85),
+      rgba(255, 170, 190, 0.75),
+      rgba(210, 90, 120, 0.65),
+      rgba(255, 200, 160, 0.55) 80%
+    );
+  filter: blur(4px);
+  animation: spinGlow 20s linear infinite;
+}
+
+.bg-ember::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 85%;
+  background: radial-gradient(circle at 100% 0%, transparent 37%, rgba(5, 6, 10, 0.9) 70%);
+  /*border-radius: 85%;
+  background: radial-gradient(circle at 100% 0%, rgba(5, 6, 10, 0.9) 45%, transparent 80%);*/
+}
+
+.bg-radial {
+  position: fixed;
+  width: 110vmin;
+  height: 110vmin;
+  top: -10vmin;
+  right: -10vmin;
+  z-index: 5;
+  transform: none;
+  pointer-events: none;
+}
+
+.bg-radial::before {
+  content:"";
+  position: absolute;
+  width: 110vmin;
+  height: 110vmin;
+  top: -10vmin;
+  right: -10vmin;
+  transform: translate(-50%, 0%);
+  clip-path: circle(40% at 50% 50%);
+
+  background:
+    radial-gradient(
+      circle at 25% 75%,
+      rgba(194, 248, 203, 0.75),
+      rgba(159, 226, 191, 0.45),
+      rgba(159, 226, 191, 0.15),
+      rgba(159, 226, 191, 0) 80%
+    );
+  filter: blur(4px);
+  animation: spinGlow 20s linear infinite;
+}
+
+@keyframes fallGlow {
+  0%   { background-position: 0% -100%; }
+  100% { background-position: 0% 100%; }
+}
+
+@keyframes spinGlow { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 .top-nav {
   position: relative;
@@ -95,15 +179,15 @@ body {
   padding-block: clamp(0.4rem, 1vw, 0.8rem);
   z-index: 20;
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  border-left: 1px solid rgba(255, 255, 255, 0.8);
-  border-right: 1px solid rgba(255, 255, 255, 0.8);
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(6px);
+  border-left: 1px outset rgba(255, 255, 255, 0.4);
+  border-right: 1px outset rgba(255, 255, 255, 0.4);
+  border-top: 1px hidden transparent;
+  border-bottom: 1px outset rgba(194, 248, 203, 0.5);
   box-shadow:
-    0 2px 8px rgba(255, 255, 255, 0.6),
-    inset 0 8px 8px rgba(0, 0, 0, 0.2),
-    inset 0 -8px 4px var(--glass-border-btm);
+    1px 0 4px rgba(255, 255, 255, 0.2),
+    inset 0 4px 2px rgba(105, 105, 105, 0.2),
+    inset 0 -4px 2px rgba(105, 105, 105, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -136,7 +220,6 @@ body {
   mask-composite: exclude;
 }
 
-/* NAV SHIMMER — midpoint at 6s */
 .top-nav::after {
   z-index: 21;
   content: "";
@@ -155,7 +238,7 @@ body {
   pointer-events: none;
 
   animation: navShimmer 4s ease-out forwards;
-  animation-delay: 1s; /* midpoint trigger */
+  animation-delay: 1s;
 }
 
 @keyframes navShimmer {
@@ -167,7 +250,7 @@ body {
 
 .top-nav a {
   flex: 1;
-  color: var(--text-primary);
+  /*color: var(--text-primary)*/
   text-decoration: none;
   font-weight: 400;
   padding-inline: clamp(0.4rem, 1vw, 1rem);
@@ -182,24 +265,22 @@ body {
   color: var(--text-primary);
 }
 
-
-/* ============================
-   GLOBAL GLASS PANEL
-   ============================= */
-
 .glass-panel {
   z-index: 10;
   background: var(--glass-bg);
   border-radius: 30px;
-  backdrop-filter: blur(14px);
-  border-left: 1px solid rgba(255, 255, 255, 0.9);
-  border-right: 1px solid rgba(255, 255, 255, 0.9);
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(12px);
+  border-left: 1px outset rgba(255, 255, 255, 0.3);
+  border-right: 1px outset rgba(255, 255, 255, 0.45);
+  border-top: 1px outset rgba(194, 248, 203, 0.5);
+  border-bottom: 1px outset rgba(255, 170, 190, 0.5);
   box-shadow:
-    0 2px 8px 2px rgba(255, 255, 255, 0.6),
-    inset 0 8px 8px 2px rgba(0, 0, 0, 0.2), 	inset 0 -8px 4px 2px var(--glass-border-btm);
+    0 0 4px 1px rgba(255, 255, 255, 0.2),
+    inset 0 8px 8px 2px rgba(105, 105, 105, 0.4),
+    inset -4px -4px 8px rgba(194, 248, 203, 0.15),
+    inset 0 -8px 4px 2px var(--glass-border-btm);
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   transition: 0.25s ease;
 }
@@ -209,7 +290,7 @@ body {
   position: absolute;
   top: -1px;
   bottom: -1px;
-  left: 0;
+  left: -0;
   right: 0;
   pointer-events: none;
   border-radius: inherit;
@@ -229,15 +310,11 @@ body {
   mask-composite: exclude;
 }
 
-/* ============================
-   MAIN SLAB (SHOWSTOPPER SHIMMER)
-   ============================= */
-
 .container {
   width: 90%;
   max-width: 480px;
-  padding: 40px;
-  margin-top: 80px;
+  padding: 15px;
+  margin-top: 50px;
   text-align: center;
   z-index: 10;
   position: relative;
@@ -245,10 +322,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
-
 }
 
-/* SHOWSTOPPER — fast, bright, dramatic */
 .container::after {
   z-index: 11;
   content: "";
@@ -277,11 +352,6 @@ body {
   100% { left: 120%; opacity: 0; }
 }
 
-/* ============================
-   INPUT FIELDS
-   ============================= */
-/* Hidden state for revealable elements */
-
 .reveal-hidden {
   opacity: 0;
   transform: translateY(20px);
@@ -289,7 +359,6 @@ body {
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* Visible state */
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
@@ -300,10 +369,10 @@ body {
   width: 70%;
   max-width: 480px;
   padding: 4px;
-  margin-top: 40px;
+  margin-top: 20px;
   border-radius: var(--radius);
   border: 1px solid rgba(255,255,255,0.4);
-  background: rgba(255,255,255,0.6);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   font-size: 1rem;
   color: var(--text-primary);
@@ -324,10 +393,6 @@ body {
   pointer-events: none;
   transition: all 0.35s ease;
 }
-
-/* ============================
-   GLASS BUTTONS
-   ============================= */
 
 .theme-grid {
   display: grid;
@@ -350,22 +415,23 @@ body {
   display: block;
   padding: 12px 20px;
   border-radius: var(--radius);
-  border-left: 1px solid rgba(255, 255, 255, 0.9);
-  border-right: 1px solid rgba(255, 255, 255, 0.9);
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px outset rgba(105, 105, 105, 0.1);
+  border-bottom: 2px hidden transparent;
 
   box-shadow:
-    0 2px 4px 2px rgba(105,105,105,0.2),
-    inset 0 8px 4px 2px rgba(0, 0, 0, 0.2),
-    inset 0 -8px 4px 2px rgba(255,255,255,0.2);
+    0 1px 4px 0 rgba(150, 150, 150, 0.4),
+	/*inset 0 6px 6px 2px rgba(0, 0, 0, 0.18),*/
+    inset 0 1px 5px 0 rgba(105, 105, 105, 0.2),
+    inset 0 -6px 6px 2px rgba(255,255,255,0.2);
 
   cursor: pointer;
   font-size: clamp(1rem, 1.4vw, 1.4rem);
-  color: var(--text-secondary);
   transition: 0.25s ease;
   box-sizing: border-box;
   background: var(--glass-bg);
+  position: relative;
 }
 
 /* Theme previews */
@@ -386,7 +452,7 @@ body {
 
 .light {
   --preview: linear-gradient(45deg, #CED4DA 60%, #4CC9F0 70%, #FFB703 80%, #DEE2E6 90%);
- --text-clr: #161616;
+  --text-clr: #161616;
 }
 
 .dark {
@@ -402,8 +468,8 @@ body {
 .glass-btn:hover {
   background: var(--preview);
   color: var(--text-clr);
-  transform: translateY(-2px);
-  opacity: 0.80;
+  transform: translateY(-4px);
+  opacity: 0.7;
 }
 
 .glass-btn.selected {
@@ -413,9 +479,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ============================
-   SELECT DROPDOWN
-   ============================= */
 #companySelect {
   z-index: 13;
   display: block;
@@ -425,7 +488,6 @@ body {
   box-sizing: border-box;
   margin-top: 12px;
 
-  /* GLASS MATERIAL — identical to .glass-panel */
   background: var(--glass-bg);
   backdrop-filter: blur(14px);
   border-radius: var(--radius);
@@ -441,9 +503,8 @@ body {
     inset 0 -8px 4px 2px rgba(255,255,255,0.2);
 
   font-size: clamp(1rem, 1.4vw, 1.4rem);
-  color: var(--text-primary);
 
-  appearance: none; /* removes default arrow */
+  appearance: none;
   cursor: pointer;
   position: relative;
 }
@@ -476,7 +537,7 @@ body {
 }
 
 .glass-pill {
-  z-index: 10;
+  z-index: 13;
   display: inline-block;
   padding: 6px 14px;
 
@@ -541,16 +602,12 @@ body {
 .note {
   margin-top: 20px;
   font-size: 0.9rem;
-  color: var(--text-secondary);
 }
 
-/* ============================
-   DOCUMENT BUTTONS (FADE-IN)
-   ============================= */
 
 #docButtons {
-  z-index: 9;
   opacity: 0;
+  z-index: 9;
   pointer-events: none;
   transform: translateY(20px);
   transition: all 0.4s ease;
@@ -560,3 +617,34 @@ body {
   margin-top: 30px;
 }
 
+/* RSP Glass Effect using Text Shadows*/
+.glass-text {
+  font-family: var(--font-display);
+/*  font-size: clamp(1.2rem, 3vw, 2rem); */
+  color: rgba(0, 0, 0, 0.08);
+  text-shadow:
+    -1px 0 1px rgba(249, 253, 254, 0.28),
+    1px 0 1px rgba(105, 105, 105, 0.3),
+    -1px 0 0 rgba(105, 105, 105, 0.15),
+	1px 0 2px rgba(0, 0, 0, 0.1),
+    -1px 0 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+/*.top-nav .glass-text {
+  text-shadow:
+    -1px 0 1px rgba(6, 2, 1, 0.28),
+    1px 0 1px rgba(150, 150, 150, 0.3),
+    -1px 0 0 rgba(150, 150, 150, 0.15),
+	1px 0 2px rgba(0, 0, 0, 0.1),
+    -1px 0 2px rgba(0, 0, 0, 0.1);
+}
+*/
+.glass-btn .glass-text {
+  text-shadow:
+    -1px 0 1px rgba(249, 253, 254, 0.5),
+    1px 0 1px rgba(105, 105, 105, 0.6),
+    -1px 0 0 rgba(105, 105, 105, 0.3),
+	1px 0 2px rgba(255, 255, 255, 0.5),
+    -1px 0 2px rgba(255, 255, 255, 0.5);
+}

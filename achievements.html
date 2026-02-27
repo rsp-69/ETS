@@ -4,26 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Achievements</title>
-
-  <!-- OS Core Styles -->
   <link rel="stylesheet" href="os.css" />
-
-  <!-- Achievements Page Styles -->
   <link rel="stylesheet" href="achievements.css" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
   <!-- TOP NAVIGATION -->
   <nav class="top-nav">
     <div class="nav-left">RSP</div>
-
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="achievements.html" class="active">Achievements</a>
@@ -45,23 +37,17 @@
         id="achievementInput"
         type="text"
         class="input-field"
-        placeholder="Enter IDs e.g. 3, 7, 12, 18, 25"/>
-</div>
-<button id="generateResumeBtn" class="glass-btn">Résumé</button>
+        placeholder="Enter IDs e.g. 3, 7, 12, 18, 25"/></div> <button id="generateResumeBtn" class="glass-btn">Résumé</button>
 </div>
 
-
-  <!-- MAIN GRID -->
-  <main>
+<main>
     <div id="achievementsContainer" class="ach-grid"></div>
   </main>
 
-  <!-- DATA + LOGIC -->
   <script src="achievements.js"></script>
   <script src="achievementFormatter.js"></script>
   <script src="achievement-selector.js"></script>
 
-  <!-- STACK + SHIMMER LOGIC -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
 

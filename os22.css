@@ -1,6 +1,5 @@
 :root {
 
-  /* Typography */
 --font-body: 
   "Plus Jakarta Sans",
   -apple-system,
@@ -8,28 +7,18 @@
   "Segoe UI",
   Roboto,
   sans-serif;
-
-  --font-display: "Rubik Doodle Shadow", cursive;
-
-  /* Glass Material */
+  --font-display: "Tilt Neon", sans-serif;
   --glass-bg: rgba(255, 255, 255, 0.15);
   --glass-border-top: rgba(255, 255, 255, 0.8);
   --glass-border-btm: rgba(105, 105, 105, 0.2);
-
-  /* Text System */
   --text-primary: rgba(44, 47, 54, 0.8);
   --text-secondary: rgba(44, 47, 54, 0.6);
   --accent: #6A4C93;
-
-  /* Shape + Shadow */
   --radius: 15px;
   --shadow: 0 8px 30px rgba(0,0,0,0.18),
             inset 0 12px 10px rgba(255,255,255,0.4),
             inset 0 -8px 8px rgba(0,0,0,0.12);
 }
-/* ============================
-   COSMIC BACKGROUND LAYER
-   ============================= */
 
 body {
   margin: 0;
@@ -49,7 +38,7 @@ body {
   position: absolute;
   width: 260px;
   height: 260px;
-  top: -25%
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
@@ -84,7 +73,7 @@ body {
   position: absolute;
   width: 260px;
   height: 260px;
-  bottom: 15%;
+  bottom: -25%;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
@@ -199,7 +188,7 @@ body {
   transform: skewX(-20deg);
   pointer-events: none;
 
-  animation: navShimmer 4s ease-out forwards;
+  animationer: navShimmer 4s ease-out forwards;
   animation-delay: 1s; /* midpoint trigger */
 }
 

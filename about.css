@@ -6,19 +6,16 @@
 /* Wrapper for page content */
 .about-wrapper {
   width: 100%;
-  max-width: 900px;
   margin: 0 auto;
-  padding: 120px 20px 100px;
   display: flex;
   flex-direction: column;
-  gap: 100px;
   position: relative;
-  z-index: 2;
+  z-index: 8;
 }
 
 /* Section container */
 .about-section {
-  max-width: 700px;
+padding: 10px;
 }
 
 /* Zig-zag alignment */
@@ -34,36 +31,30 @@
 
 /* Typography */
 .section-title {
-  font-size: clamp(1.6rem, 4vw, 2.6rem);
-  font-weight: 700;
-  margin-bottom: 10px;
-  line-height: 1.2;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  margin-bottom: 5px;
+  line-height: 1;
 }
 
 .section-text {
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  font-weight: 300;
-  line-height: 1.55;
-  max-width: 600px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1;
 }
 
-/* ==========================================
-   GLASS-TEXT — EXACT THIN-GLASS MATERIAL
-   Literal translation of your slab material
-   ========================================== */
 
+/* RSP Glass Effect using Text Shadows*/
 .glass-text {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: rgba(0, 0, 0, 0.08);
 
-  /* Glass-adjacent glow + depth */
   text-shadow:
-    0 0 6px rgba(255, 255, 255, 0.35),   /* soft glow */
-    0 2px 4px rgba(0, 0, 0, 0.25),       /* subtle drop shadow */
-    0 -1px 2px rgba(255, 255, 255, 0.4); /* faint top bevel */
+    -1px 0 1px rgba(255, 255, 255, 0.28),
+    1px 0 1px rgba(105, 105, 105, 0.3),
+    -1px 0 0 rgba(105, 105, 105, 0.15),
+	1px 0 2px rgba(0, 0, 0, 0.1),
+    -1px 0 2px rgba(0, 0, 0, 0.1);
 
   letter-spacing: 0.5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }

@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>RSP_OS — Theme Selector</title>
+	<title>Rohan OS — Theme Selector</title>
 	
 	<link rel="stylesheet" href="os.css">
-
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -28,33 +27,33 @@
     }
 
   </style>
-
 </head>
-
 <body>
+<div class="bg-base"></div>
+<div class="bg-linear"></div>
+<div class="bg-radial"></div>
+<div class="bg-ember"></div>
 <div class="home-wrapper">
 <nav class="top-nav">
-  <a href="#">RSP</a>
-  <a href="index.html" class="active">Home</a>
-  <a href="achievements.html">Achievements</a>
-  <a href="projects.html">Personal Projects</a>
-  <a href="about.html">About ETS</a>
+  <a href="#" class="glass-text">RSP</a>
+  <a href="index.html" class="active glass-text">Home</a>
+  <a href="achievements.html" class="glass-text">Achievements</a>
+  <a href="projects.html" class="glass-text">Personal Projects</a>
+  <a href="about.html" class="glass-text">About ETS</a>
 </nav>
 
-
-<!-- MAIN GLASS SLAB -->
 <div class="container glass-panel">
-  <h2>Your choice matters</h2>
-  <p>Go on, design your experience!</p>
+  <h2 class="glass-text">Your choice matters</h2>
+  <h3 class="glass-text">Go on, design your experience!</h3>
 <div class="theme-grid">
-  <button class="glass-btn myView" onclick="handleViewSelection('personal')">My View</button>
-  <button class="glass-btn tiramisu" onclick="handleViewSelection('tiramisu')">Tiramisu</button>
-  <button class="glass-btn dark" onclick="handleViewSelection('dark')">Dark Mode</button>
-  <button class="glass-btn vapourware" onclick="handleViewSelection('vapourware')">Vapourware</button>
-  <button class="glass-btn light" onclick="handleViewSelection('light')">Light Mode</button>
-  <button class="glass-btn retro_tech" onclick="handleViewSelection('retro_tech')">Retro Tech</button>
+  <button class="glass-btn myView glass-text" onclick="handleViewSelection('personal')">My View</button>
+  <button class="glass-btn tiramisu glass-text" onclick="handleViewSelection('tiramisu')">Tiramisu</button>
+  <button class="glass-btn dark glass-text" onclick="handleViewSelection('dark')">Dark Mode</button>
+  <button class="glass-btn vapourware glass-text" onclick="handleViewSelection('vapourware')">Vapourware</button>
+  <button class="glass-btn light glass-text" onclick="handleViewSelection('light')">Light Mode</button>
+  <button class="glass-btn retro_tech glass-text" onclick="handleViewSelection('retro_tech')">Retro Tech</button>
 </div>
-<select id="companySelect" class="glass-btn" onchange="localStorage.setItem('ETS_CUSTOM_ORG', this.options[this.selectedIndex].text); handleViewSelection('org')">
+<select id="companySelect" class="glass-btn glass-text" onchange="localStorage.setItem('ETS_CUSTOM_ORG', this.options[this.selectedIndex].text); handleViewSelection('org')">
 
     <option value="">Org. Mode (select)</option>
     <option value="aldi">ALDI Australia</option>
@@ -65,8 +64,7 @@
     <option value="kmart">KMART Australia</option>
     <option value="yarra_trams">Yarra Trams</option>
   </select>
-
-  <div class="note">More company themes are being added.</div>
+  <div class="note glass-text">More company themes are being added.</div>
 </div>
 <!-- ROLE INPUT (always visible) -->
 <input id="roleInput" class="input-field"

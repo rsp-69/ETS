@@ -1,17 +1,17 @@
-body{
+body {
 background-image:
   linear-gradient(
-    145deg,
-    #FFD4DF 0%,
-    #FFB3C8 12%,
-    #E98AA3 25%,
-    #D86A85 38%,
-    #F3A98A 52%,
-    #FFC8A0 66%,
-    #F8DFAF 82%,
-    #FFEED4 100%
+    165deg,
+    #D9FCE2 0%,
+    #C8F5D2 12%,
+    #B4EEC8 25%,
+    #9FE2BF 38%,
+    #A8EED4 52%,
+    #BFF5E2 66%,
+    #D8FBEF 82%,
+    #ECFFF7 100%
   ),
-  radial-gradient(circle at 30% 20%, rgba(255,255,255,0.08), transparent 60%);
+  radial-gradient(circle at 70% 25%, rgba(255,255,255,0.10), transparent 60%);
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -27,22 +27,17 @@ background-repeat: no-repeat;
   transform: scale(1);
 }
 
-/* Cards start invisible */
 .achievement-card {
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* Cards become visible */
 .achievement-card.revealed {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ==========================================================
-   HEADER
-========================================================== */
 
 .ach-header {
   display: flex;
@@ -64,10 +59,6 @@ background-repeat: no-repeat;
   opacity: 0.8;
 }
 
-/* ==========================================================
-   SELECTOR (Input + Button now inherit OS styles)
-========================================================== */
-
 .ach-selector {
   width:auto;
   gap: 12px;
@@ -75,20 +66,14 @@ background-repeat: no-repeat;
   font-size: clamp(0.4rem, 1vw, 1rem);
 }
 
-/* No custom styling needed — OS handles .input-field */
 #achievementInput {
   width: auto;
 }
 
-/* No custom styling needed — OS handles .glass-btn */
 #generateResumeBtn {
   width: auto;
   padding: 14px 22px;
 }
-
-/* ==========================================================
-   GRID
-========================================================== */
 
 .ach-grid {
   display: grid;
@@ -96,10 +81,6 @@ background-repeat: no-repeat;
   gap: 20px;
   padding: 32px;
 }
-
-/* ==========================================================
-   ACHIEVEMENT CARD — THIN GLASS (PRESERVED)
-========================================================== */
 
 .achievement-card {
   position: relative;
