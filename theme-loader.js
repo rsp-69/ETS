@@ -161,7 +161,7 @@ const themes = {
     "--headings": "#F05A28",
     "--subheadings": "#111111",
     "--lines": "#F05A28",
-    "--main": "#F05A28",
+    "--main": "#000000",
     "--borders": "#7E7E7E"
   },
 
