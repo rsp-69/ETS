@@ -153,6 +153,17 @@ const themes = {
     "--lines": "#00205B",
     "--borders": "#000000"
   },
+  
+ nike: {
+    "--body-bg": "#FFFFFF";
+    "--text": "#000000",
+    "--color-inverse-text": "#FFFFFF";
+    "--headings": "#000000";
+    "--subheadings": "#111111";
+    "--lines": "#F05A28";
+    "--main": "#F05A28";
+    "--borders": "#7E7E7E";
+  },
 
   yarra_trams: {
     "--main": "#00653A",
