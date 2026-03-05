@@ -158,7 +158,7 @@ const themes = {
     "--body-bg": "#FFFFFF",
     "--text": "#000000",
     "--color-inverse-text": "#FFFFFF",
-    "--headings": "#000000",
+    "--headings": "#F05A28",
     "--subheadings": "#111111",
     "--lines": "#F05A28",
     "--main": "#F05A28",
