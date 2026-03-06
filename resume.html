@@ -240,6 +240,76 @@
 
     .text-ha-end { color: var(--lines); font-weight: 700; }
     .text-accent-primary { color: var(--headings); }
+    
+	.availability-status {
+	  display: inline-flex;
+      align-items: center;
+	  font-family: var(--font-display);
+	  color: var(--color-primary-text);
+      font-weight: 600;
+	  opacity: 0;
+	  gap: 6px;
+	  animation: sts 1s 2.5s ease-out forwards;
+    }
+@keyframes sts {to {opacity: 0.8}}
+
+    .status-dot {
+      height: 8px;
+      width: 8px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+	  margin-right: 6px;
+	  animation: neonOn 2s 2s ease-out forwards;
+    }
+
+@keyframes neonOn {
+  0% {
+    box-shadow: none;
+    opacity: 0.2;
+  }
+
+  5% {
+    box-shadow:
+	  box-shadow: /*0 0 4px 1px var(--color-status-green),*/ 0 0 1px 2px var(--color-status-green), inset 0 0 4px var(--color-status-green);
+    opacity: 0.7;
+  }
+
+  15% {
+	  box-shadow: 0 0 4px 1px var(--color-status-green),/*0 0 1px 2px var(--color-status-green), inset 0 0 4px var(--color-status-green)*/;
+    opacity: 0.3;
+  }
+
+  20% {
+      box-shadow: 0 0 4px 1px var(--color-status-green), /*0 0 1px 2px var(--color-status-green),*/ inset 0 0 4px var(--color-status-green);
+    opacity: 0.6;
+  }
+
+  25% {
+    box-shadow: none;
+    opacity: 0.2;
+  }
+
+  30% {
+      box-shadow: 0 0 4px 1px var(--color-status-green), 0 0 1px 2px var(--color-status-green)/*,inset 0 0 4px var(--color-status-green)*/;
+    opacity: 0.8;
+  }
+
+  35% {
+    box-shadow: none;
+    opacity: 0.2;
+  }
+
+  50% {
+      box-shadow: 0 0 4px 1px var(--color-status-green), 0 0 1px 2px var(--color-status-green), inset 0 0 4px var(--color-status-green);
+    opacity: 1;
+  }
+
+  100% {
+      box-shadow: 0 0 1px 1px var(--color-status-green),0 0 4px 1px var(--color-status-green),  inset 0 0 2px 1px var(--color-status-green),inset 0 0 1px 1px #fff;
+	opacity: 0.8;
+  }
+}
 
     /*
     ============================================================
@@ -247,11 +317,10 @@
     ============================================================
     */
     @media print {
-      body { padding: 0; background: white; }
-      .resume-container { box-shadow: none; border: none; width: 100%; max-width: 100%; }
       html, body, .resume-container {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        .neonOn, .sts {animation: none !important;}
       }
     }
   </style>
@@ -271,7 +340,7 @@
 
       <div class="availability-status">
         <span class="status-dot"></span>Available for Immediate Start
-      </div>
+      </span>
     </header>
 
     <div class="content-body">
