@@ -1,474 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rohan Prabhu // Resume</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rohan Prabhu // Resume</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/*
-============================================================
-    1. CORE VARIABLES & BASE
-    ============================================================
-    */
-    :root {
-      --body-bg: #FFFFFB;
-      --text: #1C2B39;
-      --color-inverse-text: #FFFFFB;
-      --headings: #3A6EA5;
-      --subheadings: #C7242C;
-      --lines: #DADADA;
-      --main: #5F6D79;
-      --borders: #1C2B39;	
-      --color-status-green: #34BF49;
-      --pg-bg: var(--main);
-	  --tag: var(--main);
-      --font-header: 'Oswald',sans-serif;
-      --font-body: 'Roboto Mono', sans-serif;
-    }
-
-    body {
-      z-index:5;
-      margin: 0;
-      background: var(--pg-bg);
-      padding: 10px;
-      box-sizing: border-box;
-      font-family: var(--font-body);
-      line-height: 1.32;
-    }
-
-    /*  ============================================================
-    2. LAYOUT CONTAINERS  ============================================================
-    */
-    .resume-container {
-	z-index:10;
-      max-width: 800px;
-      width: 95%;
-      margin: 0 auto;
-      background: var(--body-bg);
-      box-shadow: 0 0 12px rgba(240, 90, 40, 0.8);
-      border-radius: 4px;
-      color: var(--text);
-      overflow: hidden;
-      font-size: 0.75rem;
-      border: 1px solid var(--borders);
-    }
-
-    .content-body {
-      padding: 10px 32px;
-      border-left: 4px solid var(--subheadings);
-      border-bottom: 4px solid var(--subheadings);
-      border-right: 4px solid var(--subheadings);
-    }
-
-    .section {
-      margin-top: 12px;
-      margin-bottom: 10px;
-    }
-
-/* ============================================================
-    3. HEADER & CONTACT MODULE
-    ============================================================
-    */
-    .header {
-      background-color: var(--body-bg);
-      color: var(--text);
-      padding: 12px 32px;
-      border: 5px solid var(--subheadings);
-      border-bottom: 2px solid var(--borders);
-    }
-
-    .header h1 {
-      font-family: var(--font-header);
-      font-style: italics;
-      font-size: 2.05rem;
-      font-weight: 700;
-      margin: 0 0 4px 0;
-      color: var(--headings);
-      letter-spacing: 0.04em;
-
-    }
-
-    .contact-info {
-      margin: 0 0 6px 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-
-    .contact-link {
-      color: var(--text);
-      font-weight: 400;
-      text-decoration: none;
-    }
-
-/*COMPONENT MODULES*/
-
-    .custom-header-container {
-      margin-bottom: 10px;
-    }
-
-/*    .rainbow-line-container {
-      display: flex;
-      width: 100%;
-      height: 2px;
-      margin-top: 4px;
-      border-radius: 2px;
-      overflow: hidden;
-    }*/
-	.custom-line {
-	height: 2px;
-	width: 100%;
-  background-image: linear-gradient(to right, var(--main) 0%, var(--headings) 25%, var(--subheadings) 50%, var(--lines) 75%, var(--borders) 100%);
+:root {
+--color-body-bg: #FFFFFB;
+--color-primary-text: #1C2B39;
+--color-inverse-text: #FFFFFB;
+--color-accent-1: #3A6EA5;
+--color-accent-2: #C7242C;
+--color-accent-3: #5F6D79;
+--color-accent-4: #DADADA;
+--color-status-green: #34BF49;
+--color-pg-bg: var(--color-accent-3);
+--font-body: 'Epilogue', sans-serif;
+--font-display: 'Oswald', sans-serif;
 }
 
-    .section-title {
-      font-weight: 500;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin: 0;
-      color: var(--subheadings);
-    }
+body { 
+    margin: 0px; 
+    background: var(--color-pg-bg);
+    padding: 10px; 
+    box-sizing: border-box; 
+    font-family: var(--font-body);
+}
 
-    .experience-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin: 1px 0;
-    }
+.resume-container {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    background: var(--color-body-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    color: var(--color-primary-text);
+    overflow: hidden;
+    font-size: clamp(0.55rem, 0.8vw, 0.78rem);
+    font-weight: 400;
+    border: 4px solid var(--color-primary-text);
+}
 
-    .experience-subtitle {
-      font-size: 0.65rem;
-      color: var(--borders);
-      margin-bottom: 1px;
-    }
+.header {
+    background-color: var(--color-body-bg);
+    font-family: var(--font-display);
+    color: var(--color-primary-text);
+    padding: 10px 15px;
+    border: 2px solid var(--color-accent-1);
+    position: relative;
+    border-bottom: 1px solid var(--color-accent-4);
+    box-shadow: none; 
+}
 
-    .education-title {
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
+.header-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 4px 0;
+    text-decoration: none;
+}
 
-    .education-location {
-      color: var(--lines);
-      font-style: italic;
-    }
+.header-name {
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-shadow: 0 0 2px var(--color-accent-1), 0 0 1px var(--color-accent-2);
+}
 
-    .list-item {
-      margin-bottom: 4px;
-      line-height: 1.32;
-      list-style: square;
-      margin-left: -18px;
-      margin-right: 18px;
-      text-align: justify;
-    }
+.contact-info {
+    font-weight: 500;
+    font-size: clamp(0.6rem, 0.9vw, 0.8rem);
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; 
+    color: var(--color-primary-text);
+}
 
-    .border-left-accent {
-      border-left: 1px solid var(--headings);
-      padding-left: 12px;
-      margin-bottom: 12px;
-    }
+.contact-link {
+    color: var(--color-accent-3);
+    text-decoration: none;
+}
 
-    .sub-header {
-      font-weight: 700;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      color: var(--lines);
-      margin: 8px 0 4px 0;
-    }
+.availability-status {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    color: var(--color-primary-text);
+    font-size: clamp(0.7rem, 1.2vw, 0.95rem);
+    font-weight: 600;
+    opacity: 0;
+    gap: 6px;
+    animation: sts 1s 2.5s ease-out forwards;
+}
 
-    .profile-text {
-      line-height: 1.38;
-      text-align: justify;
-      font-size: 0.75rem;
-    }
+@keyframes sts { 
+    to { opacity: 0.8; } 
+}
 
-    .tag-group-title {
-      font-weight: 400;
-      color: var(--subheadings);
-      margin: 8px 0 4px 0;
-      display: block;
-      font-size: 0.65rem;
-    }
-
-    .tag {
-		z-index:1;
-      display: inline-block;
-      background-color: var(--tag);
-      padding: 3px 7px;
-      border-radius: 2px;
-      margin: 0 5px 5px 0;
-      font-size: 0.62rem;
-      font-weight: 600;
-		color: var(--body-bg);
-      border: 1px solid var(--borders);
-    }
-
-    .separator { color: var(--lines); }
-
-    .bg-accent-soft {
-      background-color: var(--main);
-      padding: 8px;
-      margin-top: 4px;
-      border-radius: 4px;
-		color: var(--body-bg);
-      border: 1px dashed var(--borders);
-    }
-
-    .text-ha-end { color: var(--lines); font-weight: 700; }
-    .text-accent-primary { color: var(--headings); }
-    
-	.availability-status {
-	  display: inline-flex;
-      align-items: center;
-	  font-family: var(--font-display);
-	  color: var(--color-primary-text);
-      font-weight: 600;
-	  opacity: 0;
-	  gap: 6px;
-	  animation: sts 1s 2.5s ease-out forwards;
-    }
-@keyframes sts {to {opacity: 0.8}}
-
-    .status-dot {
-      height: 8px;
-      width: 8px;
-      background-color: #fff;
-      border-radius: 50%;
-      display: inline-block;
-	  margin-right: 6px;
-	  animation: neonOn 2s 2s ease-out forwards;
-    }
+.status-dot {
+    height: 8px;
+    width: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    animation: neonOn 2s 2s ease-out forwards;
+}
 
 @keyframes neonOn {
-  0% {
-    box-shadow: none;
-    opacity: 0.2;
-  }
-
-  5% {
-    box-shadow:
-	  box-shadow: /*0 0 4px 1px var(--color-status-green),*/ 0 0 1px 2px var(--color-status-green), inset 0 0 4px var(--color-status-green);
-    opacity: 0.7;
-  }
-
-  15% {
-	  box-shadow: 0 0 4px 1px var(--color-status-green),/*0 0 1px 2px var(--color-status-green), inset 0 0 4px var(--color-status-green)*/;
-    opacity: 0.3;
-  }
-
-  20% {
-      box-shadow: 0 0 4px 1px var(--color-status-green), /*0 0 1px 2px var(--color-status-green),*/ inset 0 0 4px var(--color-status-green);
-    opacity: 0.6;
-  }
-
-  25% {
-    box-shadow: none;
-    opacity: 0.2;
-  }
-
-  30% {
-      box-shadow: 0 0 4px 1px var(--color-status-green), 0 0 1px 2px var(--color-status-green)/*,inset 0 0 4px var(--color-status-green)*/;
-    opacity: 0.8;
-  }
-
-  35% {
-    box-shadow: none;
-    opacity: 0.2;
-  }
-
-  50% {
-      box-shadow: 0 0 4px 1px var(--color-status-green), 0 0 1px 2px var(--color-status-green), inset 0 0 4px var(--color-status-green);
-    opacity: 1;
-  }
-
-  100% {
-      box-shadow: 0 0 1px 1px var(--color-status-green),0 0 4px 1px var(--color-status-green),  inset 0 0 2px 1px var(--color-status-green),inset 0 0 1px 1px #fff;
-	opacity: 0.8;
-  }
+    0% { box-shadow: none; opacity: 0.2; }
+    5% { box-shadow: 0 0 1px 2px var(--color-status-green), inset 0 0 4px var(--color-status-green); opacity: 0.7; }
+    15% { box-shadow: 0 0 4px 1px var(--color-status-green); opacity: 0.3; }
+    20% { box-shadow: 0 0 4px 1px var(--color-status-green), inset 0 0 4px var(--color-status-green); opacity: 0.6; }
+    25% { box-shadow: none; opacity: 0.2; }
+    30% { box-shadow: 0 0 4px 1px var(--color-status-green), 0 0 1px 2px var(--color-status-green); opacity: 0.8; }
+    35% { box-shadow: none; opacity: 0.2; }
+    50% { box-shadow: 0 0 4px 1px var(--color-status-green), 0 0 1px 2px var(--color-status-green), inset 0 0 4px var(--color-status-green); opacity: 1; }
+    100% { box-shadow: 0 0 1px 1px var(--color-status-green), 0 0 4px 1px var(--color-status-green), inset 0 0 2px 1px var(--color-status-green), inset 0 0 1px 1px #fff; opacity: 0.8; }
 }
 
-    /*
-    ============================================================
-    5. PRINT
-    ============================================================
-    */
-    @media print {
-      html, body, .resume-container {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-        .neonOn, .sts {animation: none !important;}
-      }
+.content-body {
+    padding: 6px 15px;
+    border-left: 2px solid var(--color-accent-1);
+    border-bottom: 2px solid var(--color-accent-1);
+    border-right: 2px solid var(--color-accent-1);
+    border-top: 1px solid var(--color-accent-4);
+}
+
+.section {
+    margin-top: 4px;
+    margin-bottom: 4px; 
+}
+
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+    font-weight: 600;
+    color: var(--color-primary-text);
+}
+
+.section-gradient-line {
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(
+        135deg,
+        #3A73D1 0%,
+        #55B749 18%,
+        #F8C300 36%,
+        #E23D28 54%,
+        #F18636 72%,
+        #9A50A1 100%
+    );
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    margin: 6px 0;
+}
+
+.experience-title {
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
+    font-weight: 600;
+    color: var(--color-primary-text);         
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.education-title {
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    font-weight: 700;
+    color: var(--color-primary-text);         
+    margin-bottom: 1px;
+}
+
+.experience-subtitle {
+    font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+    font-weight: 500;
+    color: var(--color-primary-text);
+    margin-bottom: 1px;
+}
+
+.education-location {
+    font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+    font-weight: 500;
+    color: var(--color-accent-3);
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.list-item {
+    margin-bottom: 3px;
+    list-style: square; 
+    color: var(--color-primary-text);
+    margin-left: -20px;
+    margin-right:20px;
+    text-align: justify;
+    font-size: clamp(0.58rem, 0.82vw, 0.8rem);
+    font-weight: 400;
+}
+
+.profile-text {
+    line-height: 1.5; 
+    color: var(--color-primary-text);
+    text-align: justify;
+    font-family: var(--font-body);
+    font-size: clamp(0.58rem, 0.82vw, 0.8rem);
+    font-weight: 400;
+}
+
+.border-left-accent {
+    border-left: 2px solid var(--color-accent-1);
+    padding-left: 15px;
+    margin-bottom: 15px; 
+}
+
+.sub-header {
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary-text);
+    margin-top: 10px; 
+    margin-bottom: 5px; 
+}
+
+.sub-text {
+    color: var(--color-accent-3);
+    font-size: clamp(0.55rem, 0.7vw, 0.75rem);
+    font-weight: 400;
+    text-align: justify;
+}
+
+.tag-group-title {
+    font-size: clamp(0.6rem, 0.9vw, 0.8rem);
+    font-weight: 700;
+    color: var(--color-accent-3);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--color-accent-4); 
+    padding: 1px 1px; 
+    border-radius: 2px; 
+    margin-bottom: 4px;
+    font-size: clamp(0.55rem, 0.8vw, 0.78rem);
+    font-weight: 500;
+    color: var(--color-primary-text);
+    border: 1px solid var(--color-accent-3); 
+}
+
+.separator {
+    display: inline-block;
+	padding: 0 4px;
+    color: var(--color-accent-2);
+    font-size: clamp(0.6rem, 0.9vw, 0.8rem);
+    font-weight: 400;
+}
+
+.bg-accent-soft {
+    padding: 5px;
+    background-color: var(--color-accent-3); 
+    border-radius: 4px;
+    border: 1px dashed var(--color-inverse-text);
+}
+
+.bg-accent-soft .experience-title,
+.bg-accent-soft .education-title {
+    color: var(--color-accent-4);
+    text-shadow: -1px -1px 0 var(--color-primary-text), 1px -1px 0 var(--color-primary-text), -1px 1px 0 var(--color-primary-text), 1px 1px 0 var(--color-primary-text);
+}
+
+.bg-accent-soft .experience-subtitle {
+    color: var(--color-body-bg);
+    font-weight: 500;
+}
+
+.text-ha-end {
+    color: var(--color-accent-2);
+    font-weight: 700;
+    text-shadow: -1px -1px 0 var(--color-primary-text), 1px -1px 0 var(--color-primary-text), -1px 1px 0 var(--color-primary-text), 1px 1px 0 var(--color-primary-text);
+}
+
+.text-accent-primary {
+    color: var(--color-accent-1); 
+    font-weight: 700;
+}
+
+.text-accent-secondary {
+    color: var(--color-accent-2); 
+    font-weight: 700;
+}
+
+.text-accent-tertiary {
+    color: var(--color-accent-3); 
+    font-weight: 700;
+}
+
+    .text-accent-color-2 {
+		color: var(--color-accent-2);
+		font-weight: 700;
+		text-shadow:
+		-1px -1px 0 var(--color-accent-4),
+		1px -1px 0 var(--color-accent-4),
+		-1px 1px 0 var(--color-accent-4),
+		1px 1px 0 var(--color-accent-4);
     }
-  </style>
+    .text-accent-color-1 {
+        color: var(--color-primary-text); 
+        font-weight: 700;
+		text-shadow: 
+		-1px -1px 2px var(--color-accent-4),
+		1px -1px 1px var(--color-accent-4),
+		-1px 1px 1px var(--color-accent-4),
+		1px 1px 1px var(--color-accent-4);
+    }
+    .text-accent-color { 
+        color: var(--color-inverse-text); 
+        font-weight: 400;
+		text-shadow: 0 0 1px var(--color-accent-1);
+		/*-1px -1px 0 var(--color-inverse-text),
+		1px -1px 0 var(--color-inverse-text),
+		-1px 1px 0 var(--color-inverse-text),
+		1px 1px 0 var(--color-inverse-text);*/
+    }
+
+@media print {
+html, body, .resume-container {
+-webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+.neonOn, .sts {animation: none !important;}
+    }
+}
+</style>
 </head>
-
 <body>
-  <main class="resume-container">
+<div class="resume-container">
+<div class="header">
+<div class="header-name">Rohan Prabhu</div>
+<div class="header-row">
+	<span class="status-dot"></span><span class="availability-status">Available for Immediate Start</span>
+</div>
+<div class="header-row text-accent-tertiary">
+<span>Melbourne, VIC</span><span class="separator">·</span><a href="https://rsp-69.github.io/ETS/" class="text-accent-primary">✧ Work Portfolio</a><span class="separator">·</span><a href="mailto:rohan.prabhu24@gmail.com" class="contact-link">rohan.prabhu24@gmail.com</a><span class="separator">·</span><span>0415068437</span>
+ </div>
+</div>
+<div class="content-body">
+        <div class="section">
+                <div class="section-title">:: PROFESSIONAL PROFILE ::</div>
+<div class="section-gradient-line"></div>
+<div class="profile-text">My career has been defined by the&nbsp;thrill of taking Data on its true calling—the journey from Data&rarr;Information&rarr;Knowledge&rarr;Wisdom. I achieve this through one-click automations like building 'Launchpad' in Excel & teaching myself JSON in 3 days to solve a hardware puzzle. With a decade in FMCG, I specialise in leveraging data across <b>supply chain</b>, <b>sales</b>, & <b>inventory</b> to drive <b>operational efficiency</b>.</div>
+</div>
+        <div class="section"><div class="section-title">:: TECHNICAL SKILLS ::</div>
+<div class="section-gradient-line"></div>
+            </div>
+            <div>
+            <span class="tag-group-title">PROGRAMMING TOOLS</span>
+            <span class="tag">Advanced Excel (VBA, Macros)</span><span class="separator">|</span><span class="tag">SQL (Querying & Optimisation)</span><span class="separator">|</span><span class="tag">ERP & WMS</span><span class="separator">|</span><span class="tag">CSS, HTML, C++</span><span class="separator">|</span><span class="tag">JSON & RestFUL APIs (self-taught)</span><span class="separator">|</span><span class="tag">YAML & iOS Shortcuts Scripting (self-taught)</span></div>
+            <div>
+<span class="tag-group-title">DATA ANALYSIS & STRATEGY</span>
+<span class="tag">Business Intelligence</span><span class="separator">|</span>
+<span class="tag">Inventory Management & Control</span><span class="separator">|</span><span class="tag">Stock Auditing & Reconciliation</span><span class="separator">|</span>
+<span class="tag">Sales Analysis & Trend Forecasting</span><span class="separator">|</span><span class="tag">Pricing & Margin Analysis</span><span class="separator">|</span><span class="tag">ETL Data Processing</span>
+            </div>
+            <div>
+                <span class="tag-group-title">CORE COMPETENCIES</span>
+                <span class="tag">Stakeholder Engagement</span><span class="separator">|</span><span class="tag">Process Automation</span><span class="separator">|</span><span class="tag">Project Management</span><span class="separator">|</span><span class="tag">Data Integrity & Validation</span><span class="separator">|</span><span class="tag">Promo Forecasting</span><span class="separator">|</span><span class="tag">Compliance & Auditing</span><span class="separator">|</span><span class="tag">3PL Management</span><span class="separator">|</span><span class="tag">Demand Planning</span>
+            </div>
+<div class="section">
+<div class="section-title">:: KEY TECHNICAL PROJECT ::</div>
+<div class="section-gradient-line"></div>
 
-    <!-- HEADER -->
-    <header class="header">
-      <h1>Rohan Prabhu</h1>
-
-      <div class="contact-info">
-        <span>Melbourne, VIC</span>・<a href="mailto:rohan.prabhu24@gmail.com" class="contact-link">rohan.prabhu24@gmail.com</a>・<span class="contact-link">0415 068 437</span> 
-・<a class="separator" "href="https://rsp-69.github.io/ETS/index.html" class="contact-link">ETS</a>
-      </div>
-
-      <div class="availability-status">
-        <span class="status-dot"></span>Available for Immediate Start
-      </span>
-    </header>
-
-    <div class="content-body">
-
-      <!-- PROFESSIONAL PROFILE -->
-      <section class="section">
-        <header class="custom-header-container">
-          <h3 class="section-title">PROFESSIONAL PROFILE</h3>
-			<div class="custom-line">
-			</div>
-        </header>
-
-        <p class="profile-text">
-          Architect of 'Zero-Failure' operational workflows and ERP-grade ecosystems solo-engineered within the VBA/Excel framework. My technical foundation includes three years of daily SQL engineering (2016–2019), providing a deep understanding of relational databases and data integrity. I specialize in Last Mile forensics, developing proprietary diagnostic tools like 'The Trident' that outperform high-budget corporate initiatives. Having reached the technical peak of localized tools, I am seeking to translate this proven architectural logic into Coles’ Python and R environments to drive national-scale Last Mile transformation.
-        </p>
-      </section>
-
-      <!-- TECHNICAL SKILLS -->
-      <section class="section">
-        <header class="custom-header-container">
-          <h3 class="section-title">TECHNICAL SKILLS</h3>
-			<div class="custom-line">
-			</div>
-        </header>
-        <div>
-          <span class="tag-group-title">PROGRAMMING AND TOOLS</span>
-          <span class="tag">C++</span><span class="separator">|</span>
-          <span class="tag">Java</span><span class="separator">|</span>
-          <span class="tag">HTML5/CSS3</span><span class="separator">|</span>
-          <span class="tag">Advanced Excel (VBA)</span><span class="separator">|</span>
-          <span class="tag">SQL (MySQL/PostgreSQL)</span><span class="separator">|</span>
-          <span class="tag">JSON &amp; RESTful APIs</span><span class="separator">|</span>
-          <span class="tag">Python (Data Automation)</span>
-        </div>
-
-        <div>
-          <span class="tag-group-title">DATA ANALYSIS AND STRATEGY</span>
-          <span class="tag">Forensic Data Modeling</span><span class="separator">|</span>
-          <span class="tag">Unique ID Integrity Logic</span><span class="separator">|</span>
-          <span class="tag">ETL Processing</span><span class="separator">|</span>
-          <span class="tag">Predictive Supply Chain Modeling</span><span class="separator">|</span>
-          <span class="tag">Service Level Analytics</span>
-        </div>
-
-        <div>
-          <span class="tag-group-title">CORE COMPETENCIES</span>
-          <span class="tag">Last Mile Optimization</span><span class="separator">|</span>
-          <span class="tag">PLM Ecosystem Design</span><span class="separator">|</span>
-          <span class="tag">Satellite Hub Strategy</span><span class="separator">|</span>
-          <span class="tag">Coles Express (P&amp;C) Channel Mgmt</span><span class="separator">|</span>
-          <span class="tag">SLA Performance Monitoring</span>
-        </div>
-      </section>
-
-      <!-- KEY TECHNICAL PROJECT -->
-      <section class="section">
-        <header class="custom-header-container">
-          <h3 class="section-title">KEY TECHNICAL PROJECT</h3>
-			<div class="custom-line">
-			</div>
-        </header>
-
-        <article class="bg-accent-soft">
-          <h4 class="experience-title">UNIFIED P.L.M. TOOLKIT and FORENSIC INVESTIGATOR TRIDENT</h4>
-          <p class="experience-subtitle">// ENTERPRISE GOLD STANDARD ARCHITECTURE //</p>
-
+<div class="bg-accent-soft">
+<div class="experience-title">UNIFIED P.L.M. TOOLKIT & FORENSIC INVESTIGATOR TRIDENT</div>
+<div class="experience-subtitle">✧ ENTERPRISE GOLD STANDARD ARCHITECTURE ✧</div>
           <ul>
             <li class="list-item">
-              <strong>The Achievement:</strong> Solo-engineered a 6-stage closed-loop PLM ecosystem that resolved critical data-integrity flaws and reduced excess stock liability by <strong>75%</strong> nationally.
-            </li>
+              <strong>The Achievement:</strong><span class="profile-text">Solo-engineered a 6-stage closed-loop PLM ecosystem that resolved critical data-integrity flaws and reduced excess stock liability by <strong>75%</strong> nationally.</span></li>
             <li class="list-item">
-              <strong>Technical Supremacy:</strong> Provided foundational algorithms and source code for digital transformations; my architecture became the baseline against which high-budget external initiatives were evaluated.
-            </li>
+              <strong>Technical Supremacy:</strong> Provided foundational algorithms and source code for digital transformations; my architecture became the baseline against which high-budget external initiatives were evaluated.</li>
           </ul>
-        </article>
-      </section>
+	</div>
+</div>
 
-      <!-- PROFESSIONAL EXPERIENCE -->
-      <section class="section">
-        <header class="custom-header-container">
-          <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
-			<div class="custom-line">
-			</div>
-        </header>
+<div class="section">
+<div class="section-title">:: PROFESSIONAL EXPERIENCE ::</div>
+<div class="section-gradient-line"></div>
+<div class="border-left-accent">
+<div class="experience-title"><span class="text-accent-color-1">NATIONAL SUPPLY CHAIN ANALYST</span></div>
+<div class="experience-subtitle">PFD FOODSERVICES, Melbourne<span class="separator">-</span><span class="text-accent-primary">2016 - 2025</span></div>
 
-        <article class="border-left-accent">
-          <h3 class="experience-title">NATIONAL SUPPLY CHAIN ANALYST</h3>
-          <span class="text-accent-primary">
-            PFD FOOD SERVICES | <span class="text-accent-primary">AUG’16 – DEC’25</span>
-          </span>
+<div class="sub-text">Functional role since 2021 has focused on supply chain optimization and engineering enterprise-grade automation tools. <b>PREVIOUS Caps:</b> Data Analyst; Sales Support, IT Officer, Data Warehouse Admin</div>
 
-          <h4 class="sub-header"><strong>Key Achievements</strong></h4>
+<div class="sub-header"><strong>KEY ACHIEVEMENTS</strong></div>
+	<ul>
+		<li class="list-item" id="ach-slot-1"></li>
+		<li class="list-item" id="ach-slot-2"></li>
+		<li class="list-item" id="ach-slot-3"></li>
+		<li class="list-item" id="ach-slot-4"></li>
+		<li class="list-item" id="ach-slot-5"></li>
+	</ul>
+<div class="bg-accent-soft experience-title">Follow <a href="https://rsp-69.github.io/ETS/achievements.html" class="text-accent-color">My GitHub<a> link for more achievements</div>
+</div>
+<!-- === SECTION 5: EDUCATION === -->
+<div class="section">
+<div class="section-title">:: EDUCATION ::</div>
+<div class="section-gradient-line"></div>
+<div class="education-title">MASTER OF BUSINESS INFORMATION TECHNOLOGY
+<div class="education-location">RMIT University, Melbourne<span class="text-accent-primary"><span class="separator">-</span>2013 - 2015</span></div>
+</div>
+<div class="education-title">BACHELOR OF INFORMATION TECHNOLOGY
+<div class="education-location">University of Mumbai, India<span class="text-accent-primary"><span class="separator">-</span>2008 - 2012</span></div>
+</div>
+</div>
 
-          <ul>
-            <li class="list-item" id="ach-slot-1"></li>
-            <li class="list-item" id="ach-slot-2"></li>
-            <li class="list-item" id="ach-slot-3"></li>
-            <li class="list-item" id="ach-slot-4"></li>
-            <li class="list-item" id="ach-slot-5"></li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- EDUCATION -->
-      <section class="section">
-        <header class="custom-header-container">
-          <h3 class="section-title">EDUCATION</h3>
-			<div class="custom-line">
-			</div>
-        </header>
-          <article>
-            <p><span class="education-title">MASTER OF BUSINESS INFORMATION TECHNOLOGY</span>
-<span class="education-location">RMIT UNIVERSITY <span class="text-accent-primary">| 2013 - 2015</span></span>
-            </p>
-          </article>
-
-          <article>
-            <p><span class="education-title">BACHELOR OF INFORMATION TECHNOLOGY</span>
-<span class="education-location">UNIVERSITY OF MUMBAI, INDIA <span class="text-accent-primary">| 2008 - 2012</span></span>
-            </p>
-          </article>
-      </section>
-
-      <!-- INTERESTS -->
-      <section class="section">
-        <header class="custom-header-container">
-          <h3 class="section-title">INTERESTS & PERSONAL INSIGHTS</h3>
-			<div class="custom-line">
-			</div>
-			
-        <div class="bg-accent-soft">
-          <div class="profile-text" style="font-size:0.75rem; line-height: 1.3;">
+<!-- INTERESTS -->
+<div class="section">
+<div class="section-title">:: INTERESTS ::</div>
+<div class="section-gradient-line"></div>	
+<div class="bg-accent-soft">
 			<ul>
-			<li class="list-item">I have been teaching myself Japanese - I enjoy learning complex systems from scratch</li>
-			<li class="list-item">The lights at my place adjust based on outside brightness (ask me how).</li>
+			<li class="list-item">I have been teaching myself Japanese since 2022.</li>
+			<li class="list-item">The lights at mine adjust based on outside brightness (ask me how).</li>
 			<li class="list-item">I pick up patterns in people the same way I do in data.</li>
 			</ul>
-          </div>
-        </div>
-      </section>
-	</div>
-  </main>
-
+</div>
+</div>
+</div>
 <!-- External achievements data -->
 <script src="theme-loader.js"></script>
 <script src="achievements.js"></script>
 <script src="achievementFormatter.js"></script>
-
 <script>
 
   function safeGetJSON(key, fallback) {
@@ -518,7 +486,7 @@
 
   // Load selected achievements from Achievement Selector
   document.addEventListener("DOMContentLoaded", () => {
-activeIDs = safeGetJSON("ETS_SELECTED_ACHIEVEMENTS", [7,4,9,19,20]);
+activeIDs = safeGetJSON("ETS_SELECTED_ACHIEVEMENTS", [7, 4, 9, 19, 20]);
     swapAchievements();
   });
 </script>
