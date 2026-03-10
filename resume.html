@@ -8,29 +8,24 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&family=Baumans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baumans:wght@400;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/*
-============================================================
-    1. CORE VARIABLES & BASE
-    ============================================================
-    */
     :root {
-      --body-bg: #013220;
-      --text: #F4EAD5;
-      --color-inverse-text: #FFFFFF;
-      --headings: #2EBB57;
-      --subheadings: #FFB703;
-      --lines: #F4C430;
-      --main: #161616;
-      --borders: #F4C430;	
+      --body-bg: #FFFFFB;
+      --text: #1C2B39;
+      --color-inverse-text: #FFFFFB;
+      --headings: #3A6EA5;
+      --subheadings: #C7242C;
+      --lines: #5F6D79;
+      --main: #5F6D79;
+      --borders: #DADADA;	
       --color-status-green: #34BF49;
       --pg-bg: var(--main);
 	  --tag: var(--main);
       --font-header: 'Baumans',sans-serif;
       --font-body: 'Jost', sans-serif;
     }
-
+		
     body {
 	z-index:5;
       margin: 0;
@@ -41,9 +36,6 @@
       line-height: 1.32;
     }
 
-    /*  ============================================================
-    2. LAYOUT CONTAINERS  ============================================================
-    */
     .resume-container {
 	z-index:10;
       max-width: 800px;
@@ -70,10 +62,6 @@
       margin-bottom: 10px;
     }
 
-/* ============================================================
-    3. HEADER & CONTACT MODULE
-    ============================================================
-    */
     .header {
       background-color: var(--body-bg);
       color: var(--text);
@@ -82,7 +70,7 @@
       border-bottom: 2px solid var(--borders);
     }
 
-    .header h1 {
+    .header-name {
       font-family: var(--font-header);
       font-size: 2.05rem;
       font-weight: 400;
@@ -110,10 +98,12 @@
       align-items: center;
       font-size: 0.65rem;
       font-weight: 700;
-      color: var(--color-status-green);
-      text-transform: uppercase;
+		opacity:0;
       letter-spacing: 0.04em;
+	  animation: sts 1s 4s ease-out forwards;
     }
+@keyframes sts {
+to{opacity:1;}}
 
     .status-dot {
       height: 9px;
@@ -122,19 +112,66 @@
       border-radius: 50%;
       display: inline-block;
       margin-right: 6px;
-      box-shadow: 0 0 4px var(--color-status-green);
+      box-shadow: 0 0 4px 1px var(--color-status-green), inset 0 0 2px 4px #fff;
+	  opacity:0;
+	  animation: neonOn 4s 4s ease-out forwards;
     }
 
-/*COMPONENT MODULES*/
+@keyframes neonOn {
+  0% {
+    box-shadow: none;
+    opacity: 0.2;
+  }
+
+  5% {
+	  box-shadow: 0 0 1px 2px var(--color-status-green), inset 0 0 4px #fff;
+    opacity: 0.7;
+  }
+
+  15% {
+	  box-shadow: 0 0 4px 1px var(--color-status-green);
+    opacity: 0.3;
+  }
+
+  20% {
+      box-shadow: 0 0 4px 1px var(--color-status-green), inset 0 0 4px var(--color-status-green);
+    opacity: 0.6;
+  }
+
+  25% {
+    box-shadow: none;
+    opacity: 0.2;
+  }
+
+  30% {
+      box-shadow: 0 0 4px 1px var(--color-status-green), 0 0 1px 2px var(--color-status-green);
+    opacity: 0.8;
+  }
+
+  35% {
+    box-shadow: none;
+    opacity: 0.2;
+  }
+
+  50% {
+      box-shadow: 0 0 4px 1px #fff, 0 0 1px 2px var(--color-status-green), inset 0 0 4px var(--color-status-green);
+    opacity: 1;
+  }
+
+  100% {
+      box-shadow: 0 0 1px 1px #fff,0 0 4px 1px var(--color-status-green),  inset 0 0 2px 2px var(--color-status-green),inset 0 0 4px 4px #fff;
+	opacity: 0.85;
+  }
+}
 
     .custom-header-container {
       margin-bottom: 10px;
     }
 
-	.custom-line {
+.custom-line {
 	height: 2px;
 	width: 100%;
-  background-image: linear-gradient(to right, var(--main) 0%, var(--headings) 25%, var(--subheadings) 50%, var(--lines) 75%, var(--borders) 100%);
+	background-image: linear-gradient(to right, var(--main) 0%, var(--headings) 25%, var(--subheadings) 50%, var(--lines) 75%, var(--borders) 100%);
 }
 
     .section-title {
@@ -232,11 +269,6 @@
     .text-ha-end { color: var(--lines); font-weight: 700; }
     .text-accent-primary { color: var(--headings); }
 
-    /*
-    ============================================================
-    5. PRINT
-    ============================================================
-    */
     @media print {
       body { padding: 0; background: white; }
       .resume-container { box-shadow: none; border: none; width: 100%; max-width: 100%; }
@@ -250,18 +282,13 @@
 
 <body>
   <main class="resume-container">
-
-    <!-- HEADER -->
     <header class="header">
-      <h1>Rohan Prabhu</h1>
-
-      <div class="contact-info">
-        <span>Melbourne, VIC</span>・<a href="mailto:rohan.prabhu24@gmail.com" class="contact-link">rohan.prabhu24@gmail.com</a>・<span class="contact-link">0415 068 437</span> 
-・<a class="separator" "href="https://rsp-69.github.io/ETS/index.html" class="contact-link">ETS</a>
-      </div>
-
+      <div class="header-name">Rohan Prabhu</div>
       <div class="availability-status">
         <span class="status-dot"></span>Available for Immediate Start
+      </div>
+      <div class="contact-info">
+        <span>Melbourne, VIC</span><a href="https://rsp-69.github.io/ETS/index.html" class="contact-link">Work Portfolio</a><a href="mailto:rohan.prabhu24@gmail.com" class="contact-link">rohan.prabhu24@gmail.com</a><span class="contact-link">0415 068 437</span>
       </div>
     </header>
 
@@ -270,63 +297,48 @@
       <!-- PROFESSIONAL PROFILE -->
       <section class="section">
         <header class="custom-header-container">
-          <h3 class="section-title">PROFESSIONAL PROFILE</h3>
+          <div class="section-title">PROFESSIONAL PROFILE</div>
 			<div class="custom-line">
 			</div>
         </header>
 
         <p class="profile-text">
-          Architect of 'Zero-Failure' operational workflows and ERP-grade ecosystems solo-engineered within the VBA/Excel framework. My technical foundation includes three years of daily SQL engineering (2016–2019), providing a deep understanding of relational databases and data integrity. I specialize in Last Mile forensics, developing proprietary diagnostic tools like 'The Trident' that outperform high-budget corporate initiatives. Having reached the technical peak of localized tools, I am seeking to translate this proven architectural logic into Coles’ Python and R environments to drive national-scale Last Mile transformation.
+I specialise in diagnosing broken operational systems and rebuilding them into clean, reliable, automated workflows. Across national supply chains, last‑mile networks, and enterprise data environments, I’ve consistently taken ambiguous, multi‑site problems and turned them into structured architectures that eliminate failure points and restore integrity. My work blends forensic analysis with system design: trace the root cause, model the logic, automate the fix, and ensure the solution scales across every site. I translate complex operational behaviour into tools, processes, and data structures that teams can trust, enabling faster decisions, higher accuracy, and resilient performance across the entire network.
         </p>
       </section>
 
       <!-- TECHNICAL SKILLS -->
       <section class="section">
         <header class="custom-header-container">
-          <h3 class="section-title">TECHNICAL SKILLS</h3>
+          <div class="section-title">TECHNICAL SKILLS</div>
 			<div class="custom-line">
 			</div>
         </header>
         <div>
-          <span class="tag-group-title">PROGRAMMING AND TOOLS</span>
-          <span class="tag">C++</span><span class="separator">|</span>
-          <span class="tag">Java</span><span class="separator">|</span>
-          <span class="tag">HTML5/CSS3</span><span class="separator">|</span>
-          <span class="tag">Advanced Excel (VBA)</span><span class="separator">|</span>
-          <span class="tag">SQL (MySQL/PostgreSQL)</span><span class="separator">|</span>
-          <span class="tag">JSON &amp; RESTful APIs</span><span class="separator">|</span>
-          <span class="tag">Python (Data Automation)</span>
-        </div>
-
-        <div>
-          <span class="tag-group-title">DATA ANALYSIS AND STRATEGY</span>
-          <span class="tag">Forensic Data Modeling</span><span class="separator">|</span>
-          <span class="tag">Unique ID Integrity Logic</span><span class="separator">|</span>
-          <span class="tag">ETL Processing</span><span class="separator">|</span>
-          <span class="tag">Predictive Supply Chain Modeling</span><span class="separator">|</span>
-          <span class="tag">Service Level Analytics</span>
-        </div>
-
-        <div>
-          <span class="tag-group-title">CORE COMPETENCIES</span>
-          <span class="tag">Last Mile Optimization</span><span class="separator">|</span>
-          <span class="tag">PLM Ecosystem Design</span><span class="separator">|</span>
-          <span class="tag">Satellite Hub Strategy</span><span class="separator">|</span>
-          <span class="tag">Coles Express (P&amp;C) Channel Mgmt</span><span class="separator">|</span>
-          <span class="tag">SLA Performance Monitoring</span>
-        </div>
+            <span class="tag-group-title">PROGRAMMING TOOLS</span>
+            <span class="tag">Advanced Excel (VBA, Macros)</span><span class="separator">|</span><span class="tag">SQL (Querying & Optimisation)</span><span class="separator">|</span><span class="tag">ERP & WMS</span><span class="separator">|</span><span class="tag">CSS, HTML, C++</span><span class="separator">|</span><span class="tag">JSON & RestFUL APIs (self-taught)</span><span class="separator">|</span><span class="tag">YAML & iOS Shortcuts Scripting (self-taught)</span></div>
+            <div>
+<span class="tag-group-title">DATA ANALYSIS & STRATEGY</span>
+<span class="tag">Business Intelligence</span><span class="separator">|</span>
+<span class="tag">Inventory Management & Control</span><span class="separator">|</span><span class="tag">Stock Auditing & Reconciliation</span><span class="separator">|</span>
+<span class="tag">Sales Analysis & Trend Forecasting</span><span class="separator">|</span><span class="tag">Pricing & Margin Analysis</span><span class="separator">|</span><span class="tag">ETL Data Processing</span>
+            </div>
+            <div>
+                <span class="tag-group-title">CORE COMPETENCIES</span>
+                <span class="tag">Stakeholder Engagement</span><span class="separator">|</span><span class="tag">Process Automation</span><span class="separator">|</span><span class="tag">Project Management</span><span class="separator">|</span><span class="tag">Data Integrity & Validation</span><span class="separator">|</span><span class="tag">Promo Forecasting</span><span class="separator">|</span><span class="tag">Compliance & Auditing</span><span class="separator">|</span><span class="tag">3PL Management</span><span class="separator">|</span><span class="tag">Demand Planning</span>
+            </div>
       </section>
 
       <!-- KEY TECHNICAL PROJECT -->
       <section class="section">
         <header class="custom-header-container">
-          <h3 class="section-title">KEY TECHNICAL PROJECT</h3>
+          <div class="section-title">KEY TECHNICAL PROJECT</div>
 			<div class="custom-line">
 			</div>
         </header>
 
         <article class="bg-accent-soft">
-          <h4 class="experience-title">UNIFIED P.L.M. TOOLKIT and FORENSIC INVESTIGATOR TRIDENT</h4>
+          <div class="experience-title">UNIFIED P.L.M. TOOLKIT and FORENSIC INVESTIGATOR TRIDENT</div>
           <p class="experience-subtitle">// ENTERPRISE GOLD STANDARD ARCHITECTURE //</p>
 
           <ul>
@@ -343,18 +355,18 @@
       <!-- PROFESSIONAL EXPERIENCE -->
       <section class="section">
         <header class="custom-header-container">
-          <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
+          <div class="section-title">PROFESSIONAL EXPERIENCE</div>
 			<div class="custom-line">
 			</div>
         </header>
 
         <article class="border-left-accent">
-          <h3 class="experience-title">NATIONAL SUPPLY CHAIN ANALYST</h3>
+          <div class="experience-title">NATIONAL SUPPLY CHAIN ANALYST</div>
           <span class="text-accent-primary">
             PFD FOOD SERVICES | <span class="text-accent-primary">AUG’16 – DEC’25</span>
           </span>
 
-          <h4 class="sub-header"><strong>Key Achievements</strong></h4>
+          <div class="sub-header"><strong>Key Achievements</strong></div>
 
           <ul>
             <li class="list-item" id="ach-slot-1"></li>
@@ -369,7 +381,7 @@
       <!-- EDUCATION -->
       <section class="section">
         <header class="custom-header-container">
-          <h3 class="section-title">EDUCATION</h3>
+          <div class="section-title">EDUCATION</div>
 			<div class="custom-line">
 			</div>
         </header>
@@ -389,15 +401,14 @@
       <!-- INTERESTS -->
       <section class="section">
         <header class="custom-header-container">
-          <h3 class="section-title">INTERESTS & PERSONAL INSIGHTS</h3>
+          <div class="section-title">INTERESTS</div>
 			<div class="custom-line">
 			</div>
 			
         <div class="bg-accent-soft">
-          <div class="profile-text" style="font-size:0.75rem; line-height: 1.3;">
 			<ul>
-			<li class="list-item">I have been teaching myself Japanese - I enjoy learning complex systems from scratch</li>
-			<li class="list-item">The lights at my place adjust based on outside brightness (ask me how).</li>
+			<li class="list-item">I have been teaching myself Japanese since 2022.</li>
+			<li class="list-item">The lights at my place adjust based on outside brightness (<a href="https://rsp-69.github.io/ETS/index.html" class="text-accent-primary">ask me how</a>).</li>
 			<li class="list-item">I pick up patterns in people the same way I do in data.</li>
 			</ul>
           </div>
