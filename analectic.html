@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analectic — Supply Chain Systems</title>
+  <link rel="stylesheet" href="os.css" />
+  <link rel="stylesheet" href="analectic.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="bg-base"></div>
+<div class="bg-linear"></div>
+<div class="bg-radial"></div>
+<div class="bg-ember"></div>
+
+<nav class="top-nav">
+  <a href="https://www.linkedin.com/in/rronniee" class="glass-text">RSP</a>
+  <a href="index.html" class="glass-text">Home</a>
+  <a href="achievements.html" class="glass-text">Achievements</a>
+  <a href="projects.html" class="glass-text">Personal Projects</a>
+  <a href="analectic.html" class="active glass-text">Analectic</a>
+  <a href="about.html" class="glass-text">About ETS</a>
+</nav>
+
+<!-- HEADER -->
+<header class="ana-header">
+  <div class="ana-eyebrow">Supply Chain Systems Portfolio</div>
+  <h1 class="ana-title"><strong>Analectic</strong> Distribution</h1>
+  <p class="ana-subtitle">
+    A fictional food distribution company used to demonstrate real supply chain systems architecture —
+    product lifecycle management, automated diagnostics, and multi-layer analytics engines,
+    rebuilt from first principles in HTML, CSS, and JavaScript.
+  </p>
+  <div class="ana-badge">Synthetic data · Real methodology · No vendor tools</div>
+</header>
+
+<!-- TOOL GRID -->
+<main>
+  <div class="ana-grid" id="toolGrid">
+
+    <!-- CARD 01: LAUNCHPAD -->
+    <div class="tool-card" id="card-launchpad" onclick="toggleCard('launchpad')">
+      <div class="tool-id">Tool 01</div>
+      <h3 class="tool-name">Launchpad</h3>
+      <p class="tool-desc">
+        The central PLM control panel. A single-screen command centre showing live SKU health,
+        pipeline status, and flagged items requiring action — the first thing opened every morning.
+      </p>
+      <div class="tool-tags">
+        <span class="tool-tag">PLM</span>
+        <span class="tool-tag">Control Panel</span>
+        <span class="tool-tag">Dashboard</span>
+      </div>
+      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('launchpad')">
+        Explore tool <span class="toggle-arrow">▾</span>
+      </button>
+      <div class="tool-panel" id="panel-launchpad">
+        <div class="tool-panel-inner">
+          <div class="metric-row" id="launchpad-metrics"></div>
+          <div class="bar-chart" id="launchpad-bars"></div>
+          <div class="panel-insight">
+            Launchpad's job isn't to show everything — it's to show the right things. Every figure here
+            triggers a downstream action. SKUs in the red column don't leave this screen without an owner.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 02: DEATH SPIRAL DIAGNOSTIC -->
+    <div class="tool-card" id="card-spiral" onclick="toggleCard('spiral')">
+      <div class="tool-id">Tool 02</div>
+      <h3 class="tool-name">Death Spiral Diagnostic</h3>
+      <p class="tool-desc">
+        Identifies SKUs entering a self-reinforcing decline — falling sales reducing reorder confidence,
+        which reduces availability, which accelerates the fall. Catches it before the business notices.
+      </p>
+      <div class="tool-tags">
+        <span class="tool-tag">Diagnostic</span>
+        <span class="tool-tag">Risk Detection</span>
+        <span class="tool-tag">Threshold Logic</span>
+      </div>
+      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('spiral')">
+        Explore tool <span class="toggle-arrow">▾</span>
+      </button>
+      <div class="tool-panel" id="panel-spiral">
+        <div class="tool-panel-inner">
+          <div class="status-table-wrap" id="spiral-table"></div>
+          <div class="panel-insight">
+            A SKU enters Death Spiral territory when declining velocity, low stock cover, and falling
+            branch range converge simultaneously. Each factor alone is manageable. Together, they compound.
+            This tool makes the pattern visible before it becomes a write-off.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 03: DAILY REPORTING ENGINE -->
+    <div class="tool-card" id="card-report" onclick="toggleCard('report')">
+      <div class="tool-id">Tool 03</div>
+      <h3 class="tool-name">Daily Reporting Engine</h3>
+      <p class="tool-desc">
+        Automated morning snapshot that generates channel-specific reports from overnight inventory data.
+        Zero manual intervention. Each output formatted for its audience — operations, sales, and procurement.
+      </p>
+      <div class="tool-tags">
+        <span class="tool-tag">Automation</span>
+        <span class="tool-tag">Reporting</span>
+        <span class="tool-tag">Multi-channel</span>
+      </div>
+      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('report')">
+        Explore tool <span class="toggle-arrow">▾</span>
+      </button>
+      <div class="tool-panel" id="panel-report">
+        <div class="tool-panel-inner">
+          <div id="report-output"></div>
+          <div class="panel-insight">
+            The engine doesn't just automate distribution — it applies audience logic. The operations
+            report flags availability gaps. The sales report surfaces opportunity. The procurement report
+            prioritises reorder urgency. Same data. Three different truths.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 04: LOGISTICS INVESTIGATOR TRIDENT -->
+    <div class="tool-card" id="card-trident" onclick="toggleCard('trident')">
+      <div class="tool-id">Tool 04</div>
+      <h3 class="tool-name">Logistics Investigator — Trident</h3>
+      <p class="tool-desc">
+        Three interdependent audit tools that cross-reference delivery performance, claim validity,
+        and branch-level discrepancies. Designed to surface what individual reports can't see alone.
+      </p>
+      <div class="tool-tags">
+        <span class="tool-tag">Audit</span>
+        <span class="tool-tag">Logistics</span>
+        <span class="tool-tag">Cross-reference</span>
+        <span class="tool-tag">Claims</span>
+      </div>
+      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('trident')">
+        Explore tool <span class="toggle-arrow">▾</span>
+      </button>
+      <div class="tool-panel" id="panel-trident">
+        <div class="tool-panel-inner">
+          <div class="status-table-wrap" id="trident-table"></div>
+          <div class="panel-insight">
+            Trident's power is in the intersection. Prong one sees delivery timing. Prong two sees
+            credit claims. Prong three sees branch receipts. A discrepancy in one prong is a query.
+            A discrepancy across all three is a finding.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 05: SLA ANALYTICS ENGINE -->
+    <div class="tool-card" id="card-sla" onclick="toggleCard('sla')">
+      <div class="tool-id">Tool 05</div>
+      <h3 class="tool-name">SLA Analytics Engine</h3>
+      <p class="tool-desc">
+        Triple-layer service level analysis across supplier, distribution, and branch tiers.
+        Identifies where in the chain performance is degrading and quantifies the downstream impact.
+      </p>
+      <div class="tool-tags">
+        <span class="tool-tag">SLA</span>
+        <span class="tool-tag">Performance</span>
+        <span class="tool-tag">3-tier Analysis</span>
+      </div>
+      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('sla')">
+        Explore tool <span class="toggle-arrow">▾</span>
+      </button>
+      <div class="tool-panel" id="panel-sla">
+        <div class="tool-panel-inner">
+          <div class="metric-row" id="sla-metrics"></div>
+          <div class="bar-chart" id="sla-bars"></div>
+          <div class="panel-insight">
+            A 94% supplier fill rate sounds healthy — until you trace which SKUs missed.
+            When high-velocity lines underperform, the branch-level SLA collapse is
+            disproportionate. The engine maps that cascade so the right conversation
+            happens with the right supplier.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /ana-grid -->
+</main>
+
+<div class="ana-footer-note">
+  Analectic Distribution is a fictional entity. All data is synthetic and generated for demonstration purposes.<br>
+  Built as part of <a href="index.html">ETS</a> — an OS-grade professional profile by RSP.
+</div>
+
+<script>
+// ============================================================
+// SYNTHETIC DATA
+// ============================================================
+
+const analecticData = {
+  launchpad: {
+    metrics: [
+      { label: "Active SKUs",   value: "4,812",  cls: "" },
+      { label: "In Pipeline",   value: "138",    cls: "" },
+      { label: "At Risk",       value: "23",     cls: "warn" },
+      { label: "Exiting",       value: "11",     cls: "warn" },
+      { label: "Branches",      value: "62",     cls: "" },
+      { label: "Fill Rate",     value: "91.4%",  cls: "ok" },
+    ],
+    bars: [
+      { label: "Dairy & Chilled",  val: 94, pct: 94 },
+      { label: "Ambient Grocery",  val: 88, pct: 88 },
+      { label: "Frozen",           val: 76, pct: 76 },
+      { label: "Beverages",        val: 91, pct: 91 },
+      { label: "Foodservice",      val: 69, pct: 69, danger: true },
+    ]
+  },
+
+  spiral: [
+    { sku: "ANL-00291", name: "Chilli Sauce 500ml",     velocity: "↓ 38%", cover: "4d",  range: "↓ 14br", status: "critical" },
+    { sku: "ANL-00447", name: "Coconut Milk 400ml",     velocity: "↓ 22%", cover: "7d",  range: "↓ 8br",  status: "warn" },
+    { sku: "ANL-00812", name: "Pasta Sauce Arrabbiata", velocity: "↓ 17%", cover: "9d",  range: "↓ 5br",  status: "warn" },
+    { sku: "ANL-01103", name: "Rice Flour 1kg",         velocity: "↓ 44%", cover: "3d",  range: "↓ 19br", status: "critical" },
+    { sku: "ANL-01388", name: "Tahini 375g",            velocity: "↓ 9%",  cover: "12d", range: "↓ 2br",  status: "ok" },
+  ],
+
+  report: {
+    generated: "06:47 AM",
+    date: "Today",
+    channels: [
+      {
+        audience: "Operations",
+        colour: "#ff9933",
+        lines: [
+          "17 SKUs below 3-day cover threshold across 9 branches.",
+          "Frozen aisle availability at 76% — below 80% SLA floor.",
+          "ANL-00291 and ANL-01103 flagged for emergency reorder review.",
+        ]
+      },
+      {
+        audience: "Sales",
+        colour: "#50dc8c",
+        lines: [
+          "Dairy & Chilled performing at 94% — 3pt above category average.",
+          "6 NPD lines cleared clearance stage and available for ranging.",
+          "Top mover this week: Smoked Salmon Portions (ANL-02201) +28% velocity.",
+        ]
+      },
+      {
+        audience: "Procurement",
+        colour: "#4cc9f0",
+        lines: [
+          "3 supplier purchase orders overdue beyond agreed lead time.",
+          "Reorder priority: Rice Flour 1kg, Chilli Sauce 500ml, Frozen Dim Sum.",
+          "Coconut Milk supplier fill rate fell to 71% — escalation recommended.",
+        ]
+      }
+    ]
+  },
+
+  trident: [
+    { ref: "TRD-4421", branch: "Parramatta",   delivery: "On time",  claim: "None",      receipt: "Confirmed", flag: "ok" },
+    { ref: "TRD-4438", branch: "Dandenong",    delivery: "2d late",  claim: "$340 filed", receipt: "Confirmed", flag: "warn" },
+    { ref: "TRD-4451", branch: "Townsville",   delivery: "On time",  claim: "$820 filed", receipt: "Disputed",  flag: "critical" },
+    { ref: "TRD-4467", branch: "Canning Vale", delivery: "1d late",  claim: "None",       receipt: "Confirmed", flag: "ok" },
+    { ref: "TRD-4489", branch: "Cairns",       delivery: "3d late",  claim: "$510 filed", receipt: "Disputed",  flag: "critical" },
+  ],
+
+  sla: {
+    metrics: [
+      { label: "Supplier Fill",  value: "88.2%", cls: "warn" },
+      { label: "DC Dispatch",    value: "93.7%", cls: "ok" },
+      { label: "Branch Receipt", value: "91.1%", cls: "ok" },
+      { label: "End-to-End",     value: "74.6%", cls: "warn" },
+    ],
+    bars: [
+      { label: "Supplier A",  val: 94, pct: 94, cls: "safe" },
+      { label: "Supplier B",  val: 71, pct: 71, cls: "danger" },
+      { label: "Supplier C",  val: 88, pct: 88, cls: "" },
+      { label: "Supplier D",  val: 83, pct: 83, cls: "" },
+      { label: "Supplier E",  val: 67, pct: 67, cls: "danger" },
+    ]
+  }
+};
+
+// ============================================================
+// RENDER FUNCTIONS
+// ============================================================
+
+function renderMetrics(containerId, metrics) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  el.innerHTML = metrics.map(m => `
+    <div class="metric-cell">
+      <span class="metric-value ${m.cls}">${m.value}</span>
+      <span class="metric-label">${m.label}</span>
+    </div>
+  `).join('');
+}
+
+function renderBars(containerId, bars) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  el.innerHTML = bars.map(b => `
+    <div class="bar-row">
+      <span class="bar-label">${b.label}</span>
+      <div class="bar-track">
+        <div class="bar-fill ${b.danger ? 'danger' : (b.cls || '')}" data-pct="${b.pct}"></div>
+      </div>
+      <span class="bar-val">${b.val}%</span>
+    </div>
+  `).join('');
+  // Animate bars after a tick
+  requestAnimationFrame(() => {
+    el.querySelectorAll('.bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.pct + '%';
+    });
+  });
+}
+
+function renderSpiralTable() {
+  const el = document.getElementById('spiral-table');
+  if (!el) return;
+  const dotClass = { critical: 'dot-critical', warn: 'dot-warn', ok: 'dot-active' };
+  el.innerHTML = `
+    <table class="status-table">
+      <thead>
+        <tr>
+          <th>SKU</th>
+          <th>Product</th>
+          <th>Velocity</th>
+          <th>Cover</th>
+          <th>Range Δ</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${analecticData.spiral.map(r => `
+          <tr>
+            <td><span class="status-dot ${dotClass[r.status]}"></span>${r.sku}</td>
+            <td>${r.name}</td>
+            <td style="color:rgba(255,100,80,0.8)">${r.velocity}</td>
+            <td>${r.cover}</td>
+            <td style="color:rgba(255,160,50,0.7)">${r.range}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderReport() {
+  const el = document.getElementById('report-output');
+  if (!el) return;
+  const d = analecticData.report;
+  el.innerHTML = `
+    <div style="font-size:0.72rem;color:rgba(255,255,255,0.25);margin-bottom:14px;letter-spacing:0.06em;">
+      Generated ${d.date} · ${d.generated} · Auto-distributed on completion
+    </div>
+    ${d.channels.map(ch => `
+      <div style="margin-bottom:14px;">
+        <div style="font-size:0.72rem;font-weight:600;color:${ch.colour};letter-spacing:0.1em;text-transform:uppercase;margin-bottom:7px;">
+          ${ch.audience} Report
+        </div>
+        ${ch.lines.map(l => `
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);padding:4px 0 4px 10px;border-left:2px solid ${ch.colour}33;margin-bottom:4px;">
+            ${l}
+          </div>
+        `).join('')}
+      </div>
+    `).join('')}
+  `;
+}
+
+function renderTridentTable() {
+  const el = document.getElementById('trident-table');
+  if (!el) return;
+  const dotClass = { critical: 'dot-critical', warn: 'dot-warn', ok: 'dot-active' };
+  el.innerHTML = `
+    <table class="status-table">
+      <thead>
+        <tr>
+          <th>Ref</th>
+          <th>Branch</th>
+          <th>Delivery</th>
+          <th>Claim</th>
+          <th>Receipt</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${analecticData.trident.map(r => `
+          <tr>
+            <td><span class="status-dot ${dotClass[r.flag]}"></span>${r.ref}</td>
+            <td>${r.branch}</td>
+            <td style="color:${r.delivery === 'On time' ? 'rgba(80,220,140,0.7)' : 'rgba(255,120,80,0.8)'}">${r.delivery}</td>
+            <td style="color:${r.claim === 'None' ? 'rgba(255,255,255,0.35)' : 'rgba(255,160,50,0.8)'}">${r.claim}</td>
+            <td style="color:${r.receipt === 'Confirmed' ? 'rgba(80,220,140,0.7)' : 'rgba(255,80,80,0.8)'}">${r.receipt}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+// ============================================================
+// TOGGLE CARD
+// ============================================================
+
+let openCard = null;
+
+function toggleCard(id) {
+  const card = document.getElementById(`card-${id}`);
+  const panel = document.getElementById(`panel-${id}`);
+  if (!card || !panel) return;
+
+  const isOpen = card.classList.contains('expanded');
+
+  // Close any open card first
+  if (openCard && openCard !== id) {
+    const prevCard = document.getElementById(`card-${openCard}`);
+    if (prevCard) prevCard.classList.remove('expanded');
+  }
+
+  if (isOpen) {
+    card.classList.remove('expanded');
+    openCard = null;
+  } else {
+    card.classList.add('expanded');
+    openCard = id;
+
+    // Render on first open
+    if (!card.dataset.rendered) {
+      card.dataset.rendered = '1';
+      if (id === 'launchpad') {
+        renderMetrics('launchpad-metrics', analecticData.launchpad.metrics);
+        renderBars('launchpad-bars', analecticData.launchpad.bars);
+      } else if (id === 'spiral') {
+        renderSpiralTable();
+      } else if (id === 'report') {
+        renderReport();
+      } else if (id === 'trident') {
+        renderTridentTable();
+      } else if (id === 'sla') {
+        renderMetrics('sla-metrics', analecticData.sla.metrics);
+        setTimeout(() => renderBars('sla-bars', analecticData.sla.bars), 80);
+      }
+    }
+
+    // Animate bars if already rendered (re-opened)
+    if (id === 'launchpad' || id === 'sla') {
+      setTimeout(() => {
+        const containerId = id === 'launchpad' ? 'launchpad-bars' : 'sla-bars';
+        document.querySelectorAll(`#${containerId} .bar-fill`).forEach(bar => {
+          bar.style.width = '0%';
+          requestAnimationFrame(() => {
+            setTimeout(() => { bar.style.width = bar.dataset.pct + '%'; }, 50);
+          });
+        });
+      }, 50);
+    }
+  }
+}
+
+// ============================================================
+// PAGE ENTRANCE + CARD CASCADE
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.body.classList.add('analectic-loaded');
+  }, 80);
+
+  setTimeout(() => {
+    const cards = [...document.querySelectorAll('.tool-card')];
+    const columns = {};
+    cards.forEach(card => {
+      const x = Math.round(card.getBoundingClientRect().left);
+      if (!columns[x]) columns[x] = [];
+      columns[x].push(card);
+    });
+
+    const colKeys = Object.keys(columns).sort((a, b) => a - b);
+    colKeys.forEach((col, i) => {
+      setTimeout(() => {
+        columns[col].forEach(card => card.classList.add('revealed'));
+      }, i * 60);
+    });
+
+    const totalTime = colKeys.length * 60 + 200;
+    setTimeout(() => {
+      const nav = document.querySelector('.top-nav');
+      if (nav) nav.classList.add('nav-shimmer-once');
+    }, totalTime);
+  }, 200);
+});
+</script>
+
+</body>
+</html>
