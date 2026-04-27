@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -45,353 +46,396 @@
 <main>
   <div class="ana-grid" id="toolGrid">
 
-    <!-- TOOL 01 — LAUNCHPAD -->
-    <div class="tool-card" id="card-01" onclick="toggleCard('01')">
-      <div class="tool-id">Tool 01 · Stage 1</div>
-      <h3 class="tool-name">Launchpad</h3>
-      <p class="tool-desc">
-        The central control panel and Golden Thread entry point. Selecting a user and customer
-        surfaced every relevant tool, report, and action for that account in one place —
-        dynamically routing to the correct file path and silently logging every action taken,
-        by whom, for which customer, and when.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">Control Panel</span>
-        <span class="tool-tag">Dynamic Routing</span>
-        <span class="tool-tag">Silent Audit Logging</span>
-        <span class="tool-tag">PLM Entry Gate</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('01')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-01">
-        <div class="tool-panel-inner">
-          <div class="metric-row" id="metrics-01"></div>
-          <div id="log-01"></div>
-          <div class="panel-insight">
-            Launchpad's silent logging was its most strategically important feature. Without interrupting any workflow,
-            it captured who accessed which customer account, which tools were opened, and when —
-            creating a forensic audit trail that followed every product through all six lifecycle stages.
-            Anonymous forecasting was structurally impossible.
-          </div>
+```
+<!-- TOOL 01 — LAUNCHPAD -->
+<div class="tool-card" id="card-01" onclick="toggleCard('01')">
+  <div class="card-left">
+    <div class="tool-id">Tool 01 · Stage 1</div>
+    <h3 class="tool-name">Launchpad</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">Control Panel</span>
+      <span class="tool-tag">Dynamic Routing</span>
+      <span class="tool-tag">Silent Audit Logging</span>
+      <span class="tool-tag">PLM Entry Gate</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('01')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      The central control panel and Golden Thread entry point. Selecting a user and customer
+      surfaced every relevant tool, report, and action for that account in one place —
+      dynamically routing to the correct file path and silently logging every action taken,
+      by whom, for which customer, and when.
+    </p>
+    <div class="tool-panel" id="panel-01">
+      <div class="tool-panel-inner">
+        <div class="metric-row" id="metrics-01"></div>
+        <div id="log-01"></div>
+        <div class="panel-insight">
+          Launchpad's silent logging was its most strategically important feature. Without interrupting any workflow,
+          it captured who accessed which customer account, which tools were opened, and when —
+          creating a forensic audit trail that followed every product through all six lifecycle stages.
+          Anonymous forecasting was structurally impossible.
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- TOOL 02 — NPD PRECISION ENGINE -->
-    <div class="tool-card" id="card-02" onclick="toggleCard('02')">
-      <div class="tool-id">Tool 02 · Stage 2A</div>
-      <h3 class="tool-name">NPD Precision Engine</h3>
-      <p class="tool-desc">
-        The mandatory demand gate for every new product entering the national network. Replaced
-        arbitrary quantity requests with a customer-validated, store-level allocation model —
-        enforcing Pipefill + 3 weeks of ongoing demand, synchronising all 62 branches in a
-        single execution, with a time-locked 4-week review mechanism built in.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">Demand Gate</span>
-        <span class="tool-tag">62-Branch Sync</span>
-        <span class="tool-tag">Pipefill + 3wk Logic</span>
-        <span class="tool-tag">4-Week Review Lock</span>
-        <span class="tool-tag">Digital Signature</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('02')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-02">
-        <div class="tool-panel-inner">
-          <div id="npd-table-02"></div>
-          <div class="panel-insight">
-            No product entered the warehouse without passing through this gate. The Pipefill + 3 model
-            accounted for initial launch stock, POS displays, BOGOF units, and customer-specific velocity —
-            eliminating the Day 1 stockouts that had plagued every prior launch process. The 4-week review
-            tab was time-locked — it only appeared after 28 days, forcing NAMs to reconcile forecast
-            against real sales before the window closed.
-          </div>
+<!-- TOOL 02 — NPD PRECISION ENGINE -->
+<div class="tool-card" id="card-02" onclick="toggleCard('02')">
+  <div class="card-left">
+    <div class="tool-id">Tool 02 · Stage 2A</div>
+    <h3 class="tool-name">NPD Precision Engine</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">Demand Gate</span>
+      <span class="tool-tag">62-Branch Sync</span>
+      <span class="tool-tag">Pipefill + 3wk Logic</span>
+      <span class="tool-tag">4-Week Review Lock</span>
+      <span class="tool-tag">Digital Signature</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('02')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      The mandatory demand gate for every new product entering the national network. Replaced
+      arbitrary quantity requests with a customer-validated, store-level allocation model —
+      enforcing Pipefill + 3 weeks of ongoing demand, synchronising all 62 branches in a
+      single execution, with a time-locked 4-week review mechanism built in.
+    </p>
+    <div class="tool-panel" id="panel-02">
+      <div class="tool-panel-inner">
+        <div id="npd-table-02"></div>
+        <div class="panel-insight">
+          No product entered the warehouse without passing through this gate. The Pipefill + 3 model
+          accounted for initial launch stock, POS displays, BOGOF units, and customer-specific velocity —
+          eliminating the Day 1 stockouts that had plagued every prior launch process. The 4-week review
+          tab was time-locked — it only appeared after 28 days, forcing NAMs to reconcile forecast
+          against real sales before the window closed.
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- TOOL 03 — PROMO FORECAST ENGINE -->
-    <div class="tool-card" id="card-03" onclick="toggleCard('03')">
-      <div class="tool-id">Tool 03 · Stage 2B</div>
-      <h3 class="tool-name">Promo Forecast Engine</h3>
-      <p class="tool-desc">
-        Uplift-driven promotional forecasting using 12-month historic sales as the baseline.
-        Introduced customer-level sales share methodology, hub-satellite procurement modelling,
-        and 4-4-5 financial calendar integration — keeping major accounts in sync with
-        zero excess post-promo stock.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">Uplift Forecasting</span>
-        <span class="tool-tag">Hub-Satellite Logic</span>
-        <span class="tool-tag">SOH/SOO Netting</span>
-        <span class="tool-tag">4-4-5 Calendar</span>
-        <span class="tool-tag">Post-Promo Review</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('03')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-03">
-        <div class="tool-panel-inner">
-          <div id="promo-table-03"></div>
-          <div class="panel-insight">
-            The hub-satellite logic was the most technically complex part of this engine. When a satellite
-            branch sources from a hub, and that hub sources from a DC — the engine calculated each node's
-            promo demand, stacked them correctly, and produced two numbers: what each satellite orders
-            from its hub, and what each hub orders for itself plus its dependents.
-            No other internal or external tool modelled this correctly.
-          </div>
+<!-- TOOL 03 — PROMO FORECAST ENGINE -->
+<div class="tool-card" id="card-03" onclick="toggleCard('03')">
+  <div class="card-left">
+    <div class="tool-id">Tool 03 · Stage 2B</div>
+    <h3 class="tool-name">Promo Forecast Engine</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">Uplift Forecasting</span>
+      <span class="tool-tag">Hub-Satellite Logic</span>
+      <span class="tool-tag">SOH/SOO Netting</span>
+      <span class="tool-tag">4-4-5 Calendar</span>
+      <span class="tool-tag">Post-Promo Review</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('03')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      Uplift-driven promotional forecasting using 12-month historic sales as the baseline.
+      Introduced customer-level sales share methodology, hub-satellite procurement modelling,
+      and 4-4-5 financial calendar integration — keeping major accounts in sync with
+      zero excess post-promo stock.
+    </p>
+    <div class="tool-panel" id="panel-03">
+      <div class="tool-panel-inner">
+        <div id="promo-table-03"></div>
+        <div class="panel-insight">
+          The hub-satellite logic was the most technically complex part of this engine. When a satellite
+          branch sources from a hub, and that hub sources from a DC — the engine calculated each node's
+          promo demand, stacked them correctly, and produced two numbers: what each satellite orders
+          from its hub, and what each hub orders for itself plus its dependents.
+          No other internal or external tool modelled this correctly.
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- TOOL 04 — ITEM MAINTENANCE & COMPLIANCE -->
-    <div class="tool-card" id="card-04" onclick="toggleCard('04')">
-      <div class="tool-id">Tool 04 · Stage 3</div>
-      <h3 class="tool-name">Item Maintenance &amp; Compliance</h3>
-      <p class="tool-desc">
-        The data integrity backbone of the PLM ecosystem. Governed the full SKU lifecycle —
-        new items, deletions, reinstatements, range changes, and site loading validation —
-        while solving the leading-zero problem that caused both the internal TOM project
-        and external developers to produce corrupted data at scale.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">SKU Lifecycle Gates</span>
-        <span class="tool-tag">Leading-Zero Preservation</span>
-        <span class="tool-tag">ERP Sync</span>
-        <span class="tool-tag">Site Loading Governance</span>
-        <span class="tool-tag">Ghost SKU Prevention</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('04')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-04">
-        <div class="tool-panel-inner">
-          <div id="sku-table-04"></div>
-          <div class="panel-insight">
-            ERP systems strip leading zeros silently. A 6-digit item code like 012345 becomes 12345 —
-            breaking every VLOOKUP chain, corrupting every customer mapping, and poisoning every
-            diagnostic downstream. The TOM project failed to solve this with a full internal team
-            and enterprise budget. External developers failed. This ecosystem solved it permanently,
-            maintaining 100% data fidelity across ~20,000 SKUs.
-          </div>
+<!-- TOOL 04 — ITEM MAINTENANCE & COMPLIANCE -->
+<div class="tool-card" id="card-04" onclick="toggleCard('04')">
+  <div class="card-left">
+    <div class="tool-id">Tool 04 · Stage 3</div>
+    <h3 class="tool-name">Item Maintenance &amp; Compliance</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">SKU Lifecycle Gates</span>
+      <span class="tool-tag">Leading-Zero Preservation</span>
+      <span class="tool-tag">ERP Sync</span>
+      <span class="tool-tag">Site Loading Governance</span>
+      <span class="tool-tag">Ghost SKU Prevention</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('04')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      The data integrity backbone of the PLM ecosystem. Governed the full SKU lifecycle —
+      new items, deletions, reinstatements, range changes, and site loading validation —
+      while solving the leading-zero problem that caused both the internal TOM project
+      and external developers to produce corrupted data at scale.
+    </p>
+    <div class="tool-panel" id="panel-04">
+      <div class="tool-panel-inner">
+        <div id="sku-table-04"></div>
+        <div class="panel-insight">
+          ERP systems strip leading zeros silently. A 6-digit item code like 012345 becomes 12345 —
+          breaking every VLOOKUP chain, corrupting every customer mapping, and poisoning every
+          diagnostic downstream. The TOM project failed to solve this with a full internal team
+          and enterprise budget. External developers failed. This ecosystem solved it permanently,
+          maintaining 100% data fidelity across ~20,000 SKUs.
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- TOOL 05 — LOGISTICS INVESTIGATOR TRIDENT -->
-    <div class="tool-card" id="card-05" onclick="toggleCard('05')">
-      <div class="tool-id">Tool 05 · Stage 4</div>
-      <h3 class="tool-name">Logistics Investigator — Trident</h3>
-      <p class="tool-desc">
-        Three linked but independent forensic audit tools sharing one data source, with a strict
-        dependency chain — Prong 1 must run before Prongs 2 and 3 unlock. Together they assessed
-        SLA window compliance, identified out-of-sequence deliveries for cost recovery, and validated
-        customer order cut-off behaviour — building commercial dispute evidence automatically.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">Dependency Chain</span>
-        <span class="tool-tag">SLA Window Audit</span>
-        <span class="tool-tag">Cost Recovery</span>
-        <span class="tool-tag">Cut-off Validation</span>
-        <span class="tool-tag">Dispute Evidence</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('05')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-05">
-        <div class="tool-panel-inner">
-          <div id="trident-table-05"></div>
-          <div class="panel-insight">
-            Prong 1 established truth. Without it, Prongs 2 and 3 had no reference point —
-            the dependency chain wasn't a limitation, it was a discipline. Out-of-sequence
-            deliveries flagged by Prong 2 went directly into cost recovery conversations.
-            Cut-off violations surfaced by Prong 3 resolved disputes before they escalated.
-            The business always entered commercial conversations with evidence, never assumptions.
-          </div>
+<!-- TOOL 05 — LOGISTICS INVESTIGATOR TRIDENT -->
+<div class="tool-card" id="card-05" onclick="toggleCard('05')">
+  <div class="card-left">
+    <div class="tool-id">Tool 05 · Stage 4</div>
+    <h3 class="tool-name">Logistics Investigator — Trident</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">Dependency Chain</span>
+      <span class="tool-tag">SLA Window Audit</span>
+      <span class="tool-tag">Cost Recovery</span>
+      <span class="tool-tag">Cut-off Validation</span>
+      <span class="tool-tag">Dispute Evidence</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('05')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      Three linked but independent forensic audit tools sharing one data source, with a strict
+      dependency chain — Prong 1 must run before Prongs 2 and 3 unlock. Together they assessed
+      SLA window compliance, identified out-of-sequence deliveries for cost recovery, and validated
+      customer order cut-off behaviour — building commercial dispute evidence automatically.
+    </p>
+    <div class="tool-panel" id="panel-05">
+      <div class="tool-panel-inner">
+        <div id="trident-table-05"></div>
+        <div class="panel-insight">
+          Prong 1 established truth. Without it, Prongs 2 and 3 had no reference point —
+          the dependency chain wasn't a limitation, it was a discipline. Out-of-sequence
+          deliveries flagged by Prong 2 went directly into cost recovery conversations.
+          Cut-off violations surfaced by Prong 3 resolved disputes before they escalated.
+          The business always entered commercial conversations with evidence, never assumptions.
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- TOOL 06 — DAILY LOST SALES ENGINE + DEATH SPIRAL -->
-    <div class="tool-card" id="card-06" onclick="toggleCard('06')">
-      <div class="tool-id">Tool 06 · Stage 4</div>
-      <h3 class="tool-name">Daily Lost Sales Engine</h3>
-      <p class="tool-desc">
-        Captured a national inventory snapshot at 7:30 AM and automatically distributed
-        256 branch-level performance reports before 9:00 AM — zero manual intervention, every day.
-        Embedded within: the Death Spiral diagnostic, detecting when short supply was permanently
-        reducing future demand — a compounding failure invisible to every other tool in the business.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">7:30 AM Snapshot</span>
-        <span class="tool-tag">256 Auto-Reports</span>
-        <span class="tool-tag">TOS / TNA / NIR / DEL</span>
-        <span class="tool-tag">Death Spiral Detection</span>
-        <span class="tool-tag">Root-Cause Decomposition</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('06')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-06">
-        <div class="tool-panel-inner">
-          <div class="metric-row" id="metrics-06"></div>
-          <div id="spiral-table-06"></div>
-          <div class="panel-insight">
-            TOS, TNA, NIR, DEL — four failure codes that decomposed every lost sale into its actual cause.
-            TOS (Temp Out of Stock) is internal and fixable. TNA (Transferred Not Arrived) is a logistics failure.
-            NIR (Not In Range) is a setup gap. DEL (Delisted) is lifecycle closure. Treating them the same
-            is what made every prior SLA number meaningless. The Death Spiral caught the compounding pattern
-            where each of these, left unresolved, silently fed the next.
-          </div>
+<!-- TOOL 06 — DAILY LOST SALES ENGINE + DEATH SPIRAL -->
+<div class="tool-card" id="card-06" onclick="toggleCard('06')">
+  <div class="card-left">
+    <div class="tool-id">Tool 06 · Stage 4</div>
+    <h3 class="tool-name">Daily Lost Sales Engine</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">7:30 AM Snapshot</span>
+      <span class="tool-tag">256 Auto-Reports</span>
+      <span class="tool-tag">TOS / TNA / NIR / DEL</span>
+      <span class="tool-tag">Death Spiral Detection</span>
+      <span class="tool-tag">Root-Cause Decomposition</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('06')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      Captured a national inventory snapshot at 7:30 AM and automatically distributed
+      256 branch-level performance reports before 9:00 AM — zero manual intervention, every day.
+      Embedded within: the Death Spiral diagnostic, detecting when short supply was permanently
+      reducing future demand — a compounding failure invisible to every other tool in the business.
+    </p>
+    <div class="tool-panel" id="panel-06">
+      <div class="tool-panel-inner">
+        <div class="metric-row" id="metrics-06"></div>
+        <div id="spiral-table-06"></div>
+        <div class="panel-insight">
+          TOS, TNA, NIR, DEL — four failure codes that decomposed every lost sale into its actual cause.
+          TOS (Temp Out of Stock) is internal and fixable. TNA (Transferred Not Arrived) is a logistics failure.
+          NIR (Not In Range) is a setup gap. DEL (Delisted) is lifecycle closure. Treating them the same
+          is what made every prior SLA number meaningless. The Death Spiral caught the compounding pattern
+          where each of these, left unresolved, silently fed the next.
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- TOOL 07 — WEEKLY SLA & SERVICE LEVEL ENGINE -->
-    <div class="tool-card" id="card-07" onclick="toggleCard('07')">
-      <div class="tool-id">Tool 07 · Stage 5</div>
-      <h3 class="tool-name">Weekly SLA &amp; Service Level Engine</h3>
-      <p class="tool-desc">
-        Measured performance across three layers simultaneously — PFD internal, vendor, and gross —
-        so every failure could be attributed to the right source. Included a daily-to-weekly
-        reconciliation layer, a financial impact converter (lost cartons to lost gross profit by SKU),
-        and a customer-facing commentary report explaining what failed, why, and what was being done.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">3-Layer SLA</span>
-        <span class="tool-tag">Internal vs Supplier</span>
-        <span class="tool-tag">GP Impact Layer</span>
-        <span class="tool-tag">Daily-Weekly Reconciliation</span>
-        <span class="tool-tag">Customer Commentary</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('07')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-07">
-        <div class="tool-panel-inner">
-          <div id="sla-table-07"></div>
-          <div class="panel-insight">
-            Separating internal supply failures from supplier-caused stockouts made SLA measurement
-            accurate and fair — removing the internal blame-shifting that had muddied every commercial
-            conversation before. The financial impact layer gave leadership dollar-denominated evidence
-            for contract negotiations. The customer commentary report replaced silence with transparency —
-            reducing disputes by giving customers a clear explanation before they had to ask.
-          </div>
+<!-- TOOL 07 — WEEKLY SLA & SERVICE LEVEL ENGINE -->
+<div class="tool-card" id="card-07" onclick="toggleCard('07')">
+  <div class="card-left">
+    <div class="tool-id">Tool 07 · Stage 5</div>
+    <h3 class="tool-name">Weekly SLA &amp; Service Level Engine</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">3-Layer SLA</span>
+      <span class="tool-tag">Internal vs Supplier</span>
+      <span class="tool-tag">GP Impact Layer</span>
+      <span class="tool-tag">Daily-Weekly Reconciliation</span>
+      <span class="tool-tag">Customer Commentary</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('07')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      Measured performance across three layers simultaneously — PFD internal, vendor, and gross —
+      so every failure could be attributed to the right source. Included a daily-to-weekly
+      reconciliation layer, a financial impact converter (lost cartons to lost gross profit by SKU),
+      and a customer-facing commentary report explaining what failed, why, and what was being done.
+    </p>
+    <div class="tool-panel" id="panel-07">
+      <div class="tool-panel-inner">
+        <div id="sla-table-07"></div>
+        <div class="panel-insight">
+          Separating internal supply failures from supplier-caused stockouts made SLA measurement
+          accurate and fair — removing the internal blame-shifting that had muddied every commercial
+          conversation before. The financial impact layer gave leadership dollar-denominated evidence
+          for contract negotiations. The customer commentary report replaced silence with transparency —
+          reducing disputes by giving customers a clear explanation before they had to ask.
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- TOOL 08 — INVENTORY HEALTH SHIELD -->
-    <div class="tool-card" id="card-08" onclick="toggleCard('08')">
-      <div class="tool-id">Tool 08 · Stage 5</div>
-      <h3 class="tool-name">Inventory Health Shield</h3>
-      <p class="tool-desc">
-        Proactive runout projection engine flagging stock risk 3–4 weeks before ERP systems
-        could detect it. Also identified excess stock, matched surpluses at one branch against
-        shortfalls at another via site-to-site conversion, and automatically triggered
-        post-promo clearance workflows — protecting working capital before write-off became inevitable.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">3–4wk Runout Projection</span>
-        <span class="tool-tag">Excess Identification</span>
-        <span class="tool-tag">Site-to-Site Conversion</span>
-        <span class="tool-tag">Post-Promo Clearance</span>
-        <span class="tool-tag">Working Capital Protection</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('08')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-08">
-        <div class="tool-panel-inner">
-          <div class="metric-row" id="metrics-08"></div>
-          <div id="shield-table-08"></div>
-          <div class="panel-insight">
-            The site-to-site conversion turned a cost centre into a working capital tool. Excess at one branch
-            matched against a shortfall at another meant one internal transfer replaced an emergency
-            procurement order and prevented a potential write-off simultaneously. At scale across 62 branches,
-            that logic ran continuously — before the ERP knew there was a problem to solve.
-          </div>
+<!-- TOOL 08 — INVENTORY HEALTH SHIELD -->
+<div class="tool-card" id="card-08" onclick="toggleCard('08')">
+  <div class="card-left">
+    <div class="tool-id">Tool 08 · Stage 5</div>
+    <h3 class="tool-name">Inventory Health Shield</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">3–4wk Runout Projection</span>
+      <span class="tool-tag">Excess Identification</span>
+      <span class="tool-tag">Site-to-Site Conversion</span>
+      <span class="tool-tag">Post-Promo Clearance</span>
+      <span class="tool-tag">Working Capital Protection</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('08')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      Proactive runout projection engine flagging stock risk 3–4 weeks before ERP systems
+      could detect it. Also identified excess stock, matched surpluses at one branch against
+      shortfalls at another via site-to-site conversion, and automatically triggered
+      post-promo clearance workflows — protecting working capital before write-off became inevitable.
+    </p>
+    <div class="tool-panel" id="panel-08">
+      <div class="tool-panel-inner">
+        <div class="metric-row" id="metrics-08"></div>
+        <div id="shield-table-08"></div>
+        <div class="panel-insight">
+          The site-to-site conversion turned a cost centre into a working capital tool. Excess at one branch
+          matched against a shortfall at another meant one internal transfer replaced an emergency
+          procurement order and prevented a potential write-off simultaneously. At scale across 62 branches,
+          that logic ran continuously — before the ERP knew there was a problem to solve.
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- TOOL 09 — MONTHLY CREDIT CLAIMS TRACKER -->
-    <div class="tool-card" id="card-09" onclick="toggleCard('09')">
-      <div class="tool-id">Tool 09 · Stage 5</div>
-      <h3 class="tool-name">Monthly Credit Claims Tracker</h3>
-      <p class="tool-desc">
-        Two-layer credit analytics system built on a rolling financial-year QlikView extract.
-        A white accumulation page built the historic record month by month. A black dashboard
-        showed credit reason breakdown by branch with slicers for quarter, channel, and more.
-        Filtering required both a populated credit reason AND a negative sales value —
-        either condition alone produced systematically misleading results.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">Rolling FY Extract</span>
-        <span class="tool-tag">Two-Layer Architecture</span>
-        <span class="tool-tag">Credit Reason Breakdown</span>
-        <span class="tool-tag">Dual-Condition Filter</span>
-        <span class="tool-tag">Branch & Quarter Slicers</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('09')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-09">
-        <div class="tool-panel-inner">
-          <div class="metric-row" id="metrics-09"></div>
-          <div class="bar-chart" id="bars-09"></div>
-          <div class="panel-insight">
-            The dual-condition filter was the intellectual core of this tool. A credit reason code alone
-            means nothing — positive transactions carry reason codes too. A negative value alone could be
-            a legitimate adjustment. Only when both conditions are present simultaneously is a true credit
-            confirmed. Filtering on either condition alone silently inflated the numbers, misrepresenting
-            branch performance in every prior version of this report.
-          </div>
+<!-- TOOL 09 — MONTHLY CREDIT CLAIMS TRACKER -->
+<div class="tool-card" id="card-09" onclick="toggleCard('09')">
+  <div class="card-left">
+    <div class="tool-id">Tool 09 · Stage 5</div>
+    <h3 class="tool-name">Monthly Credit Claims Tracker</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">Rolling FY Extract</span>
+      <span class="tool-tag">Two-Layer Architecture</span>
+      <span class="tool-tag">Credit Reason Breakdown</span>
+      <span class="tool-tag">Dual-Condition Filter</span>
+      <span class="tool-tag">Branch & Quarter Slicers</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('09')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      Two-layer credit analytics system built on a rolling financial-year QlikView extract.
+      A white accumulation page built the historic record month by month. A black dashboard
+      showed credit reason breakdown by branch with slicers for quarter, channel, and more.
+      Filtering required both a populated credit reason AND a negative sales value —
+      either condition alone produced systematically misleading results.
+    </p>
+    <div class="tool-panel" id="panel-09">
+      <div class="tool-panel-inner">
+        <div class="metric-row" id="metrics-09"></div>
+        <div class="bar-chart" id="bars-09"></div>
+        <div class="panel-insight">
+          The dual-condition filter was the intellectual core of this tool. A credit reason code alone
+          means nothing — positive transactions carry reason codes too. A negative value alone could be
+          a legitimate adjustment. Only when both conditions are present simultaneously is a true credit
+          confirmed. Filtering on either condition alone silently inflated the numbers, misrepresenting
+          branch performance in every prior version of this report.
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- TOOL 10 — NATIONAL PERFORMANCE DASHBOARD -->
-    <div class="tool-card" id="card-10" onclick="toggleCard('10')">
-      <div class="tool-id">Tool 10 · Stage 6</div>
-      <h3 class="tool-name">National Performance Dashboard</h3>
-      <p class="tool-desc">
-        The strategic apex of the PLM ecosystem and the closure point of the Golden Thread.
-        Consolidated forecasting accuracy, SLA outcomes, inventory health, lost sales diagnostics,
-        and commercial accountability into a single executive view — with drill-down from national
-        level to individual SKU. Built to support decisions, not monitor what had already happened.
-      </p>
-      <div class="tool-tags">
-        <span class="tool-tag">TY vs LY vs Budget</span>
-        <span class="tool-tag">National → SKU Drill-down</span>
-        <span class="tool-tag">5-Channel View</span>
-        <span class="tool-tag">Executive Reporting</span>
-        <span class="tool-tag">Golden Thread Closure</span>
-      </div>
-      <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('10')">
-        Explore tool <span class="toggle-arrow">▾</span>
-      </button>
-      <div class="tool-panel" id="panel-10">
-        <div class="tool-panel-inner">
-          <div class="metric-row" id="metrics-10"></div>
-          <div class="bar-chart" id="bars-10"></div>
-          <div class="panel-insight">
-            This dashboard closed the Golden Thread. Every product that entered through Launchpad in Stage 1
-            eventually appeared here in Stage 6 — its velocity, its SLA contribution, its inventory position,
-            and its commercial outcome all visible in one place. The drill-down from national to individual SKU
-            turned it from a summary report into a live diagnostic tool. Leadership could ask a question
-            and find the answer without leaving the view.
-          </div>
+<!-- TOOL 10 — NATIONAL PERFORMANCE DASHBOARD -->
+<div class="tool-card" id="card-10" onclick="toggleCard('10')">
+  <div class="card-left">
+    <div class="tool-id">Tool 10 · Stage 6</div>
+    <h3 class="tool-name">National Performance Dashboard</h3>
+    <div class="tool-tags">
+      <span class="tool-tag">TY vs LY vs Budget</span>
+      <span class="tool-tag">National → SKU Drill-down</span>
+      <span class="tool-tag">5-Channel View</span>
+      <span class="tool-tag">Executive Reporting</span>
+      <span class="tool-tag">Golden Thread Closure</span>
+    </div>
+    <button class="tool-toggle" onclick="event.stopPropagation(); toggleCard('10')">
+      Explore tool <span class="toggle-arrow">▾</span>
+    </button>
+  </div>
+  <div class="card-right">
+    <p class="tool-desc">
+      The strategic apex of the PLM ecosystem and the closure point of the Golden Thread.
+      Consolidated forecasting accuracy, SLA outcomes, inventory health, lost sales diagnostics,
+      and commercial accountability into a single executive view — with drill-down from national
+      level to individual SKU. Built to support decisions, not monitor what had already happened.
+    </p>
+    <div class="tool-panel" id="panel-10">
+      <div class="tool-panel-inner">
+        <div class="metric-row" id="metrics-10"></div>
+        <div class="bar-chart" id="bars-10"></div>
+        <div class="panel-insight">
+          This dashboard closed the Golden Thread. Every product that entered through Launchpad in Stage 1
+          eventually appeared here in Stage 6 — its velocity, its SLA contribution, its inventory position,
+          and its commercial outcome all visible in one place. The drill-down from national to individual SKU
+          turned it from a summary report into a live diagnostic tool. Leadership could ask a question
+          and find the answer without leaving the view.
         </div>
       </div>
     </div>
+  </div>
+</div>
+```
 
   </div>
 </main>
 
 <!-- GOLDEN THREAD FOOTER -->
+
 <div class="ana-golden-thread">
   <div class="gt-label">The Golden Thread</div>
   <div class="gt-stages">
@@ -576,9 +620,6 @@ function renderBars(id, bars) {
       </div>
       <span class="bar-val">${b.val}</span>
     </div>`).join('');
-  requestAnimationFrame(() =>
-    el.querySelectorAll('.bar-fill').forEach(b => { b.style.width = b.dataset.pct + '%'; })
-  );
 }
 
 function animateBars(id) {

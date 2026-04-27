@@ -17,8 +17,13 @@ body {
   background-repeat: no-repeat;
 }
 
-/* ========== PAGE ENTRANCE ========== */
+/* ========== PAGE ENTRANCE + OVERFLOW FIX ========== */
+html {
+  overflow-x: hidden;
+}
+
 body {
+  overflow-x: hidden;
   opacity: 0;
   transform: scale(0.985);
   transition: opacity 0.35s ease, transform 0.35s ease;
@@ -33,7 +38,7 @@ body.analectic-loaded {
 .ana-header {
   display: flex;
   flex-direction: column;
-  padding: 28px 32px 20px;
+  padding: 14px 32px 18px;
   border-bottom: 1px solid rgba(255, 160, 50, 0.15);
 }
 
@@ -97,25 +102,32 @@ body.analectic-loaded {
   50% { opacity: 0.4; transform: scale(0.7); }
 }
 
-/* ========== TOOL GRID ========== */
+/* ========== TOOL GRID — single column, centred ========== */
 .ana-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0 60px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* ========== TOOL CARD ========== */
+/* ========== TOOL CARD — horizontal split ========== */
 .tool-card {
   position: relative;
   overflow: hidden;
   z-index: 10;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   background: rgba(255, 255, 255, 0.04);
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid rgba(105, 105, 105, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.08);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 22px 22px 18px;
+  padding: 0;
   border-radius: 20px;
   box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.4),
@@ -161,6 +173,60 @@ body.analectic-loaded {
 
 .tool-card.expanded {
   cursor: default;
+}
+
+/* ========== CARD PANELS (left / right split) ========== */
+.card-left {
+  width: 40%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  padding: 22px 18px 18px 22px;
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  box-sizing: border-box;
+}
+
+.card-right {
+  flex: 1;
+  min-width: 0;
+  padding: 22px 22px 18px 18px;
+  box-sizing: border-box;
+}
+
+/* Push toggle to bottom of left panel */
+.card-left .tool-toggle {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 860px) {
+  .tool-card {
+    width: 92%;
+    flex-direction: column;
+  }
+
+  .card-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 18px 18px 14px;
+    align-self: auto;
+  }
+
+  .card-right {
+    padding: 14px 18px 18px;
+  }
+
+  .card-left .tool-toggle {
+    margin-top: 12px;
+    padding-top: 0;
+  }
+
+  .ana-header {
+    padding: 12px 16px 16px;
+  }
 }
 
 /* ========== CARD HEADER ========== */
