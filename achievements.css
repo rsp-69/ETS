@@ -106,7 +106,7 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 10;
-  background: rgb(from var(--bg3) r g b / 0.2);
+  background: rgb(from var(--bg2) r g b / 0.2);
   border-top: 1px solid rgba(255,255,255,0.8);
   border-bottom: 1px solid rgba(105,105,105,0.8);
   padding: 20px;
