@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About ETS</title>
+  <title>When I Say Excel and VBA — Rohan Prabhu</title>
   <link rel="stylesheet" href="os.css" />
   <link rel="stylesheet" href="about.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,7 @@
 <div class="bg-linear"></div>
 <div class="bg-radial"></div>
 <div class="bg-ember"></div>
+
   <nav class="top-nav">
     <div class="nav-left">RSP</div>
     <div class="nav-links">
@@ -26,35 +27,226 @@
       <a href="about.html" class="active">About ETS</a>
     </div>
   </nav>
+
   <div class="about-wrapper">
-    <section class="about-section left">
-      <h2 class="section-title glass-text">ETS — Employer Tracking System</h2>
-      <p class="section-text">
-        A personal operating system built to counterbalance the hiring world’s Applicant Tracking Systems.
-        Where ATS filters applicants, ETS empowers you — helping you present your story with clarity, identity, and intention.
+
+    <!-- HERO -->
+    <div class="pillars-hero">
+      <p class="pillars-eyebrow">Technical Architecture Reference · April 2026</p>
+      <h1 class="pillars-headline glass-text">When I say Excel and VBA,<br>here is what I mean.</h1>
+      <p class="pillars-subhead">
+        The system described below is a national-scale, ERP-grade Product Lifecycle Management ecosystem.<br>
+        Excel was the runtime environment — the same way a server is an environment.<br>
+        The engineering inside it follows patterns with direct equivalents in Python, R, and enterprise architecture.
       </p>
-    </section>
-    <section class="about-section right">
-      <h2 class="section-title glass-text">Levelling the Playing Field</h2>
-      <p class="section-text">
-        Companies automate their side of the process, so you built a system to automate yours — but with humanity.
-        ETS exists to give you control, confidence, and a fair chance to be seen for who you actually are.
-      </p>
-    </section>
-    <section class="about-section left">
-      <h2 class="section-title glass-text">Personalisation as Respect</h2>
-      <p class="section-text">
-        You’ve always believed a résumé should feel like it was made <em>for</em> the company, not just sent <em>to</em> them.
-        ETS turns that belief into a system — tailoring colours, tone, and content to match each organisation’s identity.
-      </p>
-    </section>
-    <section class="about-section right">
-      <h2 class="section-title glass-text">Brand Aware. Job Aware. Me Aware.</h2>
-      <p class="section-text">
-        ETS reads job descriptions, matches them with your achievements, and generates company‑specific résumés and cover letters.
-        It’s part résumé builder, part portfolio, part OS — designed to showcase your work and how you think.
-      </p>
-    </section>
+      <p class="pillars-subhead pillars-proof">Ten pillars. Each one is proof.</p>
+    </div>
+
+    <!-- PILLAR TABLE HEADER -->
+    <div class="pillar-table-header">
+      <span class="ph-num">#</span>
+      <span class="ph-pillar">Pillar</span>
+      <span class="ph-equiv">Python / R equivalent</span>
+      <span class="ph-evidence">The evidence</span>
+    </div>
+
+    <!-- PILLAR 01 -->
+    <div class="pillar-row" data-num="01" data-accent="teal">
+      <div class="pillar-num">01</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">In-Memory Data Processing</h3>
+        <p class="pillar-claim">Datasets loaded entirely into RAM as array structures, transformed without touching the worksheet, written back in a single operation.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">NumPy ndarray</span>
+        <span class="equiv-tag">pandas DataFrame</span>
+        <p class="equiv-note">Load → transform in memory → write once. Same paradigm, different syntax.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>National SOH/SOO snapshot loaded into <code>arr_2D</code> arrays. Batch transformations across 62 branches — no worksheet reads mid-loop.</p>
+        <p>Report execution cut from <strong>~4 hours to ~1 hour</strong> on the same hardware through algorithmic optimisation alone. The gain was architectural, not infrastructure.</p>
+      </div>
+    </div>
+
+    <!-- PILLAR 02 -->
+    <div class="pillar-row" data-num="02" data-accent="blue">
+      <div class="pillar-num">02</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">Relational Modelling &amp; Single Source of Truth</h3>
+        <p class="pillar-claim">Independent modules synchronised through shared key-value structures and a central configuration layer — not duplicated logic.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">dict / defaultdict</span>
+        <span class="equiv-tag">pandas merge()</span>
+        <span class="equiv-tag">SQLAlchemy</span>
+        <p class="equiv-note">Cross-module sync mirrors a shared database session or singleton config object.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>Three-tier item mapping: 6-digit item codes → ANACODEs → 8-digit customer IDs. A relational key chain — not flat lookups.</p>
+        <p>The leading zero logic that <strong>broke both the internal TOM project and external Complexica developers</strong> — preserved with 100% fidelity.</p>
+      </div>
+    </div>
+
+    <!-- PILLAR 03 -->
+    <div class="pillar-row" data-num="03" data-accent="amber">
+      <div class="pillar-num">03</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">Algorithmic Efficiency &amp; Bottleneck Elimination</h3>
+        <p class="pillar-claim">Application-layer overhead systematically suppressed — screen updates, calculation events, and worksheet I/O all disabled during execution.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">vectorised pandas</span>
+        <span class="equiv-tag">lazy evaluation</span>
+        <p class="equiv-note">ScreenUpdating off ≈ suppressing render callbacks. The architectural intent is identical.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>Weekly SLA suite reduced from <strong>~2 days to ~3 hours</strong> through iterative code optimisation.</p>
+        <p>Real-time ETA calculator in the status bar during batch execution — equivalent to <code>tqdm</code> progress tracking in Python.</p>
+      </div>
+    </div>
+
+    <!-- PILLAR 04 -->
+    <div class="pillar-row" data-num="04" data-accent="teal">
+      <div class="pillar-num">04</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">ETL Pipeline Design</h3>
+        <p class="pillar-claim">Data extracted from multiple disparate source systems, transformed through layered logic, validated, and loaded to structured outputs and ERP back-ends — automatically.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">pandas read_csv()</span>
+        <span class="equiv-tag">Airflow DAGs</span>
+        <span class="equiv-tag">paramiko SFTP</span>
+        <p class="equiv-note">The pipeline stages are architecturally identical.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>NCW Data Warehouse: ETL pipelines processed 8 wholesalers' weekly data — each in a different format — normalised into one consistent schema.</p>
+        <p>ERP sync detection: execution held until data had fully synchronised — <strong>equivalent to an Airflow sensor or DAG dependency check</strong>.</p>
+      </div>
+    </div>
+
+    <!-- PILLAR 05 -->
+    <div class="pillar-row" data-num="05" data-accent="blue">
+      <div class="pillar-num">05</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">State Machine &amp; Lifecycle Governance</h3>
+        <p class="pillar-claim">Products moved through a defined 6-stage lifecycle with gates, validation rules, and traceable transitions at every stage.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">python-transitions</span>
+        <span class="equiv-tag">Prefect</span>
+        <span class="equiv-tag">Airflow</span>
+        <p class="equiv-note">Enum-based state machine with task dependencies and gate conditions.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>Six-stage closed-loop: Launchpad → Item Maintenance → Logistics Trident → Lost Sales Engine → Health Shield → Performance Tracker.</p>
+        <p>28-day Accountability Loop: a <strong>time-locked gate</strong> that automatically surfaced the review tab — blocking stale forecasts from persisting.</p>
+      </div>
+    </div>
+
+    <!-- PILLAR 06 -->
+    <div class="pillar-row" data-num="06" data-accent="amber">
+      <div class="pillar-num">06</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">Event-Driven &amp; Time-Triggered Execution</h3>
+        <p class="pillar-claim">Core system operations triggered by time events and data conditions — not manual runs.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">cron</span>
+        <span class="equiv-tag">APScheduler</span>
+        <span class="equiv-tag">AWS EventBridge</span>
+        <p class="equiv-note">Event-driven triggers responding to time and data state.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>7:30 AM forensic snapshot triggered daily, freezing national inventory state before ERP data could change.</p>
+        <p>Thursday Function: ran automatically after daily reports completed — <strong>not someone pressing a button</strong>.</p>
+      </div>
+    </div>
+
+    <!-- PILLAR 07 -->
+    <div class="pillar-row" data-num="07" data-accent="teal">
+      <div class="pillar-num">07</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">Role-Based Access Control &amp; Audit Logging</h3>
+        <p class="pillar-claim">Every significant action logged with username, timestamp, and context. Access to master settings permission-gated.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">Python logging</span>
+        <span class="equiv-tag">Django RBAC</span>
+        <span class="equiv-tag">FastAPI DI</span>
+        <p class="equiv-note">Middleware-layer audit logging and database-level row security.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>Digital signature system: username, timestamp, and file signature captured at every key decision point — a <strong>forensic chain of custody</strong> across all 6 lifecycle stages.</p>
+        <p>Quantified bypass cost: manual estimates exceeded tool figures in 29 of 37 branches for Ampol P8. Evidence produced from the audit trail.</p>
+      </div>
+    </div>
+
+    <!-- PILLAR 08 -->
+    <div class="pillar-row" data-num="08" data-accent="blue">
+      <div class="pillar-num">08</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">Fault Tolerance &amp; Graceful Degradation</h3>
+        <p class="pillar-claim">System designed to continue operating under failure conditions — missing files, network drops, ERP lag, corrupted data — without crashing or producing silent errors.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">tenacity</span>
+        <span class="equiv-tag">circuit breaker</span>
+        <span class="equiv-tag">try/finally</span>
+        <p class="equiv-note">Cached state for degraded-mode operation. Health checks before pipeline execution.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>Previous Day Fallback: if current snapshot was missing or corrupted, the system loaded last valid state, flagged degraded mode, and continued processing.</p>
+        <p><strong>Zero downtime</strong> across a nationally distributed operation.</p>
+      </div>
+    </div>
+
+    <!-- PILLAR 09 -->
+    <div class="pillar-row" data-num="09" data-accent="amber">
+      <div class="pillar-num">09</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">Modular Architecture with Defined Service Boundaries</h3>
+        <p class="pillar-claim">10 independent modules, each with its own logic, inputs, and outputs — sharing configuration and data through defined interfaces, not duplicated logic.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">microservices</span>
+        <span class="equiv-tag">monorepo</span>
+        <span class="equiv-tag">shared message bus</span>
+        <p class="equiv-note">Python packages with defined public APIs. FastAPI services sharing a common database layer.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>Global Configuration Management: one backend sheet controlled national variables across all 10 modules. <strong>Update once, propagate everywhere.</strong></p>
+        <p>Trident tools had explicit dependency order: Tool 1 must complete before Tools 2 and 3 — equivalent to Airflow task dependencies.</p>
+      </div>
+    </div>
+
+    <!-- PILLAR 10 -->
+    <div class="pillar-row" data-num="10" data-accent="teal">
+      <div class="pillar-num">10</div>
+      <div class="pillar-body">
+        <h3 class="pillar-name">Parameterised Reporting Engine</h3>
+        <p class="pillar-claim">256 reports generated from a single underlying dataset by varying customer group, channel, and branch parameters — not 256 separate scripts.</p>
+      </div>
+      <div class="pillar-equiv">
+        <span class="equiv-tag">Jinja2</span>
+        <span class="equiv-tag">papermill</span>
+        <span class="equiv-tag">ReportLab</span>
+        <p class="equiv-note">Parameterised SQL queries feeding a report generator. One engine, N outputs.</p>
+      </div>
+      <div class="pillar-evidence">
+        <p>Lost Sales Master Macro: one engine generated 256 channel-specific reports across 5 national channels and 62 branches — delivered by <strong>9:00 AM daily</strong>.</p>
+        <p>Dynamic email string construction: recipient list compiled at runtime per report — not a static distribution list.</p>
+      </div>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="pillars-closing">
+      <div class="closing-rule"></div>
+      <p class="closing-body">These ten pillars did not require Python or R to exist. They required systems thinking, architectural discipline, and the ability to solve real operational problems at scale.</p>
+      <p class="closing-body">The tools were incidental. The logic was not.</p>
+      <p class="closing-line glass-text">I bring the logic. You provide the language.</p>
+      <p class="closing-credit">— Rohan Prabhu &nbsp;·&nbsp; <a href="https://linkedin.com/in/rronniee" target="_blank">linkedin.com/in/rronniee</a></p>
+    </div>
+
   </div>
 </body>
 </html>

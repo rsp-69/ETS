@@ -1,60 +1,309 @@
 /* ================================
-   ABOUT ETS PAGE — LOCAL STYLES ONLY
-   Safe to paste into about.css
+   ABOUT PAGE — 10 PILLARS EDITION
+   Replaces original about.css
    ================================ */
 
-/* Wrapper for page content */
+/* ── Accent palette ── */
+:root {
+  --accent-teal:  #00C2A8;
+  --accent-blue:  #378ADD;
+  --accent-amber: #E8A020;
+  --pillar-bg:    rgba(17, 34, 54, 0.72);
+  --pillar-border: rgba(255,255,255,0.06);
+  --code-bg:      rgba(0,194,168,0.08);
+  --code-color:   #00C2A8;
+}
+
+/* ── Wrapper ── */
 .about-wrapper {
   width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 0 28px 80px;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 8;
 }
 
-/* Section container */
-.about-section {
-padding: 10px;
+/* ── Hero ── */
+.pillars-hero {
+  padding: 60px 0 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 0;
 }
 
-/* Zig-zag alignment */
-.left {
+.pillars-eyebrow {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+  margin: 0 0 20px;
+}
+
+.pillars-headline {
+  font-family: var(--font-display, 'Tilt Neon', sans-serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.08;
+  margin: 0 0 28px;
+}
+
+.pillars-subhead {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(0.88rem, 1.6vw, 1.02rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.75;
+  margin: 0 0 10px;
+  max-width: 760px;
+}
+
+.pillars-proof {
+  color: var(--accent-amber);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  margin-top: 18px;
+}
+
+/* ── Table header ── */
+.pillar-table-header {
+  display: grid;
+  grid-template-columns: 52px 1fr 1fr 1.4fr;
+  gap: 0 20px;
+  padding: 14px 20px;
+  background: rgba(0,194,168,0.06);
+  border-bottom: 1px solid var(--accent-teal);
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+}
+
+/* ── Pillar rows ── */
+.pillar-row {
+  display: grid;
+  grid-template-columns: 52px 1fr 1fr 1.4fr;
+  gap: 0 20px;
+  padding: 28px 20px;
+  border-bottom: 1px solid var(--pillar-border);
+  background: var(--pillar-bg);
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.pillar-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+}
+
+.pillar-row:hover {
+  background: rgba(17, 34, 54, 0.92);
+}
+
+/* accent stripe colours */
+.pillar-row[data-accent="teal"]::before  { background: var(--accent-teal); }
+.pillar-row[data-accent="blue"]::before  { background: var(--accent-blue); }
+.pillar-row[data-accent="amber"]::before { background: var(--accent-amber); }
+
+/* pillar number colour */
+.pillar-row[data-accent="teal"]  .pillar-num { color: var(--accent-teal); }
+.pillar-row[data-accent="blue"]  .pillar-num { color: var(--accent-blue); }
+.pillar-row[data-accent="amber"] .pillar-num { color: var(--accent-amber); }
+
+/* ── Pillar num ── */
+.pillar-num {
+  font-family: var(--font-display, 'Tilt Neon', sans-serif);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding-top: 4px;
+  opacity: 0.9;
+}
+
+/* ── Pillar body ── */
+.pillar-name {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.pillar-claim {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Equiv column ── */
+.pillar-equiv {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.equiv-tag {
+  display: inline-block;
   align-self: flex-start;
-  text-align: left;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
-.right {
-  align-self: flex-end;
-  text-align: right;
+.equiv-note {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.55;
+  margin: 4px 0 0;
+  font-style: italic;
 }
 
-/* Typography */
-.section-title {
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  margin-bottom: 5px;
-  line-height: 1;
+/* ── Evidence column ── */
+.pillar-evidence {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.section-text {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  line-height: 1;
+.pillar-evidence p {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.65;
+  margin: 0;
 }
 
+.pillar-evidence strong {
+  color: rgba(255,255,255,0.88);
+  font-weight: 600;
+}
 
-/* RSP Glass Effect using Text Shadows*/
+.pillar-evidence code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  background: var(--code-bg);
+  color: var(--code-color);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+/* ── Closing ── */
+.pillars-closing {
+  padding: 60px 0 20px;
+  max-width: 680px;
+}
+
+.closing-rule {
+  width: 48px;
+  height: 3px;
+  background: var(--accent-amber);
+  margin-bottom: 36px;
+}
+
+.closing-body {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  margin: 0 0 14px;
+}
+
+.closing-line {
+  font-family: var(--font-display, 'Tilt Neon', sans-serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  margin: 36px 0 20px;
+  line-height: 1.2;
+}
+
+.closing-credit {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+}
+
+.closing-credit a {
+  color: var(--accent-teal);
+  text-decoration: none;
+}
+
+.closing-credit a:hover {
+  text-decoration: underline;
+}
+
+/* ── RSP Glass Effect (preserved from original) ── */
 .glass-text {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-family: var(--font-display, 'Tilt Neon', sans-serif);
   color: rgba(0, 0, 0, 0.08);
-
   text-shadow:
     -1px 0 1px rgba(255, 255, 255, 0.28),
-    1px 0 1px rgba(105, 105, 105, 0.3),
-    -1px 0 0 rgba(105, 105, 105, 0.15),
-	1px 0 2px rgba(0, 0, 0, 0.1),
+     1px 0 1px rgba(105, 105, 105, 0.3),
+    -1px 0 0   rgba(105, 105, 105, 0.15),
+     1px 0 2px rgba(0, 0, 0, 0.1),
     -1px 0 2px rgba(0, 0, 0, 0.1);
-
   letter-spacing: 0.5px;
-  margin-bottom: 10px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .pillar-table-header { display: none; }
+
+  .pillar-row {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 12px 16px;
+  }
+
+  .pillar-num {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .pillar-body {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .pillar-equiv {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .equiv-note { width: 100%; }
+
+  .pillar-evidence {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 540px) {
+  .about-wrapper { padding: 0 16px 60px; }
+  .pillars-hero { padding: 40px 0 32px; }
 }
